@@ -38,7 +38,7 @@ def remove_invalid(full_set):
 def save_as_json(full_set, full_json):
 
     for link in full_set:
-        driver = webdriver.Chrome()
+        # driver = webdriver.Chrome()
         driver.get(link)
         axe = Axe(driver)
         # Inject axe-core javascript into page.
@@ -69,7 +69,7 @@ full_set = remove_invalid(full_set)
 
 full_json = save_as_json(full_set, full_json)
 
-axe.write_results(full_json, 'a11y_full3.json')
+axe.write_results(full_json, './data/a11y_full4.json')
 driver.close()
 driver.quit()
 
