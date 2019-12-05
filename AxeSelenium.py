@@ -4,11 +4,11 @@ from axe_selenium_python import Axe
 from selenium.common import exceptions
 
 
-def get_all_links():
+def get_all_links(url):
     invalid_links = ['twitter', 'instagram', 'facebook',
                      'youtube']
     fullSet = set()
-
+    fullSet.add(url)
     list = driver.find_elements_by_tag_name("a")
     for link in list:
         fullLink = str(link.get_attribute("href"))
@@ -57,18 +57,20 @@ def save_as_json(full_set, full_json):
 # Initialise driver
 driver = webdriver.Chrome()
 driver.maximize_window()
-driver.get("https://www.cpf.gov.sg/members")
+url = "https://www.cpf.gov.sg/members"
+# url = "https://form.gov.sg/#!/5de8a29e30020700123f70d1"
+driver.get(url)
 axe = Axe(driver)
 
 full_json = dict()
 list = driver.find_elements_by_tag_name("a")
 
-full_set = get_all_links()
-full_set = remove_invalid(full_set)
+full_set = get_all_links(url)
+# full_set = remove_invalid(full_set)
 
 full_json = save_as_json(full_set, full_json)
 
-axe.write_results(full_json, './data/a11y_full4.json')
+axe.write_results(full_json, './data/form_test.json')
 driver.close()
 driver.quit()
 
