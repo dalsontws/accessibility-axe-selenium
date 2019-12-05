@@ -38,7 +38,6 @@ def remove_invalid(full_set):
 def save_as_json(full_set, full_json):
 
     for link in full_set:
-        # driver = webdriver.Chrome()
         driver.get(link)
         axe = Axe(driver)
         # Inject axe-core javascript into page.
