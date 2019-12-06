@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from axe_selenium_python import Axe
 from selenium.common import exceptions
+from pymsgbox import *
 
 
 def get_all_links(url):
@@ -16,6 +17,8 @@ def get_all_links(url):
             break
 
         fullSet.add(fullLink)
+
+    # fullSet.add('https://www.cpf.gov.sg/Members/Schemes')
     return fullSet
 
 
@@ -30,27 +33,46 @@ def get_nav_links():
 
 def remove_invalid(full_set):
     # hard-coded removal of invalid links
+    # change/remove if required
     full_set.remove("None")
     full_set.remove("javascript:;")
     return full_set
 
 
 def save_as_json(full_set, full_json):
-
+    count_violations = 0
+    count_critical = 0
     for link in full_set:
+        print(link)
         driver.get(link)
+
         axe = Axe(driver)
         # Inject axe-core javascript into page.
         axe.inject()
         # Run axe accessibility checks.
-        print(link)
-        results = axe.run()
+        try:
+            results = axe.run()
+        except:
+            axe = Axe(driver)
+            results = axe.run()
+
         if (results is None):
             break
+
+        count_violations += len(results['violations'])
+
+        # count_critical += len(results.get(['violations']
+        #                                   ['impact']) == 'critical')
+        # print(type(results))
+        # print(results.get('violations').count("critical"))
+
+        # print('violations: ', count_violations)
+        # print('critical violations: ', count_critical)
 
         url = results['url']
         full_json[url] = results
         print("done")
+    print('Number of violations: ', count_violations)
     return full_json
 
 
@@ -66,11 +88,12 @@ full_json = dict()
 list = driver.find_elements_by_tag_name("a")
 
 full_set = get_all_links(url)
-# full_set = remove_invalid(full_set)
+
+full_set = remove_invalid(full_set)
 
 full_json = save_as_json(full_set, full_json)
 
-axe.write_results(full_json, './data/form_test.json')
+axe.write_results(full_json, './data/cpf_test.json')
 driver.close()
 driver.quit()
 
