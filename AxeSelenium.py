@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from axe_selenium_python import Axe
 from selenium.common import exceptions
+import time
 from pymsgbox import *
 
 
@@ -76,11 +77,11 @@ def save_as_json(full_set, full_json):
     return full_json
 
 
+start_time = time.time()
 # Initialise driver
 driver = webdriver.Chrome()
 driver.maximize_window()
 url = "https://www.cpf.gov.sg/members"
-# url = "https://form.gov.sg/#!/5de8a29e30020700123f70d1"
 driver.get(url)
 axe = Axe(driver)
 
@@ -93,7 +94,11 @@ full_set = remove_invalid(full_set)
 
 full_json = save_as_json(full_set, full_json)
 
-axe.write_results(full_json, './data/cpf_test.json')
+json_save_path = './data/cpf_test.json'
+axe.write_results(full_json, json_save_path)
+
+print('Please refer to: "', json_save_path, '" for the full violations log.')
+print('Time taken: %s seconds' % (time.time() - start_time))
 driver.close()
 driver.quit()
 
