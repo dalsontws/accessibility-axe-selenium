@@ -66,8 +66,11 @@ def save_as_json(full_set, full_json):
 
         # count_violations += len(results['violations'])
 
+        # TODO: Can use dict for violations and url array, using array now for simplicity/pyplot
         violations_arr = np.append(
             violations_arr, len(results['violations']))
+
+        url_arr = np.append(url_arr, results['url'])
 
         if (len(results['violations']) > count_max):
             count_max = len(results['violations'])
