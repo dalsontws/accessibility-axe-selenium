@@ -1,9 +1,11 @@
+import matplotlib.pyplot as plt
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from axe_selenium_python import Axe
 from selenium.common import exceptions
 import time
-from pymsgbox import *
+import pymsgbox
+import numpy as np
 
 
 def get_all_links(url):
@@ -41,8 +43,10 @@ def remove_invalid(full_set):
 
 
 def save_as_json(full_set, full_json):
-    count_violations = 0
+    # count_violations = 0
     count_critical = 0
+    count_max = 0
+    violations_arr = []
     for link in full_set:
         print(link)
         driver.get(link)
@@ -60,7 +64,14 @@ def save_as_json(full_set, full_json):
         if (results is None):
             break
 
-        count_violations += len(results['violations'])
+        # count_violations += len(results['violations'])
+
+        violations_arr = np.append(
+            violations_arr, len(results['violations']))
+
+        if (len(results['violations']) > count_max):
+            count_max = len(results['violations'])
+            max_url = results['url']
 
         # count_critical += len(results.get(['violations']
         #                                   ['impact']) == 'critical')
@@ -73,8 +84,9 @@ def save_as_json(full_set, full_json):
         url = results['url']
         full_json[url] = results
         print("done")
-    print('Number of violations: ', count_violations)
-    return full_json
+    print(sum(violations_arr))
+    print('Number of violations: ', sum(violations_arr))
+    return full_json, count_violations, max_url
 
 
 start_time = time.time()
@@ -92,14 +104,22 @@ full_set = get_all_links(url)
 
 full_set = remove_invalid(full_set)
 
-full_json = save_as_json(full_set, full_json)
+full_json, count_violations, max_url = save_as_json(full_set, full_json)
 
 json_save_path = './data/cpf_test.json'
 axe.write_results(full_json, json_save_path)
 
-print('Please refer to: "', json_save_path, '" for the full violations log.')
-print('Time taken: %s seconds' % (time.time() - start_time))
+# print('Please refer to: "', json_save_path, '" for the full violations log.')
+# print('Time taken: %s seconds' % (time.time() - start_time))
 driver.close()
 driver.quit()
+
+pymsgbox.alert(
+    "Please refer to: " + json_save_path + " for the full violations log.\n " +
+    "Time taken: %s seconds" % (time.time() - start_time) + "\n"
+    "Number of violations:" + str(count_violations) + "\n"
+    "Webpage with most violations:" + max_url,
+    'Completion Box')
+
 
 print("Test Completed")
