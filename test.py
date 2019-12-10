@@ -24,12 +24,54 @@ objects2 = [['Python', 'C++', 'Java', 'Perl', 'Scala', 'Lisp']]
 # y_pos = np.arange(len(objects))
 performance = [10, 8, 6, 4, 2, 1]
 
-ax3 = fig.add_subplot(221)
-columns = ("column")
-ax3.table(cellText=objects2,
-          colLabels=columns,
-          loc='bottom')
+ax3 = fig.add_subplot(222)
 
+
+col_labels = ['Index', 'URL']
+table_vals = []
+
+url_arr = ['link 1', 'link 2', 'link 3']
+i = 0
+for link in url_arr:
+    table_vals.append([i, link])
+#     table_vals = np.append(table_vals, [i, link])
+    i = i + 1
+print(table_vals)
+# table_vals = [[11, 12], [21, 22], [31, 32]]
+
+# Draw table
+the_table = ax3.table(cellText=table_vals,
+                      colWidths=[0.1] * 3,
+                      rowLabels=None,
+                      colLabels=col_labels,
+                      loc='center')
+the_table.auto_set_font_size(False)
+the_table.set_fontsize(12)
+the_table.scale(3, 3)
+
+
+# y = [1, 2, 3, 4, 5, 4, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1]
+# col_labels = ['Index', 'URL']
+# row_labels = ['row1', 'row2', 'row3']
+# table_vals = [[11, 12], [21, 22], [31, 32]]
+
+
+# # Draw table
+# the_table = ax3.table(cellText=table_vals,
+#                       colWidths=[0.1] * 3,
+#                       rowLabels=None,
+#                       colLabels=col_labels,
+#                       loc='center')
+# the_table.auto_set_font_size(False)
+# the_table.set_fontsize(12)
+# the_table.scale(3, 3)
+
+ax3.tick_params(axis='x', which='both', bottom=False,
+                top=False, labelbottom=False)
+ax3.tick_params(axis='y', which='both', right=False,
+                left=False, labelleft=False)
+for pos in ['right', 'top', 'bottom', 'left']:
+    ax3.spines[pos].set_visible(False)
 
 ax2.bar(objects, performance, align='center',
         alpha=0.5, tick_label=objects)

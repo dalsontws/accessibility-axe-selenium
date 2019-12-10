@@ -26,7 +26,8 @@ def get_all_links(url):
 
         fullSet.add(fullLink)
 
-    # fullSet.add('https://www.cpf.gov.sg/Members/Schemes')
+    # fullSet.add('https://www.cpf.gov.sg/Members/Schemes'
+
     return fullSet
 
 
@@ -148,6 +149,28 @@ ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
         shadow=True, startangle=90)
 
 ax2 = fig.add_subplot(224)
+
+
+ax3 = fig.add_subplot(222)
+# y = [1, 2, 3, 4, 5, 4, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1]
+col_labels = ['Index', 'URL']
+table_vals = []
+i = 0
+for link in url_arr:
+    table_vals.append([i, link])
+    i = i + 1
+# table_vals = [[11, 12], [21, 22], [31, 32]]
+
+# Draw table
+the_table = ax3.table(cellText=table_vals,
+                      colWidths=[0.1] * 3,
+                      rowLabels=None,
+                      colLabels=col_labels,
+                      loc='center')
+the_table.auto_set_font_size(False)
+the_table.set_fontsize(4)
+the_table.scale(3, 3)
+
 
 urls = url_arr
 labels = ['\n'.join(wrap(l, 10)) for l in urls]
