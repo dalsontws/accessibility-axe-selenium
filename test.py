@@ -20,11 +20,20 @@ ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
 ax2 = fig.add_subplot(224)
 
 objects = ['Python', 'C++', 'Java', 'Perl', 'Scala', 'Lisp']
-y_pos = np.arange(len(objects))
+objects2 = [['Python', 'C++', 'Java', 'Perl', 'Scala', 'Lisp']]
+# y_pos = np.arange(len(objects))
 performance = [10, 8, 6, 4, 2, 1]
 
-ax2.bar(y_pos, performance, align='center', alpha=0.5, tick_label=objects)
+ax3 = fig.add_subplot(221)
+columns = ("column")
+ax3.table(cellText=objects2,
+          colLabels=columns,
+          loc='bottom')
 
+
+ax2.bar(objects, performance, align='center',
+        alpha=0.5, tick_label=objects)
+ax2.legend(objects)
 canvas = FigureCanvasTkAgg(fig, master=root)
 canvas.draw()
 canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)

@@ -1,3 +1,8 @@
+from textwrap import wrap
+from matplotlib.figure import Figure
+from matplotlib.backend_bases import key_press_handler
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
+import tkinter as tk
 import matplotlib.pyplot as plt
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -43,10 +48,12 @@ def remove_invalid(full_set):
 
 
 def save_as_json(full_set, full_json):
-    # count_violations = 0
-    count_critical = 0
+    count_passes = 0
+    count_incomplete = 0
+
     count_max = 0
     violations_arr = []
+    url_arr = []
     for link in full_set:
         print(link)
         driver.get(link)
@@ -65,31 +72,32 @@ def save_as_json(full_set, full_json):
             break
 
         # count_violations += len(results['violations'])
-
+        url = results['url']
         # TODO: Can use dict for violations and url array, using array now for simplicity/pyplot
         violations_arr = np.append(
             violations_arr, len(results['violations']))
 
-        url_arr = np.append(url_arr, results['url'])
+        url_arr = np.append(url_arr, url)
 
         if (len(results['violations']) > count_max):
             count_max = len(results['violations'])
-            max_url = results['url']
+            max_url = url
 
-        # count_critical += len(results.get(['violations']
-        #                                   ['impact']) == 'critical')
+        count_passes += len(results['passes'])
+        count_incomplete += len(results['incomplete'])
+
         # print(type(results))
         # print(results.get('violations').count("critical"))
 
         # print('violations: ', count_violations)
         # print('critical violations: ', count_critical)
 
-        url = results['url']
         full_json[url] = results
         print("done")
     print(sum(violations_arr))
+    count_arr = [count_incomplete, sum(violations_arr), count_passes]
     print('Number of violations: ', sum(violations_arr))
-    return full_json, violations_arr, url_arr, max_url
+    return full_json, violations_arr, url_arr, max_url, count_arr
 
 
 start_time = time.time()
@@ -107,7 +115,8 @@ full_set = get_all_links(url)
 
 full_set = remove_invalid(full_set)
 
-full_json, violations_arr, url_arr, max_url = save_as_json(full_set, full_json)
+full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
+    full_set, full_json)
 
 json_save_path = './data/cpf_test.json'
 axe.write_results(full_json, json_save_path)
@@ -120,9 +129,43 @@ driver.quit()
 pymsgbox.alert(
     "Please refer to: " + json_save_path + " for the full violations log.\n " +
     "Time taken: %s seconds" % (time.time() - start_time) + "\n"
-    "Number of violations:" + str(count_violations) + "\n"
+    "Number of violations:" + str(sum(violations_arr)) + "\n"
     "Webpage with most violations:" + max_url,
     'Completion Box')
+
+# gui
+root = tk.Tk()
+root.wm_title("title")
+
+fig = Figure(figsize=(10, 10), dpi=100)
+# add pie later
+labels = 'Passes', 'Violations', 'Incomplete'
+sizes = count_arr
+explode = (0, 0.1, 0)
+
+ax1 = fig.add_subplot(223)
+ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+        shadow=True, startangle=90)
+
+ax2 = fig.add_subplot(224)
+
+urls = url_arr
+labels = ['\n'.join(wrap(l, 10)) for l in urls]
+print(labels)
+violations = violations_arr
+
+
+ax2.bar(labels, violations, align='center', alpha=0.5, tick_label=labels)
+
+canvas = FigureCanvasTkAgg(fig, master=root)
+canvas.draw()
+canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+
+toolbar = NavigationToolbar2Tk(canvas, root)
+toolbar.update()
+canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+
+tk.mainloop()
 
 
 print("Test Completed")
