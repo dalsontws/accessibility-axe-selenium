@@ -20,7 +20,6 @@ ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
         shadow=True, startangle=90)
 
 ax2 = fig.add_subplot(224)
-ax2.
 canvas = FigureCanvasTkAgg(fig, master=root)
 canvas.draw()
 canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
