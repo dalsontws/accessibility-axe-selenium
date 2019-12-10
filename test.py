@@ -9,8 +9,6 @@ root = tk.Tk()
 root.wm_title("title")
 
 fig = Figure(figsize=(10, 10), dpi=100)
-t = np.arange(0, 3, .01)
-
 labels = 'Frogs', 'Hogs', 'Dogs', 'Logs'
 sizes = [15, 30, 45, 10]
 explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
@@ -20,6 +18,13 @@ ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
         shadow=True, startangle=90)
 
 ax2 = fig.add_subplot(224)
+
+objects = ['Python', 'C++', 'Java', 'Perl', 'Scala', 'Lisp']
+y_pos = np.arange(len(objects))
+performance = [10, 8, 6, 4, 2, 1]
+
+ax2.bar(y_pos, performance, align='center', alpha=0.5, tick_label=objects)
+
 canvas = FigureCanvasTkAgg(fig, master=root)
 canvas.draw()
 canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)

@@ -89,7 +89,7 @@ def save_as_json(full_set, full_json):
         print("done")
     print(sum(violations_arr))
     print('Number of violations: ', sum(violations_arr))
-    return full_json, count_violations, max_url
+    return full_json, violations_arr, url_arr, max_url
 
 
 start_time = time.time()
@@ -107,7 +107,7 @@ full_set = get_all_links(url)
 
 full_set = remove_invalid(full_set)
 
-full_json, count_violations, max_url = save_as_json(full_set, full_json)
+full_json, violations_arr, url_arr, max_url = save_as_json(full_set, full_json)
 
 json_save_path = './data/cpf_test.json'
 axe.write_results(full_json, json_save_path)
