@@ -24,7 +24,7 @@ objects2 = [['Python', 'C++', 'Java', 'Perl', 'Scala', 'Lisp']]
 # y_pos = np.arange(len(objects))
 performance = [10, 8, 6, 4, 2, 1]
 
-ax3 = fig.add_subplot(222)
+ax3 = fig.add_subplot(211)
 
 
 col_labels = ['Index', 'URL']
@@ -41,7 +41,7 @@ print(table_vals)
 
 # Draw table
 the_table = ax3.table(cellText=table_vals,
-                      colWidths=[0.1] * 3,
+                      colWidths=[0.05, 0.2],
                       rowLabels=None,
                       colLabels=col_labels,
                       loc='center')
@@ -56,15 +56,19 @@ the_table.scale(3, 3)
 # table_vals = [[11, 12], [21, 22], [31, 32]]
 
 
-# # Draw table
-# the_table = ax3.table(cellText=table_vals,
-#                       colWidths=[0.1] * 3,
-#                       rowLabels=None,
-#                       colLabels=col_labels,
-#                       loc='center')
-# the_table.auto_set_font_size(False)
-# the_table.set_fontsize(12)
-# the_table.scale(3, 3)
+table_vals.append(['No. of Violations', '1'])
+table_vals.append(['Most Violations', '2'])
+table_vals.append(['Time taken:', "%.1f" % float("2.000000") + "s"])
+
+# Draw table
+the_table = ax3.table(cellText=table_vals,
+                      colWidths=[0.1] * 3,
+                      rowLabels=None,
+                      colLabels=None,
+                      loc='center')
+the_table.auto_set_font_size(False)
+the_table.set_fontsize(12)
+the_table.scale(3, 3)
 
 ax3.tick_params(axis='x', which='both', bottom=False,
                 top=False, labelbottom=False)
