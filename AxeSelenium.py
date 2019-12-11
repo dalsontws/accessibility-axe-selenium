@@ -11,11 +11,12 @@ from selenium.common import exceptions
 import time
 import pymsgbox
 import numpy as np
+import pytest
 
 
 def get_all_links(url):
     invalid_links = ['twitter', 'instagram', 'facebook',
-                     'youtube', 'https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/ContributionCalculator/Index?isFirstAndSecondYear=0&isMember=1']
+                     'youtube']
     fullSet = set()
     fullSet.add(url)
     list = driver.find_elements_by_tag_name("a")
@@ -26,8 +27,7 @@ def get_all_links(url):
 
         fullSet.add(fullLink)
 
-    # fullSet.add('https://www.cpf.gov.sg/Members/Schemes'
-
+    # fullSet.add('https://www.cpf.gov.sg/Members/Schemes')
     return fullSet
 
 
@@ -60,6 +60,8 @@ def save_as_json(full_set, full_json):
         driver.get(link)
 
         axe = Axe(driver)
+        # option = {'rules': {'color-contrast': {'enabled': 'false'},
+        #                     'valid-lang': {'enabled': 'false'}}}
         # Inject axe-core javascript into page.
         axe.inject()
         # Run axe accessibility checks.
@@ -113,12 +115,13 @@ list = driver.find_elements_by_tag_name("a")
 
 full_set = get_all_links(url)
 
-full_set = remove_invalid(full_set)
+# full_set=remove_invalid(full_set)
 
 full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
     full_set, full_json)
 
 json_save_path = './data/cpf_test.json'
+# json_save_path = './data/a11y_test1.json'
 axe.write_results(full_json, json_save_path)
 
 driver.close()
@@ -145,7 +148,7 @@ ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
         shadow=True, startangle=90)
 
 
-max_url = 'https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/Cashier/ECashierHomepage'
+# max_url = 'https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/Cashier/ECashierHomepage'
 ax3 = fig.add_subplot(211)
 table_vals = []
 i = 0

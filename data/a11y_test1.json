@@ -382,6 +382,204 @@
                                     "bgColor": null,
                                     "contrastRatio": 0,
                                     "expectedContrastRatio": "4.5:1",
+                                    "fgColor": "#464642",
+                                    "fontSize": "12.0pt",
+                                    "fontWeight": "bold",
+                                    "missingData": "bgGradient"
+                                },
+                                "id": "color-contrast",
+                                "impact": "serious",
+                                "message": "Element's background color could not be determined due to a background gradient",
+                                "relatedNodes": [
+                                    {
+                                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr1\">",
+                                        "target": [
+                                            ".cpf-panel-group > .panel.panel-default:nth-child(1) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "html": "<h2 id=\"Retirement\" class=\"panel-title\">Retirement<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": "serious",
+                        "none": [],
+                        "target": [
+                            "#Retirement"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": {
+                                    "bgColor": null,
+                                    "contrastRatio": 0,
+                                    "expectedContrastRatio": "4.5:1",
+                                    "fgColor": "#464642",
+                                    "fontSize": "12.0pt",
+                                    "fontWeight": "bold",
+                                    "missingData": "bgGradient"
+                                },
+                                "id": "color-contrast",
+                                "impact": "serious",
+                                "message": "Element's background color could not be determined due to a background gradient",
+                                "relatedNodes": [
+                                    {
+                                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr2\"><h2 id=\"Housing\" class=\"panel-title\">Housing<span class=\"glyphicon glyphicon-plus\"></span></h2></button>",
+                                        "target": [
+                                            ".panel.panel-default:nth-child(2) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "html": "<h2 id=\"Housing\" class=\"panel-title\">Housing<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": "serious",
+                        "none": [],
+                        "target": [
+                            "#Housing"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": {
+                                    "bgColor": null,
+                                    "contrastRatio": 0,
+                                    "expectedContrastRatio": "4.5:1",
+                                    "fgColor": "#464642",
+                                    "fontSize": "12.0pt",
+                                    "fontWeight": "bold",
+                                    "missingData": "bgGradient"
+                                },
+                                "id": "color-contrast",
+                                "impact": "serious",
+                                "message": "Element's background color could not be determined due to a background gradient",
+                                "relatedNodes": [
+                                    {
+                                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr3\">",
+                                        "target": [
+                                            ".panel.panel-default:nth-child(3) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "html": "<h2 id=\"Healthcare\" class=\"panel-title\">Healthcare<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": "serious",
+                        "none": [],
+                        "target": [
+                            "#Healthcare"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": {
+                                    "bgColor": null,
+                                    "contrastRatio": 0,
+                                    "expectedContrastRatio": "4.5:1",
+                                    "fgColor": "#464642",
+                                    "fontSize": "12.0pt",
+                                    "fontWeight": "bold",
+                                    "missingData": "bgGradient"
+                                },
+                                "id": "color-contrast",
+                                "impact": "serious",
+                                "message": "Element's background color could not be determined due to a background gradient",
+                                "relatedNodes": [
+                                    {
+                                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr4\">",
+                                        "target": [
+                                            ".panel.panel-default:nth-child(4) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "html": "<h2 id=\"OptimisingMyCPF\" class=\"panel-title\">Optimising My CPF<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": "serious",
+                        "none": [],
+                        "target": [
+                            "#OptimisingMyCPF"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": {
+                                    "bgColor": null,
+                                    "contrastRatio": 0,
+                                    "expectedContrastRatio": "4.5:1",
+                                    "fgColor": "#464642",
+                                    "fontSize": "12.0pt",
+                                    "fontWeight": "bold",
+                                    "missingData": "bgGradient"
+                                },
+                                "id": "color-contrast",
+                                "impact": "serious",
+                                "message": "Element's background color could not be determined due to a background gradient",
+                                "relatedNodes": [
+                                    {
+                                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr5\">",
+                                        "target": [
+                                            ".panel.panel-default:nth-child(5) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "html": "<h2 id=\"Self-EmployedMatters\" class=\"panel-title\">Self-Employed Matters<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": "serious",
+                        "none": [],
+                        "target": [
+                            "#Self-EmployedMatters"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": {
+                                    "bgColor": null,
+                                    "contrastRatio": 0,
+                                    "expectedContrastRatio": "4.5:1",
+                                    "fgColor": "#464642",
+                                    "fontSize": "12.0pt",
+                                    "fontWeight": "bold",
+                                    "missingData": "bgGradient"
+                                },
+                                "id": "color-contrast",
+                                "impact": "serious",
+                                "message": "Element's background color could not be determined due to a background gradient",
+                                "relatedNodes": [
+                                    {
+                                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr6\">",
+                                        "target": [
+                                            ".panel.panel-default:nth-child(6) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "html": "<h2 id=\"OtherMatters\" class=\"panel-title\">Other Matters<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": "serious",
+                        "none": [],
+                        "target": [
+                            "#OtherMatters"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": {
+                                    "bgColor": null,
+                                    "contrastRatio": 0,
+                                    "expectedContrastRatio": "4.5:1",
                                     "fgColor": "#ffffff",
                                     "fontSize": "10.5pt",
                                     "fontWeight": "bold",
@@ -553,7 +751,7 @@
                                 "relatedNodes": []
                             }
                         ],
-                        "html": "<div class=\"cpf-utility pull-right\" id=\"cpfUtilityMain\" role=\"toolbar\" style=\"display: block;\">",
+                        "html": "<div class=\"cpf-utility pull-right\" id=\"cpfUtilityMain\" role=\"toolbar\">",
                         "impact": null,
                         "none": [],
                         "target": [
@@ -625,7 +823,7 @@
                                 "relatedNodes": []
                             }
                         ],
-                        "html": "<table id=\"socialMediaShare\" class=\"cms-share accessibilityContainer\" role=\"presentation\" style=\"display: table;\">",
+                        "html": "<table id=\"socialMediaShare\" class=\"cms-share accessibilityContainer\" role=\"presentation\">",
                         "impact": null,
                         "none": [],
                         "target": [
@@ -656,7 +854,7 @@
                                 "relatedNodes": []
                             }
                         ],
-                        "html": "<body class=\"has-navbar ms-backgroundImage\" onhashchange=\"if (typeof(_spBodyOnHashChange) != 'undefined') _spBodyOnHashChange();\" style=\"font-size: 16px;\">",
+                        "html": "<body class=\"has-navbar\" onhashchange=\"if (typeof(_spBodyOnHashChange) != 'undefined') _spBodyOnHashChange();\" style=\"font-size: 16px;\">",
                         "impact": null,
                         "none": [],
                         "target": [
@@ -706,24 +904,6 @@
                                 "relatedNodes": []
                             }
                         ],
-                        "html": "<div class=\"cpf-utility pull-right\" id=\"cpfUtilityMain\" role=\"toolbar\" style=\"display: block;\">",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            "#cpfUtilityMain"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": null,
-                                "id": "aria-required-attr",
-                                "impact": "critical",
-                                "message": "All required ARIA attributes are present",
-                                "relatedNodes": []
-                            }
-                        ],
                         "html": "<table role=\"presentation\">                    <tbody><tr>                        <td><h1 class=\"page-title\">Schemes</h1></td>                    </tr>                </tbody></table>",
                         "impact": null,
                         "none": [],
@@ -765,24 +945,6 @@
                         "none": [],
                         "target": [
                             "table:nth-child(3)"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": null,
-                                "id": "aria-required-attr",
-                                "impact": "critical",
-                                "message": "All required ARIA attributes are present",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<table id=\"socialMediaShare\" class=\"cms-share accessibilityContainer\" role=\"presentation\" style=\"display: table;\">",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            "#socialMediaShare"
                         ]
                     }
                 ],
@@ -828,24 +990,6 @@
                                 "relatedNodes": []
                             }
                         ],
-                        "html": "<div class=\"cpf-utility pull-right\" id=\"cpfUtilityMain\" role=\"toolbar\" style=\"display: block;\">",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            "#cpfUtilityMain"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": null,
-                                "id": "aria-required-children",
-                                "impact": "critical",
-                                "message": "Required ARIA children are present",
-                                "relatedNodes": []
-                            }
-                        ],
                         "html": "<table role=\"presentation\">                    <tbody><tr>                        <td><h1 class=\"page-title\">Schemes</h1></td>                    </tr>                </tbody></table>",
                         "impact": null,
                         "none": [],
@@ -887,24 +1031,6 @@
                         "none": [],
                         "target": [
                             "table:nth-child(3)"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": null,
-                                "id": "aria-required-children",
-                                "impact": "critical",
-                                "message": "Required ARIA children are present",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<table id=\"socialMediaShare\" class=\"cms-share accessibilityContainer\" role=\"presentation\" style=\"display: table;\">",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            "#socialMediaShare"
                         ]
                     }
                 ],
@@ -950,24 +1076,6 @@
                                 "relatedNodes": []
                             }
                         ],
-                        "html": "<div class=\"cpf-utility pull-right\" id=\"cpfUtilityMain\" role=\"toolbar\" style=\"display: block;\">",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            "#cpfUtilityMain"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": null,
-                                "id": "aria-required-parent",
-                                "impact": "critical",
-                                "message": "Required ARIA parent role present",
-                                "relatedNodes": []
-                            }
-                        ],
                         "html": "<table role=\"presentation\">                    <tbody><tr>                        <td><h1 class=\"page-title\">Schemes</h1></td>                    </tr>                </tbody></table>",
                         "impact": null,
                         "none": [],
@@ -1009,24 +1117,6 @@
                         "none": [],
                         "target": [
                             "table:nth-child(3)"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": null,
-                                "id": "aria-required-parent",
-                                "impact": "critical",
-                                "message": "Required ARIA parent role present",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<table id=\"socialMediaShare\" class=\"cms-share accessibilityContainer\" role=\"presentation\" style=\"display: table;\">",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            "#socialMediaShare"
                         ]
                     }
                 ],
@@ -1078,38 +1168,6 @@
                     {
                         "all": [],
                         "any": [],
-                        "html": "<div class=\"cpf-utility pull-right\" id=\"cpfUtilityMain\" role=\"toolbar\" style=\"display: block;\">",
-                        "impact": null,
-                        "none": [
-                            {
-                                "data": null,
-                                "id": "invalidrole",
-                                "impact": "critical",
-                                "message": "ARIA role is valid",
-                                "relatedNodes": []
-                            },
-                            {
-                                "data": null,
-                                "id": "abstractrole",
-                                "impact": "serious",
-                                "message": "Abstract roles are not used",
-                                "relatedNodes": []
-                            },
-                            {
-                                "data": null,
-                                "id": "unsupportedrole",
-                                "impact": "critical",
-                                "message": "ARIA role is supported",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "target": [
-                            "#cpfUtilityMain"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [],
                         "html": "<table role=\"presentation\">                    <tbody><tr>                        <td><h1 class=\"page-title\">Schemes</h1></td>                    </tr>                </tbody></table>",
                         "impact": null,
                         "none": [
@@ -1201,38 +1259,6 @@
                         ],
                         "target": [
                             "table:nth-child(3)"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [],
-                        "html": "<table id=\"socialMediaShare\" class=\"cms-share accessibilityContainer\" role=\"presentation\" style=\"display: table;\">",
-                        "impact": null,
-                        "none": [
-                            {
-                                "data": null,
-                                "id": "invalidrole",
-                                "impact": "critical",
-                                "message": "ARIA role is valid",
-                                "relatedNodes": []
-                            },
-                            {
-                                "data": null,
-                                "id": "abstractrole",
-                                "impact": "serious",
-                                "message": "Abstract roles are not used",
-                                "relatedNodes": []
-                            },
-                            {
-                                "data": null,
-                                "id": "unsupportedrole",
-                                "impact": "critical",
-                                "message": "ARIA role is supported",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "target": [
-                            "#socialMediaShare"
                         ]
                     }
                 ],
@@ -1367,39 +1393,6 @@
                         "all": [],
                         "any": [
                             {
-                                "data": "A A",
-                                "id": "button-has-visible-text",
-                                "impact": "critical",
-                                "message": "Element has inner text that is visible to screen readers",
-                                "relatedNodes": []
-                            },
-                            {
-                                "data": null,
-                                "id": "non-empty-title",
-                                "impact": "serious",
-                                "message": "Element has a title attribute",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<button id=\"btnOpenUtility\" class=\"cpf-btn-share cpf-btn-accessibility-large-size\" title=\"Click to view utility options\">",
-                        "impact": null,
-                        "none": [
-                            {
-                                "data": null,
-                                "id": "focusable-no-name",
-                                "impact": "serious",
-                                "message": "Element is not in tab order or has accessible text",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "target": [
-                            "#btnOpenUtility"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
                                 "data": "Collapse All",
                                 "id": "button-has-visible-text",
                                 "impact": "critical",
@@ -1446,6 +1439,162 @@
                         ],
                         "target": [
                             "#btnExpandAll > .cpf-btn-d.btn-sm.collapseall"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "Retirement",
+                                "id": "button-has-visible-text",
+                                "impact": "critical",
+                                "message": "Element has inner text that is visible to screen readers",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr1\">",
+                        "impact": null,
+                        "none": [
+                            {
+                                "data": null,
+                                "id": "focusable-no-name",
+                                "impact": "serious",
+                                "message": "Element is not in tab order or has accessible text",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "target": [
+                            ".cpf-panel-group > .panel.panel-default:nth-child(1) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "Housing",
+                                "id": "button-has-visible-text",
+                                "impact": "critical",
+                                "message": "Element has inner text that is visible to screen readers",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr2\"><h2 id=\"Housing\" class=\"panel-title\">Housing<span class=\"glyphicon glyphicon-plus\"></span></h2></button>",
+                        "impact": null,
+                        "none": [
+                            {
+                                "data": null,
+                                "id": "focusable-no-name",
+                                "impact": "serious",
+                                "message": "Element is not in tab order or has accessible text",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "target": [
+                            ".panel.panel-default:nth-child(2) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "Healthcare",
+                                "id": "button-has-visible-text",
+                                "impact": "critical",
+                                "message": "Element has inner text that is visible to screen readers",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr3\">",
+                        "impact": null,
+                        "none": [
+                            {
+                                "data": null,
+                                "id": "focusable-no-name",
+                                "impact": "serious",
+                                "message": "Element is not in tab order or has accessible text",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "target": [
+                            ".panel.panel-default:nth-child(3) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "Optimising My CPF",
+                                "id": "button-has-visible-text",
+                                "impact": "critical",
+                                "message": "Element has inner text that is visible to screen readers",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr4\">",
+                        "impact": null,
+                        "none": [
+                            {
+                                "data": null,
+                                "id": "focusable-no-name",
+                                "impact": "serious",
+                                "message": "Element is not in tab order or has accessible text",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "target": [
+                            ".panel.panel-default:nth-child(4) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "Self-Employed Matters",
+                                "id": "button-has-visible-text",
+                                "impact": "critical",
+                                "message": "Element has inner text that is visible to screen readers",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr5\">",
+                        "impact": null,
+                        "none": [
+                            {
+                                "data": null,
+                                "id": "focusable-no-name",
+                                "impact": "serious",
+                                "message": "Element is not in tab order or has accessible text",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "target": [
+                            ".panel.panel-default:nth-child(5) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "Other Matters",
+                                "id": "button-has-visible-text",
+                                "impact": "critical",
+                                "message": "Element has inner text that is visible to screen readers",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr6\">",
+                        "impact": null,
+                        "none": [
+                            {
+                                "data": null,
+                                "id": "focusable-no-name",
+                                "impact": "serious",
+                                "message": "Element is not in tab order or has accessible text",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "target": [
+                            ".panel.panel-default:nth-child(6) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
                         ]
                     }
                 ],
@@ -1721,58 +1870,6 @@
                         "any": [
                             {
                                 "data": {
-                                    "bgColor": "#464642",
-                                    "contrastRatio": 9.48,
-                                    "expectedContrastRatio": "4.5:1",
-                                    "fgColor": "#ffffff",
-                                    "fontSize": "7.5pt",
-                                    "fontWeight": "normal",
-                                    "missingData": "shortTextContent"
-                                },
-                                "id": "color-contrast",
-                                "impact": "serious",
-                                "message": "Element has sufficient color contrast of 9.48",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<span class=\"cpf-btn-utility-small-size\" style=\"margin-right: -2px;\">A</span>",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            ".cpf-btn-utility-small-size"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": {
-                                    "bgColor": "#464642",
-                                    "contrastRatio": 9.48,
-                                    "expectedContrastRatio": "4.5:1",
-                                    "fgColor": "#ffffff",
-                                    "fontSize": "11.3pt",
-                                    "fontWeight": "normal",
-                                    "missingData": "shortTextContent"
-                                },
-                                "id": "color-contrast",
-                                "impact": "serious",
-                                "message": "Element has sufficient color contrast of 9.48",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<span class=\"cpf-btn-utility-large-size\" style=\"margin-left: -2px;\">A</span>",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            ".cpf-btn-utility-large-size"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": {
                                     "bgColor": "#f9f9f9",
                                     "contrastRatio": 4.4,
                                     "expectedContrastRatio": "3:1",
@@ -1869,33 +1966,7 @@
                         "impact": null,
                         "none": [],
                         "target": [
-                            ".cpf-btn-d.btn-sm.collapseall > .glyphicon-plus"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": {
-                                    "bgColor": "#f9f9f9",
-                                    "contrastRatio": 8.68,
-                                    "expectedContrastRatio": "4.5:1",
-                                    "fgColor": "#484848",
-                                    "fontSize": "12.0pt",
-                                    "fontWeight": "normal",
-                                    "missingData": null
-                                },
-                                "id": "color-contrast",
-                                "impact": "serious",
-                                "message": "Element has sufficient color contrast of 8.68",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<span class=\"share-text\">Share this page</span>",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            ".share-text"
+                            ".cpf-expCol-text.glyphicon-plus.glyphicon"
                         ]
                     },
                     {
@@ -2366,42 +2437,6 @@
                         "all": [],
                         "any": [
                             {
-                                "data": "linkTurnOnAcc",
-                                "id": "duplicate-id-active",
-                                "impact": "serious",
-                                "message": "Document has no active elements that share the same id attribute",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<a id=\"linkTurnOnAcc\" href=\"#\" class=\"ms-TurnOnAcc\" onclick=\"SetIsAccessibilityFeatureEnabled(true);UpdateAccessibilityUI();document.getElementById('linkTurnOffAcc').focus();return false;\">\n                Turn on more accessible mode\n            </a>",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            "#linkTurnOnAcc"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": "linkTurnOffAnimation",
-                                "id": "duplicate-id-active",
-                                "impact": "serious",
-                                "message": "Document has no active elements that share the same id attribute",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<a id=\"linkTurnOffAnimation\" href=\"#\" class=\"ms-accessible ms-acc-button\" onclick=\"ToggleAnimationStatus();return false;\">\n                Turn off Animations\n            </a>",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            "#linkTurnOffAnimation"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
                                 "data": "idCpfLogo",
                                 "id": "duplicate-id-active",
                                 "impact": "serious",
@@ -2456,114 +2491,6 @@
                         "all": [],
                         "any": [
                             {
-                                "data": "btnOpenUtility",
-                                "id": "duplicate-id-active",
-                                "impact": "serious",
-                                "message": "Document has no active elements that share the same id attribute",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<button id=\"btnOpenUtility\" class=\"cpf-btn-share cpf-btn-accessibility-large-size\" title=\"Click to view utility options\">",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            "#btnOpenUtility"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": "btnPrint",
-                                "id": "duplicate-id-active",
-                                "impact": "serious",
-                                "message": "Document has no active elements that share the same id attribute",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<button class=\"cpf-btn-share cpf-btn-accessibility-large-size\" id=\"btnPrint\" data-utility=\"printPage\" onclick=\"window.print(); return false;\" style=\"background: #464642;\">",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            "#btnPrint"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": "btnShareFacebook",
-                                "id": "duplicate-id-active",
-                                "impact": "serious",
-                                "message": "Document has no active elements that share the same id attribute",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<a id=\"btnShareFacebook\" class=\"cpf-btn-share cpf-btn-accessibility-large-size\" title=\"Click to share on facebook\" style=\"background: #4968ad !important;\" href=\"https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\">",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            "#btnShareFacebook"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": "btnShareTwitter",
-                                "id": "duplicate-id-active",
-                                "impact": "serious",
-                                "message": "Document has no active elements that share the same id attribute",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<a id=\"btnShareTwitter\" class=\"cpf-btn-share cpf-btn-accessibility-large-size\" title=\"Click to share on twitter\" style=\"background: #4aa0ec !important;\" href=\"https://twitter.com/intent/tweet?text=CPFB%20%7C%20Schemes&amp;url=https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\">",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            "#btnShareTwitter"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": "btnShareMail",
-                                "id": "duplicate-id-active",
-                                "impact": "serious",
-                                "message": "Document has no active elements that share the same id attribute",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<a id=\"btnShareMail\" class=\"cpf-btn-share cpf-btn-accessibility-large-size\" title=\"Click here to share via email\" style=\"background: #5e9dc3 !important\" href=\"mailto:?subject=CPFB%20%7C%20Schemes&amp;body=https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\">",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            "#btnShareMail"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": "btnShareWhatsapp",
-                                "id": "duplicate-id-active",
-                                "impact": "serious",
-                                "message": "Document has no active elements that share the same id attribute",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<a id=\"btnShareWhatsapp\" class=\"cpf-btn-share cpf-btn-accessibility-large-size\" title=\"Click here to share via whatsapp\" style=\"background: #25D366 !important\" href=\"https://web.whatsapp.com/send?phone=&amp;text=CPFB%20%7C%20Schemes%20https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\" target=\"_blank\">",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            "#btnShareWhatsapp"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
                                 "data": "mainContent",
                                 "id": "duplicate-id-active",
                                 "impact": "serious",
@@ -2576,78 +2503,6 @@
                         "none": [],
                         "target": [
                             "#mainContent"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": "socialMediaShareFB",
-                                "id": "duplicate-id-active",
-                                "impact": "serious",
-                                "message": "Document has no active elements that share the same id attribute",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<a id=\"socialMediaShareFB\" title=\"Share on Facebook\" href=\"https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\"><img alt=\"Facebook Share\" src=\"/members/_catalogs/masterpage/CPFB/Images/Social-Media-FB-40.png\"></a>",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            "#socialMediaShareFB"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": "socialMediaShareTW",
-                                "id": "duplicate-id-active",
-                                "impact": "serious",
-                                "message": "Document has no active elements that share the same id attribute",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<a id=\"socialMediaShareTW\" title=\"Share on Twitter\" href=\"https://twitter.com/intent/tweet?text=CPFB%20%7C%20Schemes&amp;url=https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\"><img alt=\"Twitter Share\" src=\"/members/_catalogs/masterpage/CPFB/Images/Social-Media-Twitter-40.png\"></a>",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            "#socialMediaShareTW"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": "socialMediaShareML",
-                                "id": "duplicate-id-active",
-                                "impact": "serious",
-                                "message": "Document has no active elements that share the same id attribute",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<a id=\"socialMediaShareML\" title=\"Share via Email\" href=\"mailto:?subject=CPFB%20%7C%20Schemes&amp;body=https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\"><img alt=\"Email Share\" src=\"/members/_catalogs/masterpage/CPFB/Images/Social-Media-Mail-40.png\"></a>",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            "#socialMediaShareML"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": "socialMediaShareWA",
-                                "id": "duplicate-id-active",
-                                "impact": "serious",
-                                "message": "Document has no active elements that share the same id attribute",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<a id=\"socialMediaShareWA\" title=\"Share via WhatsApp\" href=\"https://web.whatsapp.com/send?phone=&amp;text=CPFB%20%7C%20Schemes%20https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\" target=\"_blank\">",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            "#socialMediaShareWA"
                         ]
                     }
                 ],
@@ -2941,7 +2796,7 @@
                                 "relatedNodes": []
                             }
                         ],
-                        "html": "<input type=\"hidden\" name=\"__REQUESTDIGEST\" id=\"__REQUESTDIGEST\" value=\"0xA75F57F4662959FC91357E4D2EA1B14B1A1CDFD63F89BD564903A5DCBAB202C850E44C6A074422D2E285688C2F7E57429D4D67F9E10A61F1B81DBFE60FD8FA1F,11 Dec 2019 08:49:10 -0000\">",
+                        "html": "<input type=\"hidden\" name=\"__REQUESTDIGEST\" id=\"__REQUESTDIGEST\" value=\"0xF5FFEBE0959ACE421BEE4A56A7724A5716B9EEC65B091A317AFEB63733E46CD27C890AF72C71375AEF0A9B3D8305280A53FA13BBCFD1CD6DA13EF7E7FD0467B3,11 Dec 2019 08:50:14 -0000\">",
                         "impact": null,
                         "none": [],
                         "target": [
@@ -3222,6 +3077,24 @@
                         "all": [],
                         "any": [
                             {
+                                "data": "linkTurnOnAcc",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<a id=\"linkTurnOnAcc\" href=\"#\" class=\"ms-TurnOnAcc\" onclick=\"SetIsAccessibilityFeatureEnabled(true);UpdateAccessibilityUI();document.getElementById('linkTurnOffAcc').focus();return false;\">\n                Turn on more accessible mode\n            </a>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#linkTurnOnAcc"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
                                 "data": "TurnOffAccessibility",
                                 "id": "duplicate-id",
                                 "impact": "minor",
@@ -3270,6 +3143,24 @@
                         "none": [],
                         "target": [
                             "#TurnOffAnimation"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "linkTurnOffAnimation",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<a id=\"linkTurnOffAnimation\" href=\"#\" class=\"ms-accessible ms-acc-button\" onclick=\"ToggleAnimationStatus();return false;\">\n                Turn off Animations\n            </a>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#linkTurnOffAnimation"
                         ]
                     },
                     {
@@ -4176,6 +4067,24 @@
                         "all": [],
                         "any": [
                             {
+                                "data": "btnOpenUtility",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<button id=\"btnOpenUtility\" class=\"cpf-btn-share cpf-btn-accessibility-large-size\" title=\"Click to view utility options\">",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#btnOpenUtility"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
                                 "data": "dividerContainer",
                                 "id": "duplicate-id",
                                 "impact": "minor",
@@ -4212,6 +4121,24 @@
                         "all": [],
                         "any": [
                             {
+                                "data": "btnPrint",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<button class=\"cpf-btn-share cpf-btn-accessibility-large-size\" id=\"btnPrint\" data-utility=\"printPage\" onclick=\"window.print(); return false;\" style=\"background: #464642;\">",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#btnPrint"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
                                 "data": "shareContainer",
                                 "id": "duplicate-id",
                                 "impact": "minor",
@@ -4224,6 +4151,78 @@
                         "none": [],
                         "target": [
                             "#shareContainer"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "btnShareFacebook",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<a id=\"btnShareFacebook\" class=\"cpf-btn-share cpf-btn-accessibility-large-size\" title=\"Click to share on facebook\" style=\"background: #4968ad !important;\" href=\"https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\">",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#btnShareFacebook"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "btnShareTwitter",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<a id=\"btnShareTwitter\" class=\"cpf-btn-share cpf-btn-accessibility-large-size\" title=\"Click to share on twitter\" style=\"background: #4aa0ec !important;\" href=\"https://twitter.com/intent/tweet?text=CPFB%20%7C%20Schemes&amp;url=https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\">",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#btnShareTwitter"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "btnShareMail",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<a id=\"btnShareMail\" class=\"cpf-btn-share cpf-btn-accessibility-large-size\" title=\"Click here to share via email\" style=\"background: #5e9dc3 !important\" href=\"mailto:?subject=CPFB%20%7C%20Schemes&amp;body=https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\">",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#btnShareMail"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "btnShareWhatsapp",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<a id=\"btnShareWhatsapp\" class=\"cpf-btn-share cpf-btn-accessibility-large-size\" title=\"Click here to share via whatsapp\" style=\"background: #25D366 !important\" href=\"https://web.whatsapp.com/send?phone=&amp;text=CPFB%20%7C%20Schemes%20https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\" target=\"_blank\">",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#btnShareWhatsapp"
                         ]
                     },
                     {
@@ -4680,6 +4679,222 @@
                         "all": [],
                         "any": [
                             {
+                                "data": "Retirement",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"Retirement\" class=\"panel-title\">Retirement<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#Retirement"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr1",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<div class=\"panel-collapse collapse\" id=\"panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr1\">",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr1"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "Housing",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"Housing\" class=\"panel-title\">Housing<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#Housing"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr2",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<div class=\"panel-collapse collapse\" id=\"panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr2\">",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr2"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "Healthcare",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"Healthcare\" class=\"panel-title\">Healthcare<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#Healthcare"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr3",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<div class=\"panel-collapse collapse\" id=\"panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr3\">",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr3"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "OptimisingMyCPF",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"OptimisingMyCPF\" class=\"panel-title\">Optimising My CPF<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#OptimisingMyCPF"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr4",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<div class=\"panel-collapse collapse\" id=\"panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr4\">",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr4"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "Self-EmployedMatters",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"Self-EmployedMatters\" class=\"panel-title\">Self-Employed Matters<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#Self-EmployedMatters"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr5",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<div class=\"panel-collapse collapse\" id=\"panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr5\">",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr5"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "OtherMatters",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"OtherMatters\" class=\"panel-title\">Other Matters<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#OtherMatters"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr6",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<div class=\"panel-collapse collapse\" id=\"panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr6\">",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr6"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
                                 "data": "ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62",
                                 "id": "duplicate-id",
                                 "impact": "minor",
@@ -4842,6 +5057,78 @@
                         "all": [],
                         "any": [
                             {
+                                "data": "socialMediaShareFB",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<a id=\"socialMediaShareFB\" title=\"Share on Facebook\" href=\"https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\"><img alt=\"Facebook Share\" src=\"/members/_catalogs/masterpage/CPFB/Images/Social-Media-FB-40.png\"></a>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#socialMediaShareFB"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "socialMediaShareTW",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<a id=\"socialMediaShareTW\" title=\"Share on Twitter\" href=\"https://twitter.com/intent/tweet?text=CPFB%20%7C%20Schemes&amp;url=https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\"><img alt=\"Twitter Share\" src=\"/members/_catalogs/masterpage/CPFB/Images/Social-Media-Twitter-40.png\"></a>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#socialMediaShareTW"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "socialMediaShareML",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<a id=\"socialMediaShareML\" title=\"Share via Email\" href=\"mailto:?subject=CPFB%20%7C%20Schemes&amp;body=https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\"><img alt=\"Email Share\" src=\"/members/_catalogs/masterpage/CPFB/Images/Social-Media-Mail-40.png\"></a>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#socialMediaShareML"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "socialMediaShareWA",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<a id=\"socialMediaShareWA\" title=\"Share via WhatsApp\" href=\"https://web.whatsapp.com/send?phone=&amp;text=CPFB%20%7C%20Schemes%20https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\" target=\"_blank\">",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#socialMediaShareWA"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
                                 "data": "DeltaFormDigest",
                                 "id": "duplicate-id",
                                 "impact": "minor",
@@ -4989,6 +5276,114 @@
                                 "relatedNodes": []
                             }
                         ],
+                        "html": "<h2 id=\"Retirement\" class=\"panel-title\">Retirement<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#Retirement"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": null,
+                                "id": "has-visible-text",
+                                "impact": "minor",
+                                "message": "Element has text that is visible to screen readers",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"Housing\" class=\"panel-title\">Housing<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#Housing"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": null,
+                                "id": "has-visible-text",
+                                "impact": "minor",
+                                "message": "Element has text that is visible to screen readers",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"Healthcare\" class=\"panel-title\">Healthcare<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#Healthcare"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": null,
+                                "id": "has-visible-text",
+                                "impact": "minor",
+                                "message": "Element has text that is visible to screen readers",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"OptimisingMyCPF\" class=\"panel-title\">Optimising My CPF<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#OptimisingMyCPF"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": null,
+                                "id": "has-visible-text",
+                                "impact": "minor",
+                                "message": "Element has text that is visible to screen readers",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"Self-EmployedMatters\" class=\"panel-title\">Self-Employed Matters<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#Self-EmployedMatters"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": null,
+                                "id": "has-visible-text",
+                                "impact": "minor",
+                                "message": "Element has text that is visible to screen readers",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"OtherMatters\" class=\"panel-title\">Other Matters<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#OtherMatters"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": null,
+                                "id": "has-visible-text",
+                                "impact": "minor",
+                                "message": "Element has text that is visible to screen readers",
+                                "relatedNodes": []
+                            }
+                        ],
                         "html": "<h5 class=\"sub-header has-text-white\"><b>CPF Board</b></h5>",
                         "impact": null,
                         "none": [],
@@ -5025,6 +5420,114 @@
                         "none": [],
                         "target": [
                             ".page-title"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": 2,
+                                "id": "heading-order",
+                                "impact": "moderate",
+                                "message": "Heading order valid",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"Retirement\" class=\"panel-title\">Retirement<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#Retirement"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": 2,
+                                "id": "heading-order",
+                                "impact": "moderate",
+                                "message": "Heading order valid",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"Housing\" class=\"panel-title\">Housing<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#Housing"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": 2,
+                                "id": "heading-order",
+                                "impact": "moderate",
+                                "message": "Heading order valid",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"Healthcare\" class=\"panel-title\">Healthcare<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#Healthcare"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": 2,
+                                "id": "heading-order",
+                                "impact": "moderate",
+                                "message": "Heading order valid",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"OptimisingMyCPF\" class=\"panel-title\">Optimising My CPF<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#OptimisingMyCPF"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": 2,
+                                "id": "heading-order",
+                                "impact": "moderate",
+                                "message": "Heading order valid",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"Self-EmployedMatters\" class=\"panel-title\">Self-Employed Matters<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#Self-EmployedMatters"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": 2,
+                                "id": "heading-order",
+                                "impact": "moderate",
+                                "message": "Heading order valid",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"OtherMatters\" class=\"panel-title\">Other Matters<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#OtherMatters"
                         ]
                     }
                 ],
@@ -5133,78 +5636,6 @@
                                 "relatedNodes": []
                             }
                         ],
-                        "html": "<img alt=\"Facebook Share\" src=\"/members/_catalogs/masterpage/CPFB/Images/Social-Media-FB-40.png\">",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            "img[alt=\"Facebook\\ Share\"]"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": null,
-                                "id": "has-alt",
-                                "impact": "critical",
-                                "message": "Element has an alt attribute",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<img alt=\"Twitter Share\" src=\"/members/_catalogs/masterpage/CPFB/Images/Social-Media-Twitter-40.png\">",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            "img[alt=\"Twitter\\ Share\"]"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": null,
-                                "id": "has-alt",
-                                "impact": "critical",
-                                "message": "Element has an alt attribute",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<img alt=\"Email Share\" src=\"/members/_catalogs/masterpage/CPFB/Images/Social-Media-Mail-40.png\">",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            "img[alt=\"Email\\ Share\"]"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": null,
-                                "id": "has-alt",
-                                "impact": "critical",
-                                "message": "Element has an alt attribute",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<img alt=\"WhatsApp Share\" src=\"/members/_catalogs/masterpage/CPFB/Images/Social-Media-WhatsApp-25.png\">",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            "img[alt=\"WhatsApp\\ Share\"]"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": null,
-                                "id": "has-alt",
-                                "impact": "critical",
-                                "message": "Element has an alt attribute",
-                                "relatedNodes": []
-                            }
-                        ],
                         "html": "<img src=\"//www.cpf.gov.sg/askjamie/user/va/cpf/images/ask_cpf_logo_mem.png\" alt=\"Ask CPF\" class=\"avatar_img\">",
                         "impact": null,
                         "none": [],
@@ -5228,24 +5659,6 @@
                 "id": "image-redundant-alt",
                 "impact": null,
                 "nodes": [
-                    {
-                        "all": [],
-                        "any": [],
-                        "html": "<a id=\"linkTurnOnAcc\" href=\"#\" class=\"ms-TurnOnAcc\" onclick=\"SetIsAccessibilityFeatureEnabled(true);UpdateAccessibilityUI();document.getElementById('linkTurnOffAcc').focus();return false;\">\n                Turn on more accessible mode\n            </a>",
-                        "impact": null,
-                        "none": [
-                            {
-                                "data": null,
-                                "id": "duplicate-img-label",
-                                "impact": "minor",
-                                "message": "Element does not duplicate existing text in <img> alt text",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "target": [
-                            "#linkTurnOnAcc"
-                        ]
-                    },
                     {
                         "all": [],
                         "any": [],
@@ -5280,24 +5693,6 @@
                         ],
                         "target": [
                             ".ms-SkiptoMainContent"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [],
-                        "html": "<a id=\"linkTurnOffAnimation\" href=\"#\" class=\"ms-accessible ms-acc-button\" onclick=\"ToggleAnimationStatus();return false;\">\n                Turn off Animations\n            </a>",
-                        "impact": null,
-                        "none": [
-                            {
-                                "data": null,
-                                "id": "duplicate-img-label",
-                                "impact": "minor",
-                                "message": "Element does not duplicate existing text in <img> alt text",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "target": [
-                            "#linkTurnOffAnimation"
                         ]
                     },
                     {
@@ -5460,114 +5855,6 @@
                         ],
                         "target": [
                             ".accessibilityContainer:nth-child(1) > tbody > tr > td"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [],
-                        "html": "<button id=\"btnOpenUtility\" class=\"cpf-btn-share cpf-btn-accessibility-large-size\" title=\"Click to view utility options\">",
-                        "impact": null,
-                        "none": [
-                            {
-                                "data": null,
-                                "id": "duplicate-img-label",
-                                "impact": "minor",
-                                "message": "Element does not duplicate existing text in <img> alt text",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "target": [
-                            "#btnOpenUtility"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [],
-                        "html": "<button class=\"cpf-btn-share cpf-btn-accessibility-large-size\" id=\"btnPrint\" data-utility=\"printPage\" onclick=\"window.print(); return false;\" style=\"background: #464642;\">",
-                        "impact": null,
-                        "none": [
-                            {
-                                "data": null,
-                                "id": "duplicate-img-label",
-                                "impact": "minor",
-                                "message": "Element does not duplicate existing text in <img> alt text",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "target": [
-                            "#btnPrint"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [],
-                        "html": "<a id=\"btnShareFacebook\" class=\"cpf-btn-share cpf-btn-accessibility-large-size\" title=\"Click to share on facebook\" style=\"background: #4968ad !important;\" href=\"https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\">",
-                        "impact": null,
-                        "none": [
-                            {
-                                "data": null,
-                                "id": "duplicate-img-label",
-                                "impact": "minor",
-                                "message": "Element does not duplicate existing text in <img> alt text",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "target": [
-                            "#btnShareFacebook"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [],
-                        "html": "<a id=\"btnShareTwitter\" class=\"cpf-btn-share cpf-btn-accessibility-large-size\" title=\"Click to share on twitter\" style=\"background: #4aa0ec !important;\" href=\"https://twitter.com/intent/tweet?text=CPFB%20%7C%20Schemes&amp;url=https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\">",
-                        "impact": null,
-                        "none": [
-                            {
-                                "data": null,
-                                "id": "duplicate-img-label",
-                                "impact": "minor",
-                                "message": "Element does not duplicate existing text in <img> alt text",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "target": [
-                            "#btnShareTwitter"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [],
-                        "html": "<a id=\"btnShareMail\" class=\"cpf-btn-share cpf-btn-accessibility-large-size\" title=\"Click here to share via email\" style=\"background: #5e9dc3 !important\" href=\"mailto:?subject=CPFB%20%7C%20Schemes&amp;body=https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\">",
-                        "impact": null,
-                        "none": [
-                            {
-                                "data": null,
-                                "id": "duplicate-img-label",
-                                "impact": "minor",
-                                "message": "Element does not duplicate existing text in <img> alt text",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "target": [
-                            "#btnShareMail"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [],
-                        "html": "<a id=\"btnShareWhatsapp\" class=\"cpf-btn-share cpf-btn-accessibility-large-size\" title=\"Click here to share via whatsapp\" style=\"background: #25D366 !important\" href=\"https://web.whatsapp.com/send?phone=&amp;text=CPFB%20%7C%20Schemes%20https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\" target=\"_blank\">",
-                        "impact": null,
-                        "none": [
-                            {
-                                "data": null,
-                                "id": "duplicate-img-label",
-                                "impact": "minor",
-                                "message": "Element does not duplicate existing text in <img> alt text",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "target": [
-                            "#btnShareWhatsapp"
                         ]
                     },
                     {
@@ -5753,7 +6040,7 @@
                     {
                         "all": [],
                         "any": [],
-                        "html": "<td class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">",
+                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr1\">",
                         "impact": null,
                         "none": [
                             {
@@ -5765,13 +6052,13 @@
                             }
                         ],
                         "target": [
-                            "tr > .col-xs-6.col-md-6.col-lg-6"
+                            ".cpf-panel-group > .panel.panel-default:nth-child(1) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
                         ]
                     },
                     {
                         "all": [],
                         "any": [],
-                        "html": "<a id=\"socialMediaShareFB\" title=\"Share on Facebook\" href=\"https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\"><img alt=\"Facebook Share\" src=\"/members/_catalogs/masterpage/CPFB/Images/Social-Media-FB-40.png\"></a>",
+                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr2\"><h2 id=\"Housing\" class=\"panel-title\">Housing<span class=\"glyphicon glyphicon-plus\"></span></h2></button>",
                         "impact": null,
                         "none": [
                             {
@@ -5783,13 +6070,13 @@
                             }
                         ],
                         "target": [
-                            "#socialMediaShareFB"
+                            ".panel.panel-default:nth-child(2) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
                         ]
                     },
                     {
                         "all": [],
                         "any": [],
-                        "html": "<a id=\"socialMediaShareTW\" title=\"Share on Twitter\" href=\"https://twitter.com/intent/tweet?text=CPFB%20%7C%20Schemes&amp;url=https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\"><img alt=\"Twitter Share\" src=\"/members/_catalogs/masterpage/CPFB/Images/Social-Media-Twitter-40.png\"></a>",
+                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr3\">",
                         "impact": null,
                         "none": [
                             {
@@ -5801,13 +6088,13 @@
                             }
                         ],
                         "target": [
-                            "#socialMediaShareTW"
+                            ".panel.panel-default:nth-child(3) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
                         ]
                     },
                     {
                         "all": [],
                         "any": [],
-                        "html": "<a id=\"socialMediaShareML\" title=\"Share via Email\" href=\"mailto:?subject=CPFB%20%7C%20Schemes&amp;body=https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\"><img alt=\"Email Share\" src=\"/members/_catalogs/masterpage/CPFB/Images/Social-Media-Mail-40.png\"></a>",
+                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr4\">",
                         "impact": null,
                         "none": [
                             {
@@ -5819,13 +6106,13 @@
                             }
                         ],
                         "target": [
-                            "#socialMediaShareML"
+                            ".panel.panel-default:nth-child(4) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
                         ]
                     },
                     {
                         "all": [],
                         "any": [],
-                        "html": "<a id=\"socialMediaShareWA\" title=\"Share via WhatsApp\" href=\"https://web.whatsapp.com/send?phone=&amp;text=CPFB%20%7C%20Schemes%20https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\" target=\"_blank\">",
+                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr5\">",
                         "impact": null,
                         "none": [
                             {
@@ -5837,7 +6124,25 @@
                             }
                         ],
                         "target": [
-                            "#socialMediaShareWA"
+                            ".panel.panel-default:nth-child(5) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [],
+                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr6\">",
+                        "impact": null,
+                        "none": [
+                            {
+                                "data": null,
+                                "id": "duplicate-img-label",
+                                "impact": "minor",
+                                "message": "Element does not duplicate existing text in <img> alt text",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "target": [
+                            ".panel.panel-default:nth-child(6) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
                         ]
                     },
                     {
@@ -6501,32 +6806,6 @@
                                 "relatedNodes": []
                             }
                         ],
-                        "html": "<a id=\"linkTurnOnAcc\" href=\"#\" class=\"ms-TurnOnAcc\" onclick=\"SetIsAccessibilityFeatureEnabled(true);UpdateAccessibilityUI();document.getElementById('linkTurnOffAcc').focus();return false;\">\n                Turn on more accessible mode\n            </a>",
-                        "impact": null,
-                        "none": [
-                            {
-                                "data": null,
-                                "id": "focusable-no-name",
-                                "impact": "serious",
-                                "message": "Element is not in tab order or has accessible text",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "target": [
-                            "#linkTurnOnAcc"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": null,
-                                "id": "has-visible-text",
-                                "impact": "minor",
-                                "message": "Element has text that is visible to screen readers",
-                                "relatedNodes": []
-                            }
-                        ],
                         "html": "<a href=\"javascript:;\" onclick=\"document.getElementById('startNavigation').focus();\" class=\"ms-SkiptoNavigation\" accesskey=\"Y\">\n                Skip Ribbon Commands\n            </a>",
                         "impact": null,
                         "none": [
@@ -6566,32 +6845,6 @@
                         ],
                         "target": [
                             ".ms-SkiptoMainContent"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": null,
-                                "id": "has-visible-text",
-                                "impact": "minor",
-                                "message": "Element has text that is visible to screen readers",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<a id=\"linkTurnOffAnimation\" href=\"#\" class=\"ms-accessible ms-acc-button\" onclick=\"ToggleAnimationStatus();return false;\">\n                Turn off Animations\n            </a>",
-                        "impact": null,
-                        "none": [
-                            {
-                                "data": null,
-                                "id": "focusable-no-name",
-                                "impact": "serious",
-                                "message": "Element is not in tab order or has accessible text",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "target": [
-                            "#linkTurnOffAnimation"
                         ]
                     },
                     {
@@ -6774,214 +7027,6 @@
                         ],
                         "target": [
                             "#logStatus"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": null,
-                                "id": "has-visible-text",
-                                "impact": "minor",
-                                "message": "Element has text that is visible to screen readers",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<a id=\"btnShareFacebook\" class=\"cpf-btn-share cpf-btn-accessibility-large-size\" title=\"Click to share on facebook\" style=\"background: #4968ad !important;\" href=\"https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\">",
-                        "impact": null,
-                        "none": [
-                            {
-                                "data": null,
-                                "id": "focusable-no-name",
-                                "impact": "serious",
-                                "message": "Element is not in tab order or has accessible text",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "target": [
-                            "#btnShareFacebook"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": null,
-                                "id": "has-visible-text",
-                                "impact": "minor",
-                                "message": "Element has text that is visible to screen readers",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<a id=\"btnShareTwitter\" class=\"cpf-btn-share cpf-btn-accessibility-large-size\" title=\"Click to share on twitter\" style=\"background: #4aa0ec !important;\" href=\"https://twitter.com/intent/tweet?text=CPFB%20%7C%20Schemes&amp;url=https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\">",
-                        "impact": null,
-                        "none": [
-                            {
-                                "data": null,
-                                "id": "focusable-no-name",
-                                "impact": "serious",
-                                "message": "Element is not in tab order or has accessible text",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "target": [
-                            "#btnShareTwitter"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": null,
-                                "id": "has-visible-text",
-                                "impact": "minor",
-                                "message": "Element has text that is visible to screen readers",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<a id=\"btnShareMail\" class=\"cpf-btn-share cpf-btn-accessibility-large-size\" title=\"Click here to share via email\" style=\"background: #5e9dc3 !important\" href=\"mailto:?subject=CPFB%20%7C%20Schemes&amp;body=https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\">",
-                        "impact": null,
-                        "none": [
-                            {
-                                "data": null,
-                                "id": "focusable-no-name",
-                                "impact": "serious",
-                                "message": "Element is not in tab order or has accessible text",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "target": [
-                            "#btnShareMail"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": null,
-                                "id": "has-visible-text",
-                                "impact": "minor",
-                                "message": "Element has text that is visible to screen readers",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<a id=\"btnShareWhatsapp\" class=\"cpf-btn-share cpf-btn-accessibility-large-size\" title=\"Click here to share via whatsapp\" style=\"background: #25D366 !important\" href=\"https://web.whatsapp.com/send?phone=&amp;text=CPFB%20%7C%20Schemes%20https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\" target=\"_blank\">",
-                        "impact": null,
-                        "none": [
-                            {
-                                "data": null,
-                                "id": "focusable-no-name",
-                                "impact": "serious",
-                                "message": "Element is not in tab order or has accessible text",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "target": [
-                            "#btnShareWhatsapp"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": null,
-                                "id": "has-visible-text",
-                                "impact": "minor",
-                                "message": "Element has text that is visible to screen readers",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<a id=\"socialMediaShareFB\" title=\"Share on Facebook\" href=\"https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\"><img alt=\"Facebook Share\" src=\"/members/_catalogs/masterpage/CPFB/Images/Social-Media-FB-40.png\"></a>",
-                        "impact": null,
-                        "none": [
-                            {
-                                "data": null,
-                                "id": "focusable-no-name",
-                                "impact": "serious",
-                                "message": "Element is not in tab order or has accessible text",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "target": [
-                            "#socialMediaShareFB"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": null,
-                                "id": "has-visible-text",
-                                "impact": "minor",
-                                "message": "Element has text that is visible to screen readers",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<a id=\"socialMediaShareTW\" title=\"Share on Twitter\" href=\"https://twitter.com/intent/tweet?text=CPFB%20%7C%20Schemes&amp;url=https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\"><img alt=\"Twitter Share\" src=\"/members/_catalogs/masterpage/CPFB/Images/Social-Media-Twitter-40.png\"></a>",
-                        "impact": null,
-                        "none": [
-                            {
-                                "data": null,
-                                "id": "focusable-no-name",
-                                "impact": "serious",
-                                "message": "Element is not in tab order or has accessible text",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "target": [
-                            "#socialMediaShareTW"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": null,
-                                "id": "has-visible-text",
-                                "impact": "minor",
-                                "message": "Element has text that is visible to screen readers",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<a id=\"socialMediaShareML\" title=\"Share via Email\" href=\"mailto:?subject=CPFB%20%7C%20Schemes&amp;body=https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\"><img alt=\"Email Share\" src=\"/members/_catalogs/masterpage/CPFB/Images/Social-Media-Mail-40.png\"></a>",
-                        "impact": null,
-                        "none": [
-                            {
-                                "data": null,
-                                "id": "focusable-no-name",
-                                "impact": "serious",
-                                "message": "Element is not in tab order or has accessible text",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "target": [
-                            "#socialMediaShareML"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": null,
-                                "id": "has-visible-text",
-                                "impact": "minor",
-                                "message": "Element has text that is visible to screen readers",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "html": "<a id=\"socialMediaShareWA\" title=\"Share via WhatsApp\" href=\"https://web.whatsapp.com/send?phone=&amp;text=CPFB%20%7C%20Schemes%20https%3A%2F%2Fwww.cpf.gov.sg%2FMembers%2FSchemes\" target=\"_blank\">",
-                        "impact": null,
-                        "none": [
-                            {
-                                "data": null,
-                                "id": "focusable-no-name",
-                                "impact": "serious",
-                                "message": "Element is not in tab order or has accessible text",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "target": [
-                            "#socialMediaShareWA"
                         ]
                     },
                     {
@@ -7908,24 +7953,6 @@
                         "target": [
                             "table:nth-child(3)"
                         ]
-                    },
-                    {
-                        "all": [],
-                        "any": [],
-                        "html": "<table id=\"socialMediaShare\" class=\"cms-share accessibilityContainer\" role=\"presentation\" style=\"display: table;\">",
-                        "impact": null,
-                        "none": [
-                            {
-                                "data": null,
-                                "id": "same-caption-summary",
-                                "impact": "minor",
-                                "message": "Content of summary attribute and <caption> are not duplicated",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "target": [
-                            "#socialMediaShare"
-                        ]
                     }
                 ],
                 "tags": [
@@ -8011,24 +8038,6 @@
                         "target": [
                             "table:nth-child(3)"
                         ]
-                    },
-                    {
-                        "all": [
-                            {
-                                "data": null,
-                                "id": "td-headers-attr",
-                                "impact": "serious",
-                                "message": "The headers attribute is exclusively used to refer to other cells in the table",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "any": [],
-                        "html": "<table id=\"socialMediaShare\" class=\"cms-share accessibilityContainer\" role=\"presentation\" style=\"display: table;\">",
-                        "impact": null,
-                        "none": [],
-                        "target": [
-                            "#socialMediaShare"
-                        ]
                     }
                 ],
                 "tags": [
@@ -8040,7 +8049,7 @@
                 ]
             }
         ],
-        "timestamp": "2019-12-11T08:49:12.382Z",
+        "timestamp": "2019-12-11T08:50:16.128Z",
         "url": "https://www.cpf.gov.sg/Members/Schemes",
         "violations": [
             {
@@ -8124,82 +8133,6 @@
                         ],
                         "target": [
                             ".is-white"
-                        ]
-                    },
-                    {
-                        "all": [],
-                        "any": [
-                            {
-                                "data": null,
-                                "id": "non-empty-if-present",
-                                "impact": "critical",
-                                "message": "Element has a value attribute and the value attribute is empty",
-                                "relatedNodes": []
-                            },
-                            {
-                                "data": null,
-                                "id": "non-empty-value",
-                                "impact": "critical",
-                                "message": "Element has no value attribute or the value attribute is empty",
-                                "relatedNodes": []
-                            },
-                            {
-                                "data": "",
-                                "id": "button-has-visible-text",
-                                "impact": "critical",
-                                "message": "Element does not have inner text that is visible to screen readers",
-                                "relatedNodes": []
-                            },
-                            {
-                                "data": null,
-                                "id": "aria-label",
-                                "impact": "serious",
-                                "message": "aria-label attribute does not exist or is empty",
-                                "relatedNodes": []
-                            },
-                            {
-                                "data": null,
-                                "id": "aria-labelledby",
-                                "impact": "serious",
-                                "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty",
-                                "relatedNodes": []
-                            },
-                            {
-                                "data": null,
-                                "id": "role-presentation",
-                                "impact": "minor",
-                                "message": "Element's default semantics were not overridden with role=\"presentation\"",
-                                "relatedNodes": []
-                            },
-                            {
-                                "data": null,
-                                "id": "role-none",
-                                "impact": "minor",
-                                "message": "Element's default semantics were not overridden with role=\"none\"",
-                                "relatedNodes": []
-                            },
-                            {
-                                "data": null,
-                                "id": "non-empty-title",
-                                "impact": "serious",
-                                "message": "Element has no title attribute or the title attribute is empty",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element has a value attribute and the value attribute is empty\n  Element has no value attribute or the value attribute is empty\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\"\n  Element has no title attribute or the title attribute is empty",
-                        "html": "<button class=\"cpf-btn-share cpf-btn-accessibility-large-size\" id=\"btnPrint\" data-utility=\"printPage\" onclick=\"window.print(); return false;\" style=\"background: #464642;\">",
-                        "impact": "critical",
-                        "none": [
-                            {
-                                "data": null,
-                                "id": "focusable-no-name",
-                                "impact": "serious",
-                                "message": "Element is in tab order and does not have accessible text",
-                                "relatedNodes": []
-                            }
-                        ],
-                        "target": [
-                            "#btnPrint"
                         ]
                     }
                 ],
@@ -8396,12 +8329,6 @@
                                 "message": "Some page content is not contained by landmarks",
                                 "relatedNodes": [
                                     {
-                                        "html": "<a id=\"linkTurnOnAcc\" href=\"#\" class=\"ms-TurnOnAcc\" onclick=\"SetIsAccessibilityFeatureEnabled(true);UpdateAccessibilityUI();document.getElementById('linkTurnOffAcc').focus();return false;\">\n                Turn on more accessible mode\n            </a>",
-                                        "target": [
-                                            "#linkTurnOnAcc"
-                                        ]
-                                    },
-                                    {
                                         "html": "<a href=\"javascript:;\" onclick=\"document.getElementById('startNavigation').focus();\" class=\"ms-SkiptoNavigation\" accesskey=\"Y\">\n                Skip Ribbon Commands\n            </a>",
                                         "target": [
                                             ".ms-SkiptoNavigation"
@@ -8411,12 +8338,6 @@
                                         "html": "<a href=\"javascript:;\" onclick=\"document.getElementById('mainContent').focus();\" class=\"ms-SkiptoMainContent\" accesskey=\"X\">\n                Skip to main content\n            </a>",
                                         "target": [
                                             ".ms-SkiptoMainContent"
-                                        ]
-                                    },
-                                    {
-                                        "html": "<a id=\"linkTurnOffAnimation\" href=\"#\" class=\"ms-accessible ms-acc-button\" onclick=\"ToggleAnimationStatus();return false;\">\n                Turn off Animations\n            </a>",
-                                        "target": [
-                                            "#linkTurnOffAnimation"
                                         ]
                                     },
                                     {
