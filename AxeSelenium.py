@@ -43,7 +43,7 @@ def get_nav_links():
 def remove_invalid(full_set):
     if ("None" in full_set):
         full_set.remove("None")
-    if ("javascript;:" in full_set):
+    if ("javascript:;" in full_set):
         full_set.remove("javascript:;")
     return full_set
 
@@ -60,6 +60,8 @@ def save_as_json(full_set, full_json):
         driver.get(link)
 
         axe = Axe(driver)
+
+        # try options
         # option = {'rules': {'color-contrast': {'enabled': 'false'},
         #                     'valid-lang': {'enabled': 'false'}}}
         # Inject axe-core javascript into page.
@@ -102,16 +104,79 @@ def save_as_json(full_set, full_json):
     return full_json, violations_arr, url_arr, max_url, count_arr
 
 
+def plot_visualisations(count_arr, violations_arr, max_url, json_save_path):
+    root = tk.Tk()
+    root.wm_title("title")
+
+    fig = Figure(figsize=(10, 10), dpi=100)
+    labels = 'Passes', 'Violations', 'Incomplete'
+    sizes = count_arr
+    explode = (0, 0.1, 0)
+
+    ax1 = fig.add_subplot(223)
+
+    ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+            shadow=True, startangle=90)
+
+    # max_url = 'https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/Cashier/ECashierHomepage'
+    ax3 = fig.add_subplot(211)
+    table_vals = []
+    i = 0
+
+    table_vals.append(['No. of Violations', str(int(sum(violations_arr)))])
+    table_vals.append(['Most Violations', max_url])
+    table_vals.append(['Time taken:', "%.1f" % time_taken + "s"])
+    table_vals.append(['Full log:', json_save_path])
+
+    # Draw table
+    the_table = ax3.table(cellText=table_vals,
+                          colWidths=[0.07, 0.3],
+                          rowLabels=None,
+                          colLabels=None,
+                          loc='center')
+    the_table.auto_set_font_size(False)
+    the_table.set_fontsize(10)
+    the_table.scale(3, 3)
+
+    ax3.tick_params(axis='x', which='both', bottom=False,
+                    top=False, labelbottom=False)
+    ax3.tick_params(axis='y', which='both', right=False,
+                    left=False, labelleft=False)
+    for pos in ['right', 'top', 'bottom', 'left']:
+        ax3.spines[pos].set_visible(False)
+
+    j = 1
+    labels = []
+    for l in url_arr:
+        labels.append(j)
+        j = j+1
+    violations = violations_arr
+
+    ax2 = fig.add_subplot(224)
+
+    ax2.bar(labels, violations, align='center', alpha=0.5, tick_label=labels)
+
+    canvas = FigureCanvasTkAgg(fig, master=root)
+    canvas.draw()
+    canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+
+    toolbar = NavigationToolbar2Tk(canvas, root)
+    toolbar.update()
+    canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+
+    tk.mainloop()
+
+
 start_time = time.time()
 # Initialise driver
 driver = webdriver.Chrome()
 driver.maximize_window()
-# url = "https://www.cpf.gov.sg/members"
-url = 'https://www.cpf.gov.sg/eSvc/Web/PortalServices/CpfMemberPortalServices'
+url = "https://www.cpf.gov.sg/members"
+# url = 'https://www.cpf.gov.sg/eSvc/Web/PortalServices/CpfMemberPortalServices'
 driver.get(url)
 
 # Thread sleep
-time.sleep(60)
+# time.sleep(60)
 
 axe = Axe(driver)
 
@@ -134,76 +199,8 @@ axe.write_results(full_json, json_save_path)
 driver.close()
 driver.quit()
 time_taken = (time.time() - start_time)
-# pymsgbox.alert(
-#     "Please refer to: " + json_save_path + " for the full violations log.\n " +
-#     "Time taken: %s seconds" % time_taken + "\n"
-#     "Number of violations:" + str(sum(violations_arr)) + "\n"
-#     "Webpage with most violations:" + max_url,
-#     'Completion Box')
 
-root = tk.Tk()
-root.wm_title("title")
-
-fig = Figure(figsize=(10, 10), dpi=100)
-labels = 'Passes', 'Violations', 'Incomplete'
-sizes = count_arr
-explode = (0, 0.1, 0)
-
-ax1 = fig.add_subplot(223)
-
-ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
-        shadow=True, startangle=90)
-
-
-# max_url = 'https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/Cashier/ECashierHomepage'
-ax3 = fig.add_subplot(211)
-table_vals = []
-i = 0
-
-table_vals.append(['No. of Violations', str(int(sum(violations_arr)))])
-table_vals.append(['Most Violations', max_url])
-table_vals.append(['Time taken:', "%.1f" % time_taken + "s"])
-table_vals.append(['Full log:', json_save_path])
-
-
-# Draw table
-the_table = ax3.table(cellText=table_vals,
-                      colWidths=[0.07, 0.3],
-                      rowLabels=None,
-                      colLabels=None,
-                      loc='center')
-the_table.auto_set_font_size(False)
-the_table.set_fontsize(10)
-the_table.scale(3, 3)
-
-ax3.tick_params(axis='x', which='both', bottom=False,
-                top=False, labelbottom=False)
-ax3.tick_params(axis='y', which='both', right=False,
-                left=False, labelleft=False)
-for pos in ['right', 'top', 'bottom', 'left']:
-    ax3.spines[pos].set_visible(False)
-
-
-j = 1
-labels = []
-for l in url_arr:
-    labels.append(j)
-    j = j+1
-violations = violations_arr
-
-ax2 = fig.add_subplot(224)
-
-ax2.bar(labels, violations, align='center', alpha=0.5, tick_label=labels)
-
-canvas = FigureCanvasTkAgg(fig, master=root)
-canvas.draw()
-canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
-
-toolbar = NavigationToolbar2Tk(canvas, root)
-toolbar.update()
-canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
-
-tk.mainloop()
+plot_visualisations(count_arr, violations_arr, max_url, json_save_path)
 
 
 print("Test Completed")
