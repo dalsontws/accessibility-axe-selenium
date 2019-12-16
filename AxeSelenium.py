@@ -16,7 +16,7 @@ import pytest
 
 def get_all_links(url):
     invalid_links = ['twitter', 'instagram', 'facebook',
-                     'youtube']
+                     'youtube', 'areyouready']
     fullSet = set()
     fullSet.add(url)
     list = driver.find_elements_by_tag_name("a")
@@ -41,10 +41,10 @@ def get_nav_links():
 
 
 def remove_invalid(full_set):
-    # hard-coded removal of invalid links
-    # change/remove if required
-    full_set.remove("None")
-    full_set.remove("javascript:;")
+    if ("None" in full_set):
+        full_set.remove("None")
+    if ("javascript;:" in full_set):
+        full_set.remove("javascript:;")
     return full_set
 
 
@@ -106,8 +106,8 @@ start_time = time.time()
 # Initialise driver
 driver = webdriver.Chrome()
 driver.maximize_window()
-url = "https://www.cpf.gov.sg/members"
-# url = 'https://www.cpf.gov.sg/eSvc/Web/PortalServices/CpfMemberPortalServices'
+# url = "https://www.cpf.gov.sg/members"
+url = 'https://www.cpf.gov.sg/eSvc/Web/PortalServices/CpfMemberPortalServices'
 driver.get(url)
 
 # Thread sleep
@@ -127,7 +127,7 @@ full_set = remove_invalid(full_set)
 full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
     full_set, full_json)
 
-json_save_path = './data/cpf_test.json'
+json_save_path = './data/cpf_login_test.json'
 # json_save_path = './data/a11y_test1.json'
 axe.write_results(full_json, json_save_path)
 
