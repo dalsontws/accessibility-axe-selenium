@@ -27,18 +27,18 @@ def make_autopct(values):
 
 def get_all_links(url):
     fullSet = set()
-    # invalid_links = ['twitter', 'instagram', 'facebook',
-    #                  'youtube', 'areyouready']
-    # fullSet.add(url)
-    # list = driver.find_elements_by_tag_name("a")
-    # for link in list:
-    #     fullLink = str(link.get_attribute("href"))
-    #     if any(substring in fullLink for substring in invalid_links):
-    #         break
+    invalid_links = ['twitter', 'instagram', 'facebook',
+                     'youtube', 'areyouready']
+    fullSet.add(url)
+    list = driver.find_elements_by_tag_name("a")
+    for link in list:
+        fullLink = str(link.get_attribute("href"))
+        if any(substring in fullLink for substring in invalid_links):
+            break
 
-    #     fullSet.add(fullLink)
+        fullSet.add(fullLink)
 
-    fullSet.add('https://www.cpf.gov.sg/Members/Schemes')
+    # fullSet.add('https://www.cpf.gov.sg/Members/Schemes')
 
     # ------- LocalHost Testing ------- #
     # fullSet.add('http://127.0.0.1:8000/about/')
@@ -131,6 +131,7 @@ def plot_visualisations(count_arr, violations_arr, max_url, json_save_path):
     ax3 = fig.add_subplot(211)
     table_vals = []
 
+    # add number of urls?
     table_vals.append(['No. of Violations', str(int(sum(violations_arr)))])
     table_vals.append(['No. of Passes', str(count_arr[0])])
     table_vals.append(['Most Violations', max_url])
@@ -202,14 +203,14 @@ full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
     full_set, full_json)
 
 json_save_path = './data/cpf_test.json'
-# json_save_path = './data/a11y_test1.json'
 axe.write_results(full_json, json_save_path)
 
 driver.close()
 driver.quit()
 time_taken = (time.time() - start_time)
 
-plot_visualisations(count_arr, violations_arr, max_url, json_save_path)
+plot_visualisations(count_arr, violations_arr,
+                    max_url, json_save_path)
 
 
 print("Test Completed")
