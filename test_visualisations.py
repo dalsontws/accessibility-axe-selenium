@@ -5,18 +5,28 @@ from matplotlib.figure import Figure
 
 import numpy as np
 
+
+def make_autopct(values):
+    def my_autopct(pct):
+        total = sum(values)
+        val = int(round(pct*total/100.0))
+        return '{p:.2f}%  ({v:d})'.format(p=pct, v=val)
+    return my_autopct
+
+
 root = tk.Tk()
 root.wm_title("title")
 
-fig = Figure(figsize=(10, 10), dpi=100)
+fig = Figure(figsize=(12, 12), dpi=100)
 labels = 'Frogs', 'Hogs', 'Dogs', 'Logs'
 sizes = [15, 30, 45, 10]
 explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
 
 ax1 = fig.add_subplot(223)
-ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
-        shadow=True, startangle=90)
+ax1.pie(sizes, explode=explode, labels=labels, autopct=make_autopct(sizes), textprops={'fontsize': 10},
+        shadow=True, startangle=90, radius=1.6)
 
+ax1.figsize = (30, 30)
 ax2 = fig.add_subplot(224)
 
 objects = ['Python', 'C++', 'Java', 'Perl', 'Scala', 'Lisp']

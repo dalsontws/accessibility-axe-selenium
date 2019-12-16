@@ -14,30 +14,38 @@ import numpy as np
 import pytest
 
 
+def make_autopct(values):
+    def my_autopct(pct):
+        total = sum(values)
+        val = int(round(pct*total/100.0))
+        if pct > 7:
+            return '{p:.2f}%  ({v:d})'.format(p=pct, v=val)
+        else:
+            return ''
+    return my_autopct
+
+
 def get_all_links(url):
-    invalid_links = ['twitter', 'instagram', 'facebook',
-                     'youtube', 'areyouready']
     fullSet = set()
-    fullSet.add(url)
-    list = driver.find_elements_by_tag_name("a")
-    for link in list:
-        fullLink = str(link.get_attribute("href"))
-        if any(substring in fullLink for substring in invalid_links):
-            break
+    # invalid_links = ['twitter', 'instagram', 'facebook',
+    #                  'youtube', 'areyouready']
+    # fullSet.add(url)
+    # list = driver.find_elements_by_tag_name("a")
+    # for link in list:
+    #     fullLink = str(link.get_attribute("href"))
+    #     if any(substring in fullLink for substring in invalid_links):
+    #         break
 
-        fullSet.add(fullLink)
+    #     fullSet.add(fullLink)
 
-    # fullSet.add('https://www.cpf.gov.sg/Members/Schemes')
+    fullSet.add('https://www.cpf.gov.sg/Members/Schemes')
+
+    # ------- LocalHost Testing ------- #
+    # fullSet.add('http://127.0.0.1:8000/about/')
+    # fullSet.add('http://127.0.0.1:8000/contact/')
+    # ------- LocalHost Testing ------- #
+
     return fullSet
-
-
-def get_nav_links():
-    navSet = set()
-    navbar = driver.find_elements_by_css_selector("#mainnav-4 > a")
-    for link in navbar:
-        fullLink = link.get_attribute("href")
-        navSet.add(fullLink)
-    return navSet
 
 
 def remove_invalid(full_set):
@@ -98,6 +106,7 @@ def save_as_json(full_set, full_json):
 
         full_json[url] = results
         print("done")
+
     print(sum(violations_arr))
     count_arr = [count_incomplete, sum(violations_arr), count_passes]
     print('Number of violations: ', sum(violations_arr))
@@ -111,19 +120,19 @@ def plot_visualisations(count_arr, violations_arr, max_url, json_save_path):
     fig = Figure(figsize=(10, 10), dpi=100)
     labels = 'Passes', 'Violations', 'Incomplete'
     sizes = count_arr
-    explode = (0, 0.1, 0)
+    explode = (0, 0.2, 0)
 
     ax1 = fig.add_subplot(223)
 
-    ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
-            shadow=True, startangle=90)
+    ax1.pie(sizes, explode=explode, labels=labels, autopct=make_autopct(sizes),
+            textprops={'fontsize': 10}, shadow=True, startangle=90, radius=1.5)
 
     # max_url = 'https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/Cashier/ECashierHomepage'
     ax3 = fig.add_subplot(211)
     table_vals = []
-    i = 0
 
     table_vals.append(['No. of Violations', str(int(sum(violations_arr)))])
+    table_vals.append(['No. of Passes', str(count_arr[0])])
     table_vals.append(['Most Violations', max_url])
     table_vals.append(['Time taken:', "%.1f" % time_taken + "s"])
     table_vals.append(['Full log:', json_save_path])
@@ -192,7 +201,7 @@ full_set = remove_invalid(full_set)
 full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
     full_set, full_json)
 
-json_save_path = './data/cpf_login_test.json'
+json_save_path = './data/cpf_test.json'
 # json_save_path = './data/a11y_test1.json'
 axe.write_results(full_json, json_save_path)
 

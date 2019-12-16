@@ -382,6 +382,204 @@
                                     "bgColor": null,
                                     "contrastRatio": 0,
                                     "expectedContrastRatio": "4.5:1",
+                                    "fgColor": "#464642",
+                                    "fontSize": "12.0pt",
+                                    "fontWeight": "bold",
+                                    "missingData": "bgGradient"
+                                },
+                                "id": "color-contrast",
+                                "impact": "serious",
+                                "message": "Element's background color could not be determined due to a background gradient",
+                                "relatedNodes": [
+                                    {
+                                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr1\">",
+                                        "target": [
+                                            ".cpf-panel-group > .panel.panel-default:nth-child(1) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "html": "<h2 id=\"Retirement\" class=\"panel-title\">Retirement<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": "serious",
+                        "none": [],
+                        "target": [
+                            "#Retirement"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": {
+                                    "bgColor": null,
+                                    "contrastRatio": 0,
+                                    "expectedContrastRatio": "4.5:1",
+                                    "fgColor": "#464642",
+                                    "fontSize": "12.0pt",
+                                    "fontWeight": "bold",
+                                    "missingData": "bgGradient"
+                                },
+                                "id": "color-contrast",
+                                "impact": "serious",
+                                "message": "Element's background color could not be determined due to a background gradient",
+                                "relatedNodes": [
+                                    {
+                                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr2\"><h2 id=\"Housing\" class=\"panel-title\">Housing<span class=\"glyphicon glyphicon-plus\"></span></h2></button>",
+                                        "target": [
+                                            ".panel.panel-default:nth-child(2) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "html": "<h2 id=\"Housing\" class=\"panel-title\">Housing<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": "serious",
+                        "none": [],
+                        "target": [
+                            "#Housing"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": {
+                                    "bgColor": null,
+                                    "contrastRatio": 0,
+                                    "expectedContrastRatio": "4.5:1",
+                                    "fgColor": "#464642",
+                                    "fontSize": "12.0pt",
+                                    "fontWeight": "bold",
+                                    "missingData": "bgGradient"
+                                },
+                                "id": "color-contrast",
+                                "impact": "serious",
+                                "message": "Element's background color could not be determined due to a background gradient",
+                                "relatedNodes": [
+                                    {
+                                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr3\">",
+                                        "target": [
+                                            ".panel.panel-default:nth-child(3) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "html": "<h2 id=\"Healthcare\" class=\"panel-title\">Healthcare<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": "serious",
+                        "none": [],
+                        "target": [
+                            "#Healthcare"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": {
+                                    "bgColor": null,
+                                    "contrastRatio": 0,
+                                    "expectedContrastRatio": "4.5:1",
+                                    "fgColor": "#464642",
+                                    "fontSize": "12.0pt",
+                                    "fontWeight": "bold",
+                                    "missingData": "bgGradient"
+                                },
+                                "id": "color-contrast",
+                                "impact": "serious",
+                                "message": "Element's background color could not be determined due to a background gradient",
+                                "relatedNodes": [
+                                    {
+                                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr4\">",
+                                        "target": [
+                                            ".panel.panel-default:nth-child(4) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "html": "<h2 id=\"OptimisingMyCPF\" class=\"panel-title\">Optimising My CPF<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": "serious",
+                        "none": [],
+                        "target": [
+                            "#OptimisingMyCPF"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": {
+                                    "bgColor": null,
+                                    "contrastRatio": 0,
+                                    "expectedContrastRatio": "4.5:1",
+                                    "fgColor": "#464642",
+                                    "fontSize": "12.0pt",
+                                    "fontWeight": "bold",
+                                    "missingData": "bgGradient"
+                                },
+                                "id": "color-contrast",
+                                "impact": "serious",
+                                "message": "Element's background color could not be determined due to a background gradient",
+                                "relatedNodes": [
+                                    {
+                                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr5\">",
+                                        "target": [
+                                            ".panel.panel-default:nth-child(5) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "html": "<h2 id=\"Self-EmployedMatters\" class=\"panel-title\">Self-Employed Matters<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": "serious",
+                        "none": [],
+                        "target": [
+                            "#Self-EmployedMatters"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": {
+                                    "bgColor": null,
+                                    "contrastRatio": 0,
+                                    "expectedContrastRatio": "4.5:1",
+                                    "fgColor": "#464642",
+                                    "fontSize": "12.0pt",
+                                    "fontWeight": "bold",
+                                    "missingData": "bgGradient"
+                                },
+                                "id": "color-contrast",
+                                "impact": "serious",
+                                "message": "Element's background color could not be determined due to a background gradient",
+                                "relatedNodes": [
+                                    {
+                                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr6\">",
+                                        "target": [
+                                            ".panel.panel-default:nth-child(6) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "html": "<h2 id=\"OtherMatters\" class=\"panel-title\">Other Matters<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": "serious",
+                        "none": [],
+                        "target": [
+                            "#OtherMatters"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": {
+                                    "bgColor": null,
+                                    "contrastRatio": 0,
+                                    "expectedContrastRatio": "4.5:1",
                                     "fgColor": "#ffffff",
                                     "fontSize": "10.5pt",
                                     "fontWeight": "bold",
@@ -1447,6 +1645,162 @@
                         "target": [
                             "#btnExpandAll > .cpf-btn-d.btn-sm.collapseall"
                         ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "Retirement",
+                                "id": "button-has-visible-text",
+                                "impact": "critical",
+                                "message": "Element has inner text that is visible to screen readers",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr1\">",
+                        "impact": null,
+                        "none": [
+                            {
+                                "data": null,
+                                "id": "focusable-no-name",
+                                "impact": "serious",
+                                "message": "Element is not in tab order or has accessible text",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "target": [
+                            ".cpf-panel-group > .panel.panel-default:nth-child(1) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "Housing",
+                                "id": "button-has-visible-text",
+                                "impact": "critical",
+                                "message": "Element has inner text that is visible to screen readers",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr2\"><h2 id=\"Housing\" class=\"panel-title\">Housing<span class=\"glyphicon glyphicon-plus\"></span></h2></button>",
+                        "impact": null,
+                        "none": [
+                            {
+                                "data": null,
+                                "id": "focusable-no-name",
+                                "impact": "serious",
+                                "message": "Element is not in tab order or has accessible text",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "target": [
+                            ".panel.panel-default:nth-child(2) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "Healthcare",
+                                "id": "button-has-visible-text",
+                                "impact": "critical",
+                                "message": "Element has inner text that is visible to screen readers",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr3\">",
+                        "impact": null,
+                        "none": [
+                            {
+                                "data": null,
+                                "id": "focusable-no-name",
+                                "impact": "serious",
+                                "message": "Element is not in tab order or has accessible text",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "target": [
+                            ".panel.panel-default:nth-child(3) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "Optimising My CPF",
+                                "id": "button-has-visible-text",
+                                "impact": "critical",
+                                "message": "Element has inner text that is visible to screen readers",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr4\">",
+                        "impact": null,
+                        "none": [
+                            {
+                                "data": null,
+                                "id": "focusable-no-name",
+                                "impact": "serious",
+                                "message": "Element is not in tab order or has accessible text",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "target": [
+                            ".panel.panel-default:nth-child(4) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "Self-Employed Matters",
+                                "id": "button-has-visible-text",
+                                "impact": "critical",
+                                "message": "Element has inner text that is visible to screen readers",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr5\">",
+                        "impact": null,
+                        "none": [
+                            {
+                                "data": null,
+                                "id": "focusable-no-name",
+                                "impact": "serious",
+                                "message": "Element is not in tab order or has accessible text",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "target": [
+                            ".panel.panel-default:nth-child(5) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "Other Matters",
+                                "id": "button-has-visible-text",
+                                "impact": "critical",
+                                "message": "Element has inner text that is visible to screen readers",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr6\">",
+                        "impact": null,
+                        "none": [
+                            {
+                                "data": null,
+                                "id": "focusable-no-name",
+                                "impact": "serious",
+                                "message": "Element is not in tab order or has accessible text",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "target": [
+                            ".panel.panel-default:nth-child(6) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                        ]
                     }
                 ],
                 "tags": [
@@ -1869,7 +2223,7 @@
                         "impact": null,
                         "none": [],
                         "target": [
-                            ".cpf-btn-d.btn-sm.collapseall > .glyphicon-plus"
+                            ".cpf-expCol-text.glyphicon-plus.glyphicon"
                         ]
                     },
                     {
@@ -2941,7 +3295,7 @@
                                 "relatedNodes": []
                             }
                         ],
-                        "html": "<input type=\"hidden\" name=\"__REQUESTDIGEST\" id=\"__REQUESTDIGEST\" value=\"0xA75F57F4662959FC91357E4D2EA1B14B1A1CDFD63F89BD564903A5DCBAB202C850E44C6A074422D2E285688C2F7E57429D4D67F9E10A61F1B81DBFE60FD8FA1F,11 Dec 2019 08:49:10 -0000\">",
+                        "html": "<input type=\"hidden\" name=\"__REQUESTDIGEST\" id=\"__REQUESTDIGEST\" value=\"0x6FD3763588FB940DFD02AFE1D86871B2357CD2A1A401D1E1F719F8672B30E506FBB888B0C4564FD0C8B281C419469E459CBEEA66E789D447E9F31AF95F4F8580,16 Dec 2019 09:43:06 -0000\">",
                         "impact": null,
                         "none": [],
                         "target": [
@@ -4680,6 +5034,222 @@
                         "all": [],
                         "any": [
                             {
+                                "data": "Retirement",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"Retirement\" class=\"panel-title\">Retirement<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#Retirement"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr1",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<div class=\"panel-collapse collapse\" id=\"panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr1\">",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr1"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "Housing",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"Housing\" class=\"panel-title\">Housing<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#Housing"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr2",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<div class=\"panel-collapse collapse\" id=\"panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr2\">",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr2"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "Healthcare",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"Healthcare\" class=\"panel-title\">Healthcare<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#Healthcare"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr3",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<div class=\"panel-collapse collapse\" id=\"panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr3\">",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr3"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "OptimisingMyCPF",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"OptimisingMyCPF\" class=\"panel-title\">Optimising My CPF<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#OptimisingMyCPF"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr4",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<div class=\"panel-collapse collapse\" id=\"panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr4\">",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr4"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "Self-EmployedMatters",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"Self-EmployedMatters\" class=\"panel-title\">Self-Employed Matters<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#Self-EmployedMatters"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr5",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<div class=\"panel-collapse collapse\" id=\"panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr5\">",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr5"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "OtherMatters",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"OtherMatters\" class=\"panel-title\">Other Matters<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#OtherMatters"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": "panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr6",
+                                "id": "duplicate-id",
+                                "impact": "minor",
+                                "message": "Document has no static elements that share the same id attribute",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<div class=\"panel-collapse collapse\" id=\"panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr6\">",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr6"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
                                 "data": "ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62",
                                 "id": "duplicate-id",
                                 "impact": "minor",
@@ -4989,6 +5559,114 @@
                                 "relatedNodes": []
                             }
                         ],
+                        "html": "<h2 id=\"Retirement\" class=\"panel-title\">Retirement<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#Retirement"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": null,
+                                "id": "has-visible-text",
+                                "impact": "minor",
+                                "message": "Element has text that is visible to screen readers",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"Housing\" class=\"panel-title\">Housing<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#Housing"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": null,
+                                "id": "has-visible-text",
+                                "impact": "minor",
+                                "message": "Element has text that is visible to screen readers",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"Healthcare\" class=\"panel-title\">Healthcare<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#Healthcare"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": null,
+                                "id": "has-visible-text",
+                                "impact": "minor",
+                                "message": "Element has text that is visible to screen readers",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"OptimisingMyCPF\" class=\"panel-title\">Optimising My CPF<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#OptimisingMyCPF"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": null,
+                                "id": "has-visible-text",
+                                "impact": "minor",
+                                "message": "Element has text that is visible to screen readers",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"Self-EmployedMatters\" class=\"panel-title\">Self-Employed Matters<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#Self-EmployedMatters"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": null,
+                                "id": "has-visible-text",
+                                "impact": "minor",
+                                "message": "Element has text that is visible to screen readers",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"OtherMatters\" class=\"panel-title\">Other Matters<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#OtherMatters"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": null,
+                                "id": "has-visible-text",
+                                "impact": "minor",
+                                "message": "Element has text that is visible to screen readers",
+                                "relatedNodes": []
+                            }
+                        ],
                         "html": "<h5 class=\"sub-header has-text-white\"><b>CPF Board</b></h5>",
                         "impact": null,
                         "none": [],
@@ -5025,6 +5703,114 @@
                         "none": [],
                         "target": [
                             ".page-title"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": 2,
+                                "id": "heading-order",
+                                "impact": "moderate",
+                                "message": "Heading order valid",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"Retirement\" class=\"panel-title\">Retirement<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#Retirement"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": 2,
+                                "id": "heading-order",
+                                "impact": "moderate",
+                                "message": "Heading order valid",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"Housing\" class=\"panel-title\">Housing<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#Housing"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": 2,
+                                "id": "heading-order",
+                                "impact": "moderate",
+                                "message": "Heading order valid",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"Healthcare\" class=\"panel-title\">Healthcare<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#Healthcare"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": 2,
+                                "id": "heading-order",
+                                "impact": "moderate",
+                                "message": "Heading order valid",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"OptimisingMyCPF\" class=\"panel-title\">Optimising My CPF<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#OptimisingMyCPF"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": 2,
+                                "id": "heading-order",
+                                "impact": "moderate",
+                                "message": "Heading order valid",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"Self-EmployedMatters\" class=\"panel-title\">Self-Employed Matters<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#Self-EmployedMatters"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [
+                            {
+                                "data": 2,
+                                "id": "heading-order",
+                                "impact": "moderate",
+                                "message": "Heading order valid",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "html": "<h2 id=\"OtherMatters\" class=\"panel-title\">Other Matters<span class=\"glyphicon glyphicon-plus\"></span></h2>",
+                        "impact": null,
+                        "none": [],
+                        "target": [
+                            "#OtherMatters"
                         ]
                     }
                 ],
@@ -5748,6 +6534,114 @@
                         ],
                         "target": [
                             "#btnExpandAll > .cpf-btn-d.btn-sm.collapseall"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [],
+                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr1\">",
+                        "impact": null,
+                        "none": [
+                            {
+                                "data": null,
+                                "id": "duplicate-img-label",
+                                "impact": "minor",
+                                "message": "Element does not duplicate existing text in <img> alt text",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "target": [
+                            ".cpf-panel-group > .panel.panel-default:nth-child(1) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [],
+                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr2\"><h2 id=\"Housing\" class=\"panel-title\">Housing<span class=\"glyphicon glyphicon-plus\"></span></h2></button>",
+                        "impact": null,
+                        "none": [
+                            {
+                                "data": null,
+                                "id": "duplicate-img-label",
+                                "impact": "minor",
+                                "message": "Element does not duplicate existing text in <img> alt text",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "target": [
+                            ".panel.panel-default:nth-child(2) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [],
+                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr3\">",
+                        "impact": null,
+                        "none": [
+                            {
+                                "data": null,
+                                "id": "duplicate-img-label",
+                                "impact": "minor",
+                                "message": "Element does not duplicate existing text in <img> alt text",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "target": [
+                            ".panel.panel-default:nth-child(3) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [],
+                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr4\">",
+                        "impact": null,
+                        "none": [
+                            {
+                                "data": null,
+                                "id": "duplicate-img-label",
+                                "impact": "minor",
+                                "message": "Element does not duplicate existing text in <img> alt text",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "target": [
+                            ".panel.panel-default:nth-child(4) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [],
+                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr5\">",
+                        "impact": null,
+                        "none": [
+                            {
+                                "data": null,
+                                "id": "duplicate-img-label",
+                                "impact": "minor",
+                                "message": "Element does not duplicate existing text in <img> alt text",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "target": [
+                            ".panel.panel-default:nth-child(5) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
+                        ]
+                    },
+                    {
+                        "all": [],
+                        "any": [],
+                        "html": "<button type=\"button\" class=\"panel-heading collapsed\" style=\"width: 100%; text-align: left;\" data-toggle=\"collapse\" data-target=\"#panel_ctl00_ctl87_g_d58197bd_d664_4591_8577_e98085530a62_csr6\">",
+                        "impact": null,
+                        "none": [
+                            {
+                                "data": null,
+                                "id": "duplicate-img-label",
+                                "impact": "minor",
+                                "message": "Element does not duplicate existing text in <img> alt text",
+                                "relatedNodes": []
+                            }
+                        ],
+                        "target": [
+                            ".panel.panel-default:nth-child(6) > .panel-heading.collapsed[data-toggle=\"collapse\"]"
                         ]
                     },
                     {
@@ -8040,7 +8934,7 @@
                 ]
             }
         ],
-        "timestamp": "2019-12-11T08:49:12.382Z",
+        "timestamp": "2019-12-16T09:43:07.355Z",
         "url": "https://www.cpf.gov.sg/Members/Schemes",
         "violations": [
             {
