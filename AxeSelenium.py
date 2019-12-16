@@ -110,6 +110,9 @@ url = "https://www.cpf.gov.sg/members"
 # url = 'https://www.cpf.gov.sg/eSvc/Web/PortalServices/CpfMemberPortalServices'
 driver.get(url)
 
+# Thread sleep
+time.sleep(60)
+
 axe = Axe(driver)
 
 # wait for login
