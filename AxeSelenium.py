@@ -179,8 +179,19 @@ def plot_visualisations(count_arr, violations_arr, max_url, json_save_path):
 
 start_time = time.time()
 # Initialise driver
+
+
+# -------- For Chrome -------- #
 driver = webdriver.Chrome()
 driver.maximize_window()
+# -------- For Chrome -------- #
+
+# -------- Internet Explorer -------- #
+# cap = DesiredCapabilities().INTERNETEXPLORER
+# cap['ignoreZoomSetting'] = True
+# driver = webdriver.Ie(capabilities=cap)
+# -------- Internet Explorer -------- #
+
 url = "https://www.cpf.gov.sg/members"
 # url = 'https://www.cpf.gov.sg/eSvc/Web/PortalServices/CpfMemberPortalServices'
 driver.get(url)
