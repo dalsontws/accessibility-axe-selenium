@@ -107,15 +107,19 @@ start_time = time.time()
 driver = webdriver.Chrome()
 driver.maximize_window()
 url = "https://www.cpf.gov.sg/members"
+# url = 'https://www.cpf.gov.sg/eSvc/Web/PortalServices/CpfMemberPortalServices'
 driver.get(url)
+
 axe = Axe(driver)
 
+# wait for login
+# driver.implicitly_wait(30)
+
 full_json = dict()
-list = driver.find_elements_by_tag_name("a")
 
 full_set = get_all_links(url)
 
-# full_set=remove_invalid(full_set)
+full_set = remove_invalid(full_set)
 
 full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
     full_set, full_json)
