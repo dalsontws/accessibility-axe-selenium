@@ -53,6 +53,7 @@ def get_all_links(urls):
 
 def remove_invalid(full_set):
     # Removing possible special cases
+    # fix later
     if ("None" in full_set):
         full_set.remove("None")
     if ("javascript:;" in full_set):
@@ -129,7 +130,7 @@ def save_as_json(full_set, full_json):
     return full_json, violations_arr, url_arr, max_url, count_arr
 
 
-def plot_visualisations(count_arr, violations_arr, max_url, json_save_path):
+def plot_visualisations(count_arr, violations_arr, url_arr, max_url, json_save_path):
     root = tk.Tk()
     root.wm_title("title")
 
@@ -147,7 +148,7 @@ def plot_visualisations(count_arr, violations_arr, max_url, json_save_path):
     ax3 = fig.add_subplot(211)
     table_vals = []
 
-    # add number of urls?
+    table_vals.append(['No. of Web Pages', len(url_arr)])
     table_vals.append(['No. of Violations', str(int(sum(violations_arr)))])
     table_vals.append(['No. of Passes', str(count_arr[0])])
     table_vals.append(['Most Violations', max_url])
@@ -208,17 +209,18 @@ driver.maximize_window()
 # driver = webdriver.Ie(capabilities=cap)
 # -------- Internet Explorer -------- #
 
-main_url = "https://www.cpf.gov.sg/members"
+# main_url = "https://www.cpf.gov.sg/members"
+main_url = "https://eservices.healthhub.sg/PersonalHealth"
 
 # -------- Add base URLs -------- #
-urls = {"https://www.cpf.gov.sg/members",
-        "https://www.cpf.gov.sg/Members/Schemes"}
+urls = {"https://eservices.healthhub.sg/PersonalHealth"}
+# "https://www.cpf.gov.sg/Members/Schemes"}
 # -------- Add base URLs -------- #
 
 driver.get(main_url)
 
 # Thread sleep
-# time.sleep(60)
+time.sleep(60)
 
 axe = Axe(driver)
 
@@ -231,14 +233,14 @@ full_set = remove_invalid(full_set)
 full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
     full_set, full_json)
 
-json_save_path = './data/cpf_test.json'
+json_save_path = './data/healthhub_test.json'
 axe.write_results(full_json, json_save_path)
 
 driver.close()
 driver.quit()
 time_taken = (time.time() - start_time)
 
-plot_visualisations(count_arr, violations_arr,
+plot_visualisations(count_arr, violations_arr, url_arr,
                     max_url, json_save_path)
 
 
