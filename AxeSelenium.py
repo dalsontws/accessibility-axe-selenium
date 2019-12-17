@@ -62,6 +62,8 @@ def remove_invalid(full_set):
     if ("https://null/common/Lists/CPFPages/DispForm.aspx?ID=239" in full_set):
         full_set.remove(
             "https://null/common/Lists/CPFPages/DispForm.aspx?ID=239")
+    if ("https://www.cpf.gov.sg/members" in full_set):
+        full_set.remove("https://www.cpf.gov.sg/members")
     if ("https://www.cpf.gov.sg/members#" in full_set):
         full_set.remove("https://www.cpf.gov.sg/members#")
     if ("https://www.cpf.gov.sg/Members/Schemes#" in full_set):
@@ -207,9 +209,11 @@ driver.maximize_window()
 # -------- Internet Explorer -------- #
 
 main_url = "https://www.cpf.gov.sg/members"
-urls = {"https://www.cpf.gov.sg/members"}
-        # "https://www.cpf.gov.sg/Members/Schemes"}
-# url = 'https://www.cpf.gov.sg/eSvc/Web/PortalServices/CpfMemberPortalServices'
+
+# -------- Add base URLs -------- #
+urls = {"https://www.cpf.gov.sg/members",
+        "https://www.cpf.gov.sg/Members/Schemes"}
+# -------- Add base URLs -------- #
 
 driver.get(main_url)
 
@@ -217,9 +221,6 @@ driver.get(main_url)
 # time.sleep(60)
 
 axe = Axe(driver)
-
-# wait for login
-# driver.implicitly_wait(30)
 
 full_json = dict()
 
