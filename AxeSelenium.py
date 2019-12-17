@@ -25,18 +25,21 @@ def make_autopct(values):
     return my_autopct
 
 
-def get_all_links(url):
+def get_all_links(urls):
     fullSet = set()
     invalid_links = ['twitter', 'instagram', 'facebook',
                      'youtube', 'areyouready']
-    fullSet.add(url)
-    list = driver.find_elements_by_tag_name("a")
-    for link in list:
-        fullLink = str(link.get_attribute("href"))
-        if any(substring in fullLink for substring in invalid_links):
-            break
+    for url in urls:
+        fullSet.add(url)
+        driver.get(url)
+        url_list = driver.find_elements_by_tag_name("a")
+        for link in url_list:
+            fullLink = str(link.get_attribute("href"))
+            print(fullLink)
+            if any(substring in fullLink for substring in invalid_links):
+                break
 
-        fullSet.add(fullLink)
+            fullSet.add(fullLink)
 
     # fullSet.add('https://www.cpf.gov.sg/Members/Schemes')
 
@@ -49,10 +52,21 @@ def get_all_links(url):
 
 
 def remove_invalid(full_set):
+    # Removing possible special cases
     if ("None" in full_set):
         full_set.remove("None")
     if ("javascript:;" in full_set):
         full_set.remove("javascript:;")
+    if ("https://www.gov.sg/" in full_set):
+        full_set.remove("https://www.gov.sg/")
+    if ("https://null/common/Lists/CPFPages/DispForm.aspx?ID=239" in full_set):
+        full_set.remove(
+            "https://null/common/Lists/CPFPages/DispForm.aspx?ID=239")
+    if ("https://www.cpf.gov.sg/members#" in full_set):
+        full_set.remove("https://www.cpf.gov.sg/members#")
+    if ("https://www.cpf.gov.sg/Members/Schemes#" in full_set):
+        full_set.remove("https://www.cpf.gov.sg/Members/Schemes#")
+
     return full_set
 
 
@@ -192,9 +206,12 @@ driver.maximize_window()
 # driver = webdriver.Ie(capabilities=cap)
 # -------- Internet Explorer -------- #
 
-url = "https://www.cpf.gov.sg/members"
+main_url = "https://www.cpf.gov.sg/members"
+urls = {"https://www.cpf.gov.sg/members"}
+        # "https://www.cpf.gov.sg/Members/Schemes"}
 # url = 'https://www.cpf.gov.sg/eSvc/Web/PortalServices/CpfMemberPortalServices'
-driver.get(url)
+
+driver.get(main_url)
 
 # Thread sleep
 # time.sleep(60)
@@ -206,7 +223,7 @@ axe = Axe(driver)
 
 full_json = dict()
 
-full_set = get_all_links(url)
+full_set = get_all_links(urls)
 
 full_set = remove_invalid(full_set)
 
