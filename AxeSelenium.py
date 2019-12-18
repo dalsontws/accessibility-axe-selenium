@@ -8,6 +8,10 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from axe_selenium_python import Axe
 from selenium.common import exceptions
+from collections import Counter
+
+from scipy import stats
+
 import time
 import pymsgbox
 import numpy as np
@@ -35,7 +39,6 @@ def get_all_links(urls):
         url_list = driver.find_elements_by_tag_name("a")
         for link in url_list:
             fullLink = str(link.get_attribute("href"))
-            print(fullLink)
             if any(substring in fullLink for substring in invalid_links):
                 break
 
@@ -130,7 +133,7 @@ def save_as_json(full_set, full_json):
     return full_json, violations_arr, url_arr, max_url, count_arr
 
 
-def plot_visualisations(count_arr, violations_arr, url_arr, max_url, json_save_path):
+def plot_visualisations(count_arr, violations_arr, url_arr, des_arr, max_url, json_save_path):
     root = tk.Tk()
     root.wm_title("title")
 
@@ -150,6 +153,7 @@ def plot_visualisations(count_arr, violations_arr, url_arr, max_url, json_save_p
 
     table_vals.append(['No. of Web Pages', len(url_arr)])
     table_vals.append(['No. of Violations', str(int(sum(violations_arr)))])
+    table_vals.append(['Most Common Violation', str(stats.mode(des_arr)[0])])
     table_vals.append(['No. of Passes', str(count_arr[0])])
     table_vals.append(['Most Violations', max_url])
     table_vals.append(['Time taken:', "%.1f" % time_taken + "s"])
@@ -157,7 +161,7 @@ def plot_visualisations(count_arr, violations_arr, url_arr, max_url, json_save_p
 
     # Draw table
     the_table = ax3.table(cellText=table_vals,
-                          colWidths=[0.07, 0.3],
+                          colWidths=[0.09, 0.3],
                           rowLabels=None,
                           colLabels=None,
                           loc='center')
@@ -210,17 +214,17 @@ driver.maximize_window()
 # -------- Internet Explorer -------- #
 
 # main_url = "https://www.cpf.gov.sg/members"
-main_url = "https://eservices.healthhub.sg/PersonalHealth"
+main_url = "https://www.hdb.gov.sg/cs/infoweb/homepage"
 
 # -------- Add base URLs -------- #
-urls = {"https://eservices.healthhub.sg/PersonalHealth"}
+urls = {"https://www.hdb.gov.sg/cs/infoweb/homepage"}
 # "https://www.cpf.gov.sg/Members/Schemes"}
 # -------- Add base URLs -------- #
 
 driver.get(main_url)
 
 # Thread sleep
-time.sleep(60)
+# time.sleep(60)
 
 axe = Axe(driver)
 
@@ -233,14 +237,20 @@ full_set = remove_invalid(full_set)
 full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
     full_set, full_json)
 
-json_save_path = './data/healthhub_test.json'
+json_save_path = './data/trial_test.json'
 axe.write_results(full_json, json_save_path)
+
+des_arr = []
+for items in full_json.values():
+    # print(items['violations'])
+    for item in items['violations']:
+        des_arr.append(item['description'])
 
 driver.close()
 driver.quit()
 time_taken = (time.time() - start_time)
 
-plot_visualisations(count_arr, violations_arr, url_arr,
+plot_visualisations(count_arr, violations_arr, url_arr, des_arr,
                     max_url, json_save_path)
 
 

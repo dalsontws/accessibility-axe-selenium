@@ -51,7 +51,7 @@ print(table_vals)
 
 # Draw table
 the_table = ax3.table(cellText=table_vals,
-                      colWidths=[0.05, 0.2],
+                      colWidths=[0.1, 0.3],
                       rowLabels=None,
                       colLabels=col_labels,
                       loc='center')
