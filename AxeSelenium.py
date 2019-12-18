@@ -1,9 +1,9 @@
-# from textwrap import wrap
-# from matplotlib.figure import Figure
-# from matplotlib.backend_bases import key_press_handler
-# from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
-# import tkinter as tk
-# import matplotlib.pyplot as plt
+from textwrap import wrap
+from matplotlib.figure import Figure
+from matplotlib.backend_bases import key_press_handler
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
+import tkinter as tk
+import matplotlib.pyplot as plt
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from axe_selenium_python import Axe
