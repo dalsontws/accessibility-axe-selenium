@@ -212,7 +212,7 @@ urls = {"https://eservices.healthhub.sg/PersonalHealth"}
 driver.get(main_url)
 
 # Thread sleep
-# time.sleep(60)
+time.sleep(60)
 
 axe = Axe(driver)
 
@@ -231,8 +231,21 @@ with open('data.json', 'w') as outfile:
 full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
     full_set, full_json)
 
+
 json_save_path = './data/cpf_test6.json'
 axe.write_results(full_json, json_save_path)
+
+=======
+json_save_path = './data/ica_test.json'
+axe.write_results(full_json, json_save_path)
+
+des_arr = []
+for items in full_json.values():
+    # print(items['violations'])
+    for item in items['violations']:
+        des_arr.append(item['description'])
+        # print(item['description'])
+
 
 driver.close()
 driver.quit()
