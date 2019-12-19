@@ -16,11 +16,10 @@ fs.readFile('./data.json', 'utf8', (err, jsonString) => {
         return
     }
     try {
-        const customer = JSON.parse(jsonString)
-        console.log("Customer address is:", customer)
+        const link = JSON.parse(jsonString)
         
-        for(var key in customer){
-        if(customer.hasOwnProperty(key)){
+        for(var key in link){
+        if(link.hasOwnProperty(key)){
         arr.push(key);
 
   }}
