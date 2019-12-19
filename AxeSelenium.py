@@ -205,7 +205,7 @@ main_url = "https://www.cpf.gov.sg/members"
 # main_url = "https://eservices.healthhub.sg/PersonalHealth"
 
 # -------- Add base URLs -------- #
-urls = {"https://eservices.healthhub.sg/PersonalHealth"}
+urls = {"https://www.googles.com"}
 # "https://www.cpf.gov.sg/Members/Schemes"}
 # -------- Add base URLs -------- #
 
@@ -231,7 +231,7 @@ with open('data.json', 'w') as outfile:
 full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
     full_set, full_json)
 
-json_save_path = './data/cpf_test6.json'
+json_save_path = './data/cpf_test7.json'
 axe.write_results(full_json, json_save_path)
 
 driver.close()
