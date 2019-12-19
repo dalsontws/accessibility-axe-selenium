@@ -11,11 +11,12 @@ from selenium.common import exceptions
 from collections import Counter
 
 from scipy import stats
-
 import time
 import pymsgbox
 import numpy as np
 import pytest
+import json
+from Naked.toolshed.shell import execute_js
 
 
 def make_autopct(values):
@@ -39,6 +40,7 @@ def get_all_links(urls):
         url_list = driver.find_elements_by_tag_name("a")
         for link in url_list:
             fullLink = str(link.get_attribute("href"))
+            print(fullLink)
             if any(substring in fullLink for substring in invalid_links):
                 break
 
@@ -85,40 +87,30 @@ def save_as_json(full_set, full_json):
     count_max = 0
     violations_arr = []
     url_arr = []
-    for link in full_set:
-        print(link)
-        driver.get(link)
+    resu = execute_js('conftest.js')
 
-        axe = Axe(driver)
+    
+    with open("object.json", "r") as read_file:
+        results = json.load(read_file)
+        print(len(results))
+        for i in range(len(results)):
+            if results[i] is None:
+                continue
+            url = results[i]['url']
 
-        # try options
-        # option = {'rules': {'color-contrast': {'enabled': 'false'},
-        #                     'valid-lang': {'enabled': 'false'}}}
-        # Inject axe-core javascript into page.
-        axe.inject()
-        # Run axe accessibility checks.
-        try:
-            results = axe.run()
-        except:
-            axe = Axe(driver)
-            results = axe.run()
 
-        if (results is None):
-            break
-
-        url = results['url']
         # TODO: Can use dict for violations and url array, using array now for simplicity/pyplot
-        violations_arr = np.append(
-            violations_arr, len(results['violations']))
+            violations_arr = np.append(
+                violations_arr, len(results[i]['violations']))
 
-        url_arr = np.append(url_arr, url)
+            url_arr = np.append(url_arr, url)
 
-        if (len(results['violations']) > count_max):
-            count_max = len(results['violations'])
-            max_url = url
+            if (len(results[i]['violations']) > count_max):
+                count_max = len(results[i]['violations'])
+                max_url = url
 
-        count_passes += len(results['passes'])
-        count_incomplete += len(results['incomplete'])
+            count_passes += len(results[i]['passes'])
+            count_incomplete += len(results[i]['incomplete'])
 
         # print(type(results))
         # print(results.get('violations').count("critical"))
@@ -126,14 +118,13 @@ def save_as_json(full_set, full_json):
         # print('violations: ', count_violations)
         # print('critical violations: ', count_critical)
 
-        full_json[url] = results
-        print("done")
+            full_json[url] = results[i]
+            print("done")
 
-    print(sum(violations_arr))
-    count_arr = [count_incomplete, sum(violations_arr), count_passes]
-    print('Number of violations: ', sum(violations_arr))
+            print(sum(violations_arr))
+            count_arr = [count_incomplete, sum(violations_arr), count_passes]
+            print('Number of violations: ', sum(violations_arr))
     return full_json, violations_arr, url_arr, max_url, count_arr
-
 
 def plot_visualisations(count_arr, violations_arr, url_arr, des_arr, max_url, json_save_path):
     root = tk.Tk()
@@ -199,7 +190,6 @@ def plot_visualisations(count_arr, violations_arr, url_arr, des_arr, max_url, js
 
     tk.mainloop()
 
-
 start_time = time.time()
 # Initialise driver
 
@@ -215,6 +205,7 @@ driver.maximize_window()
 # driver = webdriver.Ie(capabilities=cap)
 # -------- Internet Explorer -------- #
 
+
 # main_url = "https://www.cpf.gov.sg/members"
 # log in on singpass
 main_url = "https://eservices.ica.gov.sg/icsbip"
@@ -222,7 +213,7 @@ main_url = "https://eservices.ica.gov.sg/icsbip"
 # -------- Add base URLs -------- #
 urls = {"https://icaeservices.ica.gov.sg/dashboard"}
 # "https://www.cpf.gov.sg/Members/Schemes"}s
-# -------- Add base URLs -------- #
+
 
 driver.get(main_url)
 
@@ -237,10 +228,17 @@ full_set = get_all_links(urls)
 
 full_set = remove_invalid(full_set)
 
+res = dict.fromkeys(full_set, 0)
+
+with open('data.json', 'w') as outfile:
+    json.dump(res, outfile)
+
+
 full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
     full_set, full_json)
 
-json_save_path = './data/ica_test.json'
+
+json_save_path = './data/cpf_test6.json'
 axe.write_results(full_json, json_save_path)
 
 des_arr = []
@@ -248,7 +246,8 @@ for items in full_json.values():
     # print(items['violations'])
     for item in items['violations']:
         des_arr.append(item['description'])
-        # print(item['description'])
+
+
 
 driver.close()
 driver.quit()
