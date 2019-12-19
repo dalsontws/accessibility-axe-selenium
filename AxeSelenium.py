@@ -1,13 +1,16 @@
-# from textwrap import wrap
-# from matplotlib.figure import Figure
-# from matplotlib.backend_bases import key_press_handler
-# from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
-# import tkinter as tk
-# import matplotlib.pyplot as plt
+from textwrap import wrap
+from matplotlib.figure import Figure
+from matplotlib.backend_bases import key_press_handler
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
+import tkinter as tk
+import matplotlib.pyplot as plt
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from axe_selenium_python import Axe
 from selenium.common import exceptions
+from collections import Counter
+
+from scipy import stats
 import time
 import pymsgbox
 import numpy as np
@@ -71,7 +74,9 @@ def remove_invalid(full_set):
         full_set.remove("https://www.cpf.gov.sg/members#")
     if ("https://www.cpf.gov.sg/Members/Schemes#" in full_set):
         full_set.remove("https://www.cpf.gov.sg/Members/Schemes#")
-
+    if ("https://icaeservices.ica.gov.sg/ipevp/web/evp/enquire-status-make-payment/status-enquiry" in full_set):
+        full_set.remove(
+            "https://icaeservices.ica.gov.sg/ipevp/web/evp/enquire-status-make-payment/status-enquiry")
     return full_set
 
 
@@ -84,7 +89,7 @@ def save_as_json(full_set, full_json):
     url_arr = []
     resu = execute_js('conftest.js')
 
-    # for i in range(len(full_set)):
+    
     with open("object.json", "r") as read_file:
         results = json.load(read_file)
         print(len(results))
@@ -121,70 +126,69 @@ def save_as_json(full_set, full_json):
             print('Number of violations: ', sum(violations_arr))
     return full_json, violations_arr, url_arr, max_url, count_arr
 
+def plot_visualisations(count_arr, violations_arr, url_arr, des_arr, max_url, json_save_path):
+    root = tk.Tk()
+    root.wm_title("title")
 
-# def plot_visualisations(count_arr, violations_arr, url_arr, max_url, json_save_path):
-#     root = tk.Tk()
-#     root.wm_title("title")
-#
-#     fig = Figure(figsize=(10, 10), dpi=100)
-#     labels = 'Passes', 'Violations', 'Incomplete'
-#     sizes = count_arr
-#     explode = (0, 0.2, 0)
-#
-#     ax1 = fig.add_subplot(223)
-#
-#     ax1.pie(sizes, explode=explode, labels=labels, autopct=make_autopct(sizes),
-#             textprops={'fontsize': 10}, shadow=True, startangle=90, radius=1.5)
-#
-#     # max_url = 'https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/Cashier/ECashierHomepage'
-#     ax3 = fig.add_subplot(211)
-#     table_vals = []
-#
-#     table_vals.append(['No. of Web Pages', len(url_arr)])
-#     table_vals.append(['No. of Violations', str(int(sum(violations_arr)))])
-#     table_vals.append(['No. of Passes', str(count_arr[0])])
-#     table_vals.append(['Most Violations', max_url])
-#     table_vals.append(['Time taken:', "%.1f" % time_taken + "s"])
-#     table_vals.append(['Full log:', json_save_path])
-#
-#     # Draw table
-#     the_table = ax3.table(cellText=table_vals,
-#                           colWidths=[0.07, 0.3],
-#                           rowLabels=None,
-#                           colLabels=None,
-#                           loc='center')
-#     the_table.auto_set_font_size(False)
-#     the_table.set_fontsize(10)
-#     the_table.scale(3, 3)
-#
-#     ax3.tick_params(axis='x', which='both', bottom=False,
-#                     top=False, labelbottom=False)
-#     ax3.tick_params(axis='y', which='both', right=False,
-#                     left=False, labelleft=False)
-#     for pos in ['right', 'top', 'bottom', 'left']:
-#         ax3.spines[pos].set_visible(False)
-#
-#     j = 1
-#     labels = []
-#     for l in url_arr:
-#         labels.append(j)
-#         j = j+1
-#     violations = violations_arr
-#
-#     ax2 = fig.add_subplot(224)
-#
-#     ax2.bar(labels, violations, align='center', alpha=0.5, tick_label=labels)
-#
-#     canvas = FigureCanvasTkAgg(fig, master=root)
-#     canvas.draw()
-#     canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
-#
-#     toolbar = NavigationToolbar2Tk(canvas, root)
-#     toolbar.update()
-#     canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
-#
-#     tk.mainloop()
+    fig = Figure(figsize=(10, 10), dpi=100)
+    labels = 'Passes', 'Violations', 'Incomplete'
+    sizes = count_arr
+    explode = (0, 0.2, 0)
 
+    ax1 = fig.add_subplot(223)
+
+    ax1.pie(sizes, explode=explode, labels=labels, autopct=make_autopct(sizes),
+            textprops={'fontsize': 10}, shadow=True, startangle=90, radius=1.5)
+
+    # max_url = 'https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/Cashier/ECashierHomepage'
+    ax3 = fig.add_subplot(211)
+    table_vals = []
+
+    table_vals.append(['No. of Web Pages', len(url_arr)])
+    table_vals.append(['No. of Violations', str(int(sum(violations_arr)))])
+    table_vals.append(['Most Common Violation', str(stats.mode(des_arr)[0])])
+    table_vals.append(['No. of Passes', str(count_arr[0])])
+    table_vals.append(['Most Violations', max_url])
+    table_vals.append(['Time taken:', "%.1f" % time_taken + "s"])
+    table_vals.append(['Full log:', json_save_path])
+
+    # Draw table
+    the_table = ax3.table(cellText=table_vals,
+                          colWidths=[0.09, 0.3],
+                          rowLabels=None,
+                          colLabels=None,
+                          loc='center')
+    the_table.auto_set_font_size(False)
+    the_table.set_fontsize(10)
+    the_table.scale(3, 3)
+
+    ax3.tick_params(axis='x', which='both', bottom=False,
+                    top=False, labelbottom=False)
+    ax3.tick_params(axis='y', which='both', right=False,
+                    left=False, labelleft=False)
+    for pos in ['right', 'top', 'bottom', 'left']:
+        ax3.spines[pos].set_visible(False)
+
+    j = 1
+    labels = []
+    for l in url_arr:
+        labels.append(j)
+        j = j+1
+    violations = violations_arr
+
+    ax2 = fig.add_subplot(224)
+
+    ax2.bar(labels, violations, align='center', alpha=0.5, tick_label=labels)
+
+    canvas = FigureCanvasTkAgg(fig, master=root)
+    canvas.draw()
+    canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+
+    toolbar = NavigationToolbar2Tk(canvas, root)
+    toolbar.update()
+    canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+
+    tk.mainloop()
 
 start_time = time.time()
 # Initialise driver
@@ -201,18 +205,21 @@ driver.maximize_window()
 # driver = webdriver.Ie(capabilities=cap)
 # -------- Internet Explorer -------- #
 
-main_url = "https://www.cpf.gov.sg/members"
-# main_url = "https://eservices.healthhub.sg/PersonalHealth"
 
-# -------- Add base URLs -------- #
-urls = {"https://www.googles.com"}
-# "https://www.cpf.gov.sg/Members/Schemes"}
-# -------- Add base URLs -------- #
+# main_url = "https://www.cpf.gov.sg/members"
+# log in on singpass
+main_url = "https://eservices.ica.gov.sg/icsbip"
+
+
+urls = {"https://icaeservices.ica.gov.sg/dashboard"}
+# "https://www.cpf.gov.sg/Members/Schemes"}s
+
+
 
 driver.get(main_url)
 
 # Thread sleep
-# time.sleep(60)
+time.sleep(50)
 
 axe = Axe(driver)
 
@@ -231,15 +238,26 @@ with open('data.json', 'w') as outfile:
 full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
     full_set, full_json)
 
+
 json_save_path = './data/cpf_test7.json'
+
+
 axe.write_results(full_json, json_save_path)
+
+des_arr = []
+for items in full_json.values():
+    # print(items['violations'])
+    for item in items['violations']:
+        des_arr.append(item['description'])
+
+
 
 driver.close()
 driver.quit()
 time_taken = (time.time() - start_time)
 
-# plot_visualisations(count_arr, violations_arr, url_arr,
-#                     max_url, json_save_path)
+plot_visualisations(count_arr, violations_arr, url_arr, des_arr,
+                    max_url, json_save_path)
 
 
 print("Test Completed")
