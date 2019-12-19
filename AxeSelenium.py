@@ -87,7 +87,7 @@ def save_as_json(full_set, full_json):
     url_arr = []
     resu = execute_js('conftest.js')
 
-    # for i in range(len(full_set)):
+    
     with open("object.json", "r") as read_file:
         results = json.load(read_file)
         print(len(results))
@@ -235,10 +235,6 @@ full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
 
 
 json_save_path = './data/cpf_test6.json'
-axe.write_results(full_json, json_save_path)
-
-=======
-json_save_path = './data/ica_test.json'
 axe.write_results(full_json, json_save_path)
 
 des_arr = []
