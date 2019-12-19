@@ -74,7 +74,7 @@ def remove_invalid(full_set):
         full_set.remove("https://www.cpf.gov.sg/Members/Schemes#")
     if ("https://icaeservices.ica.gov.sg/ipevp/web/evp/enquire-status-make-payment/status-enquiry" in full_set):
         full_set.remove(
-            "https://icaeservices.ica.gov.sg/ipevp/web/evp/enquire-status-make-payment/status-enquiry")
+            "https://icaeservices.ica.gov.sg/ipevp/web/evp/enquire-status-make-payment/status-enquirygit")
     return full_set
 
 
