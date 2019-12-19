@@ -1,6 +1,6 @@
 var AxeBuilder = require('axe-webdriverjs');
 var WebDriver = require('selenium-webdriver');
-var AxeReports = require('axe-reports');
+
 
 var driver = new WebDriver.Builder()
   .forBrowser('chrome')
@@ -24,7 +24,7 @@ fs.readFile('./data.json', 'utf8', (err, jsonString) => {
 
   }}
 
-// => "Customer address is: Infinity Loop Drive"
+
 } catch(err) {
         console.log('Error parsing JSON string:', err)
     }
@@ -33,15 +33,15 @@ console.log(arr);
 console.log(arr.length);
 
 
-for (var i=1;i<arr.length;i++){
+for (var i=0;i<arr.length;i++){
 driver
   .get(arr[i])
   .then(function() {
     AxeBuilder(driver)
     .configure(config)
     .analyze(function(results) {
-      //AxeReports.createCsvReport(results)
-      console.log(results);
+      
+      // console.log(results);
       dict.push(results);
       var addReport = Report(results);
       dict.push(addReport);
@@ -142,61 +142,61 @@ Report = function(results){
       //trial for outputting DOM element & error message
      for (k=0; k<anyCount;k+=1){
       any = anys[k];
-      if(any.message && any.impact !== 'undefined'){
-      console.log('\nDOM element: ' + element[k] + ' has error ' + any.message + '\n' + any.impact);}
-     
-     violationImpact = any.impact;
+      violationImpact = any.impact;
+      // if(any.message && any.impact !== 'undefined'){
+      // console.log('\nDOM element: ' + element[k] + ' has error ' + any.message + '\n' + any.impact);
+    }
       
       //primitive scoring system for trial
       //Refer to Google Lighthouse Accessibility Scoring System for criteria scoring
       //Scoring is not part of configuration of original axe-core rules 
-      switch(violationImpact){
-        case "moderate":
-          vScore += 5;
-          break;
-        case "serious":
-          vScore += 7.5;
-          break;
-        case "critical":
-          vScore += 10;
-          break;
-        case null:
-          vScore += 2;
-          break;
-        default:
-          break;
-      }
+      // switch(violationImpact){
+      //   case "moderate":
+      //     vScore += 5;
+      //     break;
+      //   case "serious":
+      //     vScore += 7.5;
+      //     break;
+      //   case "critical":
+      //     vScore += 10;
+      //     break;
+      //   case null:
+      //     vScore += 2;
+      //     break;
+      //   default:
+      //     break;
+      // }
     }
-  }}
+  }
 
-     if(typeof passes !== 'undefined'){
-      passesCount = passes.length;
-     }
-     console.log('\nNumber of passes: ' + passesCount);
+     // if(typeof passes !== 'undefined'){
+     //  passesCount = passes.length;
+     // }
+     // console.log('\nNumber of passes: ' + passesCount);
 
-     for(l=0;l<passesCount;l+=1){
-      passesImpact = passes[l].impact;
+     // for(l=0;l<passesCount;l+=1){
+     //  passesImpact = passes[l].impact;
 
-      switch(passesImpact){
-        case "moderate":
-          score += 5;
-          break;
-        case "serious":
-          score += 7.5;
-          break;
-        case "critical":
-          score += 10;
-          break;
-        case null:
-          score += 2;
-          break;
-        default:
-          break;
+     //  switch(passesImpact){
+     //    case "moderate":
+     //      score += 5;
+     //      break;
+     //    case "serious":
+     //      score += 7.5;
+     //      break;
+     //    case "critical":
+     //      score += 10;
+     //      break;
+     //    case null:
+     //      score += 2;
+     //      break;
+     //    default:
+     //      break;
+      // }
       }
-     }
-     console.log('\nvScore: ' + vScore + '\nScore: ' + score);
-     avgScore = score + vScore;
-     console.log('\nAccessibility Score: ' + (score/avgScore)*100);
+     // console.log('\nvScore: ' + vScore + '\nScore: ' + score);
+     // avgScore = score + vScore;
+     // console.log('\nAccessibility Score: ' + (score/avgScore)*100);
 
      //Incomplete tests to be marked as Manual checking?
      //Add impact:Manual as a configuration?
@@ -237,4 +237,4 @@ JSONReport = function(dict){
     console.log("File has been created");
 });
 }
-}
+// }

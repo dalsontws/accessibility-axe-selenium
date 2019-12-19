@@ -39,6 +39,8 @@ def get_all_links(urls):
         fullSet.add(url)
         driver.get(url)
         url_list = driver.find_elements_by_tag_name("a")
+        print('hi', url_list)
+        time.sleep(2)
         for link in url_list:
             fullLink = str(link.get_attribute("href"))
             print(fullLink)
@@ -60,6 +62,8 @@ def get_all_links(urls):
 def remove_invalid(full_set):
     # Removing possible special cases
     # fix later
+    if ("" in full_set):
+        full_set.remove("")
     if ("None" in full_set):
         full_set.remove("None")
     if ("javascript:;" in full_set):
@@ -220,7 +224,7 @@ urls = {"https://www.mycareersfuture.sg"}
 driver.get(main_url)
 
 # Thread sleep
-# time.sleep(50)
+# time.sleep(10)
 
 axe = Axe(driver)
 
@@ -228,16 +232,21 @@ full_json = dict()
 
 full_set = get_all_links(urls)
 
+print(full_set)
 full_set = remove_invalid(full_set)
 
+
+
+print(full_set)
+
 res = dict.fromkeys(full_set, 0)
+
+print(res)
 
 json_save = 'data.json'
 
 with open(json_save, 'w') as outfile:
     links = json.dump(res, outfile)
-
-print(links)
 
 
 full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
