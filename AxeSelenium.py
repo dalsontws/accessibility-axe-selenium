@@ -74,7 +74,9 @@ def remove_invalid(full_set):
         full_set.remove("https://www.cpf.gov.sg/members#")
     if ("https://www.cpf.gov.sg/Members/Schemes#" in full_set):
         full_set.remove("https://www.cpf.gov.sg/Members/Schemes#")
-
+    if ("https://icaeservices.ica.gov.sg/ipevp/web/evp/enquire-status-make-payment/status-enquiry" in full_set):
+        full_set.remove(
+            "https://icaeservices.ica.gov.sg/ipevp/web/evp/enquire-status-make-payment/status-enquiry")
     return full_set
 
 
@@ -203,18 +205,20 @@ driver.maximize_window()
 # driver = webdriver.Ie(capabilities=cap)
 # -------- Internet Explorer -------- #
 
-main_url = "https://www.cpf.gov.sg/members"
-# main_url = "https://eservices.healthhub.sg/PersonalHealth"
+
+# main_url = "https://www.cpf.gov.sg/members"
+# log in on singpass
+main_url = "https://eservices.ica.gov.sg/icsbip"
 
 # -------- Add base URLs -------- #
-urls = {"https://eservices.healthhub.sg/PersonalHealth"}
-# "https://www.cpf.gov.sg/Members/Schemes"}
-# -------- Add base URLs -------- #
+urls = {"https://icaeservices.ica.gov.sg/dashboard"}
+# "https://www.cpf.gov.sg/Members/Schemes"}s
+
 
 driver.get(main_url)
 
 # Thread sleep
-time.sleep(60)
+time.sleep(50)
 
 axe = Axe(driver)
 
