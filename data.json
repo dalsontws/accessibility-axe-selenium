@@ -1,1 +1,16 @@
-{"": 0, "https://www.singpass.gov.sg/singpass/common/contactus": 0, "https://www.singpass.gov.sg/singpass/common/faq": 0, "https://saml.singpass.gov.sg/spauth/login/eservloginpage?URL=%2FFIM%2Fsps%2FSingpassIDPFed%2Fsaml20%2Flogininitial%3FRequestBinding%3DHTTPArtifact%26ResponseBinding%3DHTTPArtifact%26PartnerId%3Dhttps%3A%2F%2Fhealth1.auth.sg%2Foam%2Ffed%26Target%3Dhttp%253A%252F%252Feservices.healthhub.sg%252Fidp%252F%253Fs%253Dmyhealth%2526target%253D%252FPersonalHealth%2526ssaf%253D0%26NameIdFormat%3Demail%26esrvcID%3DHPB-HH-SP&TAM_OP=login#sectionA": 0, "https://www.singpass.gov.sg/singpass/common/supportmain": 0, "https://www.singpass.gov.sg/singpass/retrieveaccount/retrievesingpassid": 0, "https://saml.singpass.gov.sg/spauth/login/eservloginpage?URL=%2FFIM%2Fsps%2FSingpassIDPFed%2Fsaml20%2Flogininitial%3FRequestBinding%3DHTTPArtifact%26ResponseBinding%3DHTTPArtifact%26PartnerId%3Dhttps%3A%2F%2Fhealth1.auth.sg%2Foam%2Ffed%26Target%3Dhttp%253A%252F%252Feservices.healthhub.sg%252Fidp%252F%253Fs%253Dmyhealth%2526target%253D%252FPersonalHealth%2526ssaf%253D0%26NameIdFormat%3Demail%26esrvcID%3DHPB-HH-SP&TAM_OP=login#": 0, "https://www.singpass.gov.sg/singpass/common/aboutus": 0, "https://www.singpass.gov.sg/singpass/common/ratethiswebsiteform": 0, "https://www.singpass.gov.sg/singpass/common/counter": 0, "https://www.singpass.gov.sg/singpass/register/instructions": 0, "https://www.singpass.gov.sg/singpass/resources/pdf/SPM_AndroidGuide.pdf": 0, "https://www.singpass.gov.sg/singpass/common/feedbackform": 0, "https://saml.singpass.gov.sg/spauth/login/eservloginpage?URL=%2FFIM%2Fsps%2FSingpassIDPFed%2Fsaml20%2Flogininitial%3FRequestBinding%3DHTTPArtifact%26ResponseBinding%3DHTTPArtifact%26PartnerId%3Dhttps%3A%2F%2Fhealth1.auth.sg%2Foam%2Ffed%26Target%3Dhttp%253A%252F%252Feservices.healthhub.sg%252Fidp%252F%253Fs%253Dmyhealth%2526target%253D%252FPersonalHealth%2526ssaf%253D0%26NameIdFormat%3Demail%26esrvcID%3DHPB-HH-SP&TAM_OP=login#sectionB": 0, "https://www.singpass.gov.sg/singpass/common/termsofuse": 0, "https://singpassmobile.sg/": 0, "https://www.singpass.gov.sg/singpass/resources/pdf/SPM_iOSGuide.pdf": 0, "https://www.singpass.gov.sg/singpass/common/privacystatement": 0, "https://www.singpass.gov.sg/singpass/onlineresetpassword/userdetail": 0, "http://www.gov.sg/": 0, "https://www.singpass.gov.sg/singpass/common/news": 0, "https://eservices.healthhub.sg/PersonalHealth": 0, "https://www.tech.gov.sg/report_vulnerability": 0, "https://www.singpass.gov.sg/singpass/common/site": 0}
+{
+    "http://www.wsg.gov.sg/career-services.html": 0,
+    "https://employer.mycareersfuture.sg/": 0,
+    "http://www.wsg.gov.sg/adapt-and-grow.html": 0,
+    "https://content.mycareersfuture.sg/dressing-job-interview-success/": 0,
+    "https://www.tech.gov.sg/report_vulnerability": 0,
+    "https://www.mycareersfuture.sg/terms-of-use": 0,
+    "https://www.mycareersfuture.sg": 0,
+    "https://www.mycareersfuture.sg/#": 0,
+    "https://www.mycareersfuture.sg/": 0,
+    "https://www.mycareersfuture.sg/survey": 0,
+    "https://content.mycareersfuture.sg/": 0,
+    "https://portal.ssg-wsg.gov.sg/": 0,
+    "https://www.mycareersfuture.sg/privacy-policy": 0,
+    "https://www.mycareersfuture.sg/docs/mycareersfuture_sg_user_faqs.pdf": 0
+}
