@@ -37,10 +37,9 @@ def get_all_links(urls):
     for url in urls:
         fullSet.add(url)
         driver.get(url)
-        # url_list = driver.find_elements_by_tag_name("a")
-        url_list = driver.find_elements_by_xpath("//a[@href]")
-        # driver.find
-        print(url_list)
+
+        url_list = driver.find_elements_by_css_selector("a")
+        print('hi', url_list)
         for link in url_list:
             fullLink = str(link.get_attribute("href"))
             print(fullLink)
@@ -85,7 +84,7 @@ def remove_invalid(full_set):
     return full_set
 
 
-def save_as_json(full_set, full_json):
+def save_as_json(full_json):
     count_passes = 0
     count_incomplete = 0
 
@@ -111,6 +110,7 @@ def save_as_json(full_set, full_json):
 
             if (len(results[i]['violations']) > count_max):
                 count_max = len(results[i]['violations'])
+
                 max_url = url
 
             count_passes += len(results[i]['passes'])
@@ -125,8 +125,9 @@ def save_as_json(full_set, full_json):
             full_json[url] = results[i]
             print("done")
 
+            print(sum(violations_arr))
             count_arr = [count_incomplete, sum(violations_arr), count_passes]
-            print('Number of violations: ', int(sum(violations_arr)))
+            print('Number of violations: ', sum(violations_arr))
     return full_json, violations_arr, url_arr, max_url, count_arr
 
 
@@ -243,15 +244,15 @@ print(res)
 json_save = 'data.json'
 
 with open(json_save, 'w') as outfile:
-    json.dump(res, outfile)
+
+    links = json.dump(res, outfile)
 
 
 full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
-    full_set, full_json)
+    full_json)
 
 
 json_save_path = './data/careers_future.json'
-
 
 axe.write_results(full_json, json_save_path)
 

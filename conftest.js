@@ -27,18 +27,19 @@ fs.readFile("./data.json", "utf8", (err, jsonString) => {
   console.log(arr.length);
 
   for (var i = 0; i < arr.length; i++) {
+
     driver.get(arr[i]).then(function() {
+
       AxeBuilder(driver)
         .configure(config)
-        .analyze(function(results) {
-          // console.log(results);
+        .analyze()
+        .then(function(results) {
 
           dict.push(results);
-          var addReport = Report(results);
-          dict.push(addReport);
+          Report(results);
 
-          JSONReport(dict);
         });
+        JSONReport(dict);
     });
   }
 
@@ -94,7 +95,6 @@ const config = {
   ]
 };
 
-//Repeated processing functionality implemented in Crawl.py
 Report = function(results) {
   var violations = results.violations;
   var passes = results.passes;
@@ -106,12 +106,7 @@ Report = function(results) {
     nodeCount,
     element,
     any,
-    anys,
-    anyCount,
-    passesCount,
-    avgScore;
-  var score = 0;
-  var vScore = 0;
+    anys
 
   if (typeof violations !== "undefined") {
     violationCount = violations.length;
@@ -161,4 +156,4 @@ JSONReport = function(dict) {
   });
 };
 
-// }
+
