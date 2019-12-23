@@ -286,6 +286,5 @@ time_taken = (time.time() - start_time)
 
 plot_visualisations(count_arr, violations_arr, url_arr, des_arr,
                     max_url, json_save_path)
-
-
+                    
 print("Test Completed")
