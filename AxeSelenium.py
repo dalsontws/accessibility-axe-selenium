@@ -19,6 +19,8 @@ import json
 from Naked.toolshed.shell import execute_js
 
 
+
+
 def get_user_input():
     input_url_list = []
     print()
@@ -282,6 +284,8 @@ urls = {"https://www.cpf.gov.sg/members"}
         # "https://www.mycareersfuture.sg/search/"}
 
 axe = Axe(driver)
+
+
 
 # Thread sleep
 # time.sleep(50)
