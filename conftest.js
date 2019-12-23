@@ -27,10 +27,13 @@ fs.readFile("./data.json", "utf8", (err, jsonString) => {
   console.log(arr.length);
 
   for (var i = 0; i < arr.length; i++) {
+
     driver.get(arr[i]).then(function() {
+
       AxeBuilder(driver)
         .configure(config)
-        .analyze(function(results) {
+        .analyze()
+        .then(function(results) {
 
           dict.push(results);
           Report(results);

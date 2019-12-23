@@ -38,7 +38,7 @@ def get_all_links(urls):
     for url in urls:
         fullSet.add(url)
         driver.get(url)
-        url_list = driver.find_elements_by_tag_name("a")
+        url_list = driver.find_elements_by_css_selector("a")
         print('hi', url_list)
 
         for link in url_list:
@@ -85,7 +85,7 @@ def remove_invalid(full_set):
     return full_set
 
 
-def save_as_json(full_set, full_json):
+def save_as_json(full_json):
     count_passes = 0
     count_incomplete = 0
 
@@ -103,16 +103,15 @@ def save_as_json(full_set, full_json):
                 continue
             url = results[i]['url']
 
-
         # TODO: Can use dict for violations and url array, using array now for simplicity/pyplot
             violations_arr = np.append(
                 violations_arr, len(results[i]['violations']))
 
             url_arr = np.append(url_arr, url)
 
-
-            if (len(results[i]['violations']) > count_max):
+            if len(results[i]['violations']) > count_max:
                 count_max = len(results[i]['violations'])
+
                 max_url = url
 
             count_passes += len(results[i]['passes'])
@@ -196,6 +195,7 @@ def save_as_json(full_set, full_json):
 #
 #     tk.mainloop()
 
+
 start_time = time.time()
 # Initialise driver
 
@@ -217,9 +217,8 @@ driver.maximize_window()
 main_url = "https://www.google.com"
 
 
-urls = {"https://www.mycareersfuture.sg"}
+urls = {"https://www.cpf.gov.sg/Members"}
 # "https://www.cpf.gov.sg/Members/Schemes"}s
-
 
 
 driver.get(main_url)
@@ -237,7 +236,6 @@ print(full_set)
 full_set = remove_invalid(full_set)
 
 
-
 print(full_set)
 
 res = dict.fromkeys(full_set, 0)
@@ -250,8 +248,7 @@ with open(json_save, 'w') as outfile:
     links = json.dump(res, outfile)
 
 
-full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
-    full_set, full_json)
+full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(full_json)
 
 
 json_save_path = './data/careers_future.json'
@@ -264,7 +261,6 @@ for items in full_json.values():
     # print(items['violations'])
     for item in items['violations']:
         des_arr.append(item['description'])
-
 
 
 driver.close()
