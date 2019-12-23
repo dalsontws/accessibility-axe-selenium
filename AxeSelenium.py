@@ -19,6 +19,7 @@ import json
 from Naked.toolshed.shell import execute_js
 
 
+
 def make_autopct(values):
     def my_autopct(pct):
         total = sum(values)
@@ -40,6 +41,7 @@ def get_all_links(urls):
 
         url_list = driver.find_elements_by_css_selector("a")
         print('hi', url_list)
+
         for link in url_list:
             fullLink = str(link.get_attribute("href"))
             print(fullLink)
@@ -108,7 +110,9 @@ def save_as_json(full_json):
 
             url_arr = np.append(url_arr, url)
 
-            if (len(results[i]['violations']) > count_max):
+
+            if len(results[i]['violations']) > count_max:
+
                 count_max = len(results[i]['violations'])
 
                 max_url = url
@@ -130,7 +134,6 @@ def save_as_json(full_json):
             print('Number of violations: ', sum(violations_arr))
     return full_json, violations_arr, url_arr, max_url, count_arr
 
-
 def plot_visualisations(count_arr, violations_arr, url_arr, des_arr, max_url, json_save_path):
     root = tk.Tk()
     root.wm_title("title")
@@ -144,6 +147,7 @@ def plot_visualisations(count_arr, violations_arr, url_arr, des_arr, max_url, js
 
     ax1.pie(sizes, explode=explode, labels=labels, autopct=make_autopct(sizes),
             textprops={'fontsize': 10}, shadow=True, startangle=90, radius=1.5)
+
 
     ax3 = fig.add_subplot(211)
     table_vals = []
@@ -213,11 +217,13 @@ driver.maximize_window()
 
 # main_url = "https://www.cpf.gov.sg/members"
 # log in on singpass
+
 main_url = "https://www.google.com"
 
 
 urls = {"https://www.mycareersfuture.sg",
         "https://www.mycareersfuture.sg/search"}
+
 
 
 driver.get(main_url)
