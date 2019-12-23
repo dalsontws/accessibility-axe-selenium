@@ -33,11 +33,13 @@ def make_autopct(values):
 def get_all_links(urls):
     fullSet = set()
     invalid_links = ['twitter', 'instagram', 'facebook',
-                     'youtube', 'areyouready', 'void(0)']
+                     'youtube', 'areyouready']
     for url in urls:
         fullSet.add(url)
         driver.get(url)
         url_list = driver.find_elements_by_tag_name("a")
+        print('hi', url_list)
+        time.sleep(2)
         for link in url_list:
             fullLink = str(link.get_attribute("href"))
             print(fullLink)
@@ -78,72 +80,40 @@ def remove_invalid(full_set):
         full_set.remove("https://www.cpf.gov.sg/Members/Schemes#")
     if ("https://icaeservices.ica.gov.sg/ipevp/web/evp/enquire-status-make-payment/status-enquiry" in full_set):
         full_set.remove(
-            "https://icaeservices.ica.gov.sg/ipevp/web/evp/enquire-status-make-payment/status-enquirygit")
-    if ("https://www.onemotoring.com.sg/content/onemotoring/home/digitalservices/buy-e-day-licence.html" in full_set):
-        full_set.remove(
-            "https://www.onemotoring.com.sg/content/onemotoring/home/digitalservices/buy-e-day-licence.html")
+            "https://icaeservices.ica.gov.sg/ipevp/web/evp/enquire-status-make-payment/status-enquiry")
     return full_set
 
 
 def save_as_json(full_set, full_json):
-    count_passes=0
-    count_incomplete=0
+    count_passes = 0
+    count_incomplete = 0
 
-    count_max=0
-    violations_arr=[]
-    url_arr=[]
+    count_max = 0
+    violations_arr = []
+    url_arr = []
+    resu = execute_js('conftest.js')
 
-    # -------- Python Selenium -------- #
-    for link in full_set:
-        print(link)
-        driver.get(link)
+    json_read = 'object.json'
+    with open(json_read, "r") as read_file:
+        results = json.load(read_file)
+        print(len(results))
+        for i in range(len(results)):
+            if results[i] is None:
+                continue
+            url = results[i]['url']
 
-        axe=Axe(driver)
+        # TODO: Can use dict for violations and url array, using array now for simplicity/pyplot
+            violations_arr = np.append(
+                violations_arr, len(results[i]['violations']))
 
-        # try options
-        # option = {'rules': {'color-contrast': {'enabled': 'false'},
-        #                     'valid-lang': {'enabled': 'false'}}}
-        # Inject axe-core javascript into page.
-        axe.inject()
-        # Run axe accessibility checks.
-        try:
-            results=axe.run()
-        except:
-            break
-            # driver.get(link)
-            # axe=Axe(driver)
-            # results=axe.run()
+            url_arr = np.append(url_arr, url)
 
-        if (results is None):
-            break
+            if (len(results[i]['violations']) > count_max):
+                count_max = len(results[i]['violations'])
+                max_url = url
 
-        url=results['url']
-    # -------- Python Selenium -------- #
-
-    # -------- JS Configuration -------- #
-    # resu = execute_js('conftest.js')
-    # with open("object.json", "r") as read_file:
-    #     results = json.load(read_file)
-    #     print(len(results))
-    #     for i in range(len(results)):
-    #         if results[i] is None:
-    #             continue
-    #         url = results[i]['url']
-
-    # -------- JS Configuration -------- #
-
-     # TODO: Can use dict for violations and url array, using array now for simplicity/pyplot
-        violations_arr=np.append(
-            violations_arr, len(results['violations']))
-
-        url_arr=np.append(url_arr, url)
-
-        if (len(results['violations']) > count_max):
-            count_max=len(results['violations'])
-            max_url=url
-
-        count_passes += len(results['passes'])
-        count_incomplete += len(results['incomplete'])
+            count_passes += len(results[i]['passes'])
+            count_incomplete += len(results[i]['incomplete'])
 
         # print(type(results))
         # print(results.get('violations').count("critical"))
@@ -151,32 +121,31 @@ def save_as_json(full_set, full_json):
         # print('violations: ', count_violations)
         # print('critical violations: ', count_critical)
 
-        full_json[url]=results
-        print("done")
+            full_json[url] = results[i]
+            print("done")
 
-        count_arr=[count_incomplete, sum(violations_arr), count_passes]
-
-    print('Number of violations: ', sum(violations_arr))
+            print(sum(violations_arr))
+            count_arr = [count_incomplete, sum(violations_arr), count_passes]
+            print('Number of violations: ', sum(violations_arr))
     return full_json, violations_arr, url_arr, max_url, count_arr
 
 
 def plot_visualisations(count_arr, violations_arr, url_arr, des_arr, max_url, json_save_path):
-    root=tk.Tk()
+    root = tk.Tk()
     root.wm_title("title")
 
-    fig=Figure(figsize = (10, 10), dpi = 100)
-    labels='Passes', 'Violations', 'Incomplete'
-    sizes=count_arr
-    explode=(0, 0.2, 0)
+    fig = Figure(figsize=(10, 10), dpi=100)
+    labels = 'Passes', 'Violations', 'Incomplete'
+    sizes = count_arr
+    explode = (0, 0.2, 0)
 
-    ax1=fig.add_subplot(223)
+    ax1 = fig.add_subplot(223)
 
-    ax1.pie(sizes, explode = explode, labels = labels, autopct = make_autopct(sizes),
-            textprops = {'fontsize': 10}, shadow = True, startangle = 90, radius = 1.5)
+    ax1.pie(sizes, explode=explode, labels=labels, autopct=make_autopct(sizes),
+            textprops={'fontsize': 10}, shadow=True, startangle=90, radius=1.5)
 
-    # max_url = 'https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/Cashier/ECashierHomepage'
-    ax3=fig.add_subplot(211)
-    table_vals=[]
+    ax3 = fig.add_subplot(211)
+    table_vals = []
 
     table_vals.append(['No. of Web Pages', len(url_arr)])
     table_vals.append(['No. of Violations', str(int(sum(violations_arr)))])
@@ -187,16 +156,16 @@ def plot_visualisations(count_arr, violations_arr, url_arr, des_arr, max_url, js
     table_vals.append(['Full log:', json_save_path])
 
     # Draw table
-    the_table=ax3.table(cellText = table_vals,
-                          colWidths = [0.09, 0.3],
-                          rowLabels = None,
-                          colLabels = None,
-                          loc = 'center')
+    the_table = ax3.table(cellText=table_vals,
+                          colWidths=[0.09, 0.3],
+                          rowLabels=None,
+                          colLabels=None,
+                          loc='center')
     the_table.auto_set_font_size(False)
     the_table.set_fontsize(10)
     the_table.scale(3, 3)
 
-    ax3.tick_params(axis = 'x', which = 'both', bottom = False,
+    ax3.tick_params(axis='x', which='both', bottom=False,
                     top=False, labelbottom=False)
     ax3.tick_params(axis='y', which='both', right=False,
                     left=False, labelleft=False)
@@ -241,36 +210,49 @@ driver.maximize_window()
 # -------- Internet Explorer -------- #
 
 
-# main_url = "https://www.healthhub.sg/a-z"
+# main_url = "https://www.cpf.gov.sg/members"
+# log in on singpass
+main_url = "https://www.google.com"
 
-# --------- SP Log In -------- #
-main_url = "https://www.mycareersfuture.sg/"
-# main_url = "https://saml.singpass.gov.sg/"
+
+urls = {"https://www.mycareersfuture.sg"}
+# "https://www.cpf.gov.sg/Members/Schemes"}s
+
+
 driver.get(main_url)
 
-# --------- SP Log In -------- #
-
-# -------- Add base URLs -------- #
-urls = {"https://www.mycareersfuture.sg/"}
-        # "https://eservices.healthhub.sg/PersonalHealth"}
-
+# Thread sleep
+# time.sleep(10)
 
 axe = Axe(driver)
-
-# Thread sleep
-# time.sleep(50)
 
 full_json = dict()
 
 full_set = get_all_links(urls)
 
+print(full_set)
 full_set = remove_invalid(full_set)
+
+
+print(full_set)
+
+res = dict.fromkeys(full_set, 0)
+
+print(res)
+
+json_save = 'data.json'
+
+with open(json_save, 'w') as outfile:
+    links = json.dump(res, outfile)
+
 
 full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
     full_set, full_json)
 
 
-json_save_path = './data/mha_test.json'
+json_save_path = './data/cpf_test7.json'
+
+
 axe.write_results(full_json, json_save_path)
 
 des_arr = []
@@ -286,5 +268,6 @@ time_taken = (time.time() - start_time)
 
 plot_visualisations(count_arr, violations_arr, url_arr, des_arr,
                     max_url, json_save_path)
-                    
+
+
 print("Test Completed")
