@@ -251,8 +251,8 @@ driver.get(main_url)
 # --------- SP Log In -------- #
 
 # -------- Add base URLs -------- #
-urls = {"https://www.mycareersfuture.sg/"}
-        # "https://eservices.healthhub.sg/PersonalHealth"}
+urls = {"https://www.mycareersfuture.sg/",
+        "https://www.mycareersfuture.sg/search/"}
 
 
 axe = Axe(driver)
@@ -270,7 +270,7 @@ full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
     full_set, full_json)
 
 
-json_save_path = './data/mha_test.json'
+json_save_path = './data/careers_future_test.json'
 axe.write_results(full_json, json_save_path)
 
 des_arr = []
