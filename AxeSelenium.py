@@ -37,9 +37,10 @@ def get_all_links(urls):
     for url in urls:
         fullSet.add(url)
         driver.get(url)
-        url_list = driver.find_elements_by_tag_name("a")
-        print('hi', url_list)
-        time.sleep(2)
+        # url_list = driver.find_elements_by_tag_name("a")
+        url_list = driver.find_elements_by_xpath("//a[@href]")
+        # driver.find
+        print(url_list)
         for link in url_list:
             fullLink = str(link.get_attribute("href"))
             print(fullLink)
@@ -215,8 +216,8 @@ driver.maximize_window()
 main_url = "https://www.google.com"
 
 
-urls = {"https://www.mycareersfuture.sg"}
-# "https://www.cpf.gov.sg/Members/Schemes"}s
+urls = {"https://www.mycareersfuture.sg",
+        "https://www.mycareersfuture.sg/search"}
 
 
 driver.get(main_url)
@@ -243,7 +244,7 @@ print(res)
 json_save = 'data.json'
 
 with open(json_save, 'w') as outfile:
-    links = json.dump(res, outfile)
+    json.dump(res, outfile)
 
 
 full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
