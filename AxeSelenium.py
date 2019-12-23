@@ -34,10 +34,11 @@ def make_autopct(values):
 def get_all_links(urls):
     fullSet = set()
     invalid_links = ['twitter', 'instagram', 'facebook',
-                     'youtube', 'areyouready', 'void(0)']
+                     'youtube', 'areyouready']
     for url in urls:
         fullSet.add(url)
         driver.get(url)
+
         url_list = driver.find_elements_by_css_selector("a")
         print('hi', url_list)
 
@@ -109,7 +110,9 @@ def save_as_json(full_json):
 
             url_arr = np.append(url_arr, url)
 
+
             if len(results[i]['violations']) > count_max:
+
                 count_max = len(results[i]['violations'])
 
                 max_url = url
@@ -145,7 +148,7 @@ def plot_visualisations(count_arr, violations_arr, url_arr, des_arr, max_url, js
     ax1.pie(sizes, explode=explode, labels=labels, autopct=make_autopct(sizes),
             textprops={'fontsize': 10}, shadow=True, startangle=90, radius=1.5)
 
-    # max_url = 'https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/Cashier/ECashierHomepage'
+
     ax3 = fig.add_subplot(211)
     table_vals = []
 
@@ -214,11 +217,13 @@ driver.maximize_window()
 
 # main_url = "https://www.cpf.gov.sg/members"
 # log in on singpass
-main_url = "https://gms-internet-dev.gds-gov.tech/"
+
+main_url = "https://www.google.com"
 
 
-urls = {"https://gms-internet-dev.gds-gov.tech/"}
-# "https://www.cpf.gov.sg/Members/Schemes"}
+urls = {"https://www.mycareersfuture.sg",
+        "https://www.mycareersfuture.sg/search"}
+
 
 
 driver.get(main_url)
@@ -245,14 +250,15 @@ print(res)
 json_save = 'data.json'
 
 with open(json_save, 'w') as outfile:
+
     links = json.dump(res, outfile)
 
 
-full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(full_json)
+full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
+    full_json)
 
 
 json_save_path = './data/careers_future.json'
-
 
 axe.write_results(full_json, json_save_path)
 
