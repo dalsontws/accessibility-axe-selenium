@@ -34,7 +34,7 @@ def make_autopct(values):
 def get_all_links(urls):
     fullSet = set()
     invalid_links = ['twitter', 'instagram', 'facebook',
-                     'youtube', 'areyouready']
+                     'youtube', 'areyouready', 'void[0]']
     for url in urls:
         fullSet.add(url)
         driver.get(url)
