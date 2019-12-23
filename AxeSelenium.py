@@ -19,6 +19,24 @@ import json
 from Naked.toolshed.shell import execute_js
 
 
+def get_user_input():
+    input_url_list = []
+    print()
+    print("# -------------------- Start URL Input -------------------- #")
+    while True:
+        input_url = input('Enter URL:')
+        if (input_url == ''):
+            break
+        if ('http' not in input_url):
+            print('Please enter a valid URL')
+            continue
+        input_url_list.append(input_url)
+    # print(input_url_list)
+    print("# --------------------- End URL Input --------------------- #")
+    print()
+    return(input_url_list)
+    
+    
 def make_autopct(values):
     def my_autopct(pct):
         total = sum(values)
@@ -186,6 +204,15 @@ def plot_visualisations(count_arr, violations_arr, url_arr, des_arr, max_url, js
     table_vals.append(['Time taken:', "%.1f" % time_taken + "s"])
     table_vals.append(['Full log:', json_save_path])
 
+
+    print(['No. of Web Pages', len(url_arr)])
+    print(['No. of Violations', str(int(sum(violations_arr)))])
+    print(['Most Common Violation', str(stats.mode(des_arr)[0])])
+    print(['No. of Passes', str(count_arr[0])])
+    print(['Most Violations', max_url])
+    print(['Time taken:', "%.1f" % time_taken + "s"])
+    print(['Full log:', json_save_path])
+
     # Draw table
     the_table=ax3.table(cellText = table_vals,
                           colWidths = [0.09, 0.3],
@@ -228,6 +255,7 @@ def plot_visualisations(count_arr, violations_arr, url_arr, des_arr, max_url, js
 start_time = time.time()
 # Initialise driver
 
+# input_url_list = get_user_input()
 
 # -------- For Chrome -------- #
 driver = webdriver.Chrome()
@@ -244,16 +272,14 @@ driver.maximize_window()
 # main_url = "https://www.healthhub.sg/a-z"
 
 # --------- SP Log In -------- #
-main_url = "https://www.mycareersfuture.sg/"
+main_url = "https://www.cpf.gov.sg/members"
 # main_url = "https://saml.singpass.gov.sg/"
 driver.get(main_url)
-
 # --------- SP Log In -------- #
 
 # -------- Add base URLs -------- #
-urls = {"https://www.mycareersfuture.sg/",
-        "https://www.mycareersfuture.sg/search/"}
-
+urls = {"https://www.cpf.gov.sg/members"}
+        # "https://www.mycareersfuture.sg/search/"}
 
 axe = Axe(driver)
 
@@ -262,6 +288,7 @@ axe = Axe(driver)
 
 full_json = dict()
 
+# full_set = get_all_links(input_url_list)
 full_set = get_all_links(urls)
 
 full_set = remove_invalid(full_set)
