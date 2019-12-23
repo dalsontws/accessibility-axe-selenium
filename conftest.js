@@ -42,7 +42,7 @@ fs.readFile("./data.json", "utf8", (err, jsonString) => {
     });
   }
 
-  driver.close();
+  //driver.close();
 });
 
 //trial configuration of rules and checks

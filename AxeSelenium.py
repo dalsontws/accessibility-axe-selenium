@@ -40,7 +40,7 @@ def get_all_links(urls):
         driver.get(url)
         url_list = driver.find_elements_by_tag_name("a")
         print('hi', url_list)
-        time.sleep(2)
+
         for link in url_list:
             fullLink = str(link.get_attribute("href"))
             print(fullLink)
@@ -109,6 +109,7 @@ def save_as_json(full_set, full_json):
                 violations_arr, len(results[i]['violations']))
 
             url_arr = np.append(url_arr, url)
+
 
             if (len(results[i]['violations']) > count_max):
                 count_max = len(results[i]['violations'])
@@ -253,7 +254,7 @@ full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
     full_set, full_json)
 
 
-json_save_path = './data/cpf_test7.json'
+json_save_path = './data/careers_future.json'
 
 
 axe.write_results(full_json, json_save_path)
