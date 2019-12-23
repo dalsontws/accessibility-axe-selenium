@@ -125,9 +125,8 @@ def save_as_json(full_set, full_json):
             full_json[url] = results[i]
             print("done")
 
-            print(sum(violations_arr))
             count_arr = [count_incomplete, sum(violations_arr), count_passes]
-            print('Number of violations: ', sum(violations_arr))
+            print('Number of violations: ', int(sum(violations_arr)))
     return full_json, violations_arr, url_arr, max_url, count_arr
 
 
@@ -251,7 +250,7 @@ full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
     full_set, full_json)
 
 
-json_save_path = './data/cpf_test7.json'
+json_save_path = './data/careers_future.json'
 
 
 axe.write_results(full_json, json_save_path)
