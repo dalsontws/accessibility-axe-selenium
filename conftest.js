@@ -28,18 +28,19 @@ fs.readFile("./data.json", "utf8", (err, jsonString) => {
 
   for (var i = 0; i < arr.length; i++) {
 
-    driver.get(arr[i]).then(function() {
+    let page = driver.get(arr[i]).then(function() {
 
       AxeBuilder(driver)
         .configure(config)
-        .analyze()
-        .then(function(results) {
-
+        .analyze(function(err, results) {
+          if (err){
+          console.log("Error!")
+          }
           dict.push(results);
           Report(results);
-
+          JSONReport(dict);
         });
-        JSONReport(dict);
+}
     });
   }
 
