@@ -1,7 +1,47 @@
 ---
 - hosts: all
   tasks:
-    - name: Create testing directory
+    - name: Create accessbility testing directory
       file:
-        path: "~/testing"
+        path: "~/accessibility-testing"
         state: "directory"
+
+      # python_version is a given variable
+    - name: Check if python3 is there
+      command: python3 --version
+      register: python_version_result
+      ignore_errors: true
+
+    #  - name: Python version
+    #    debug:
+    #    msg: "{{ python_version_result}}"
+
+    - name: Install/Update python
+      apt: name="python{{ '3.7.3' }}-dev" staansbite=present
+      when: python_version_result.stdout | replace('Python ', '') is version('3.7', '<')
+      ignore_errors: true
+
+    - name: Install virtualenv
+      pip:
+        name: virtualenv
+        executable: pip3
+
+      # sudo: yes
+    - name: Check if virtualenv ~/accessibility-testing folder exists (1/2)
+      file:
+        path: "~/accessibility-testing"
+        state: "touch"
+      ignore_errors: yes
+
+    - name: Check if virtualenv ~/accessibility-testing folder exists (2/2)
+      file:
+        path: "~/accessibility-testing"
+        state: "absent"
+
+    - name: Create Virtual Env
+      shell: bash -lc "virtualenv ~/accessibility-testing/venv && source ~/accessibility-testing/venv/bin/activate"
+      #  - name: Install requirements for Python pip
+  #    pip:
+  #       requirements: "https://raw.githubusercontent.com/younglim/hats-ci/master/install-list/pip-install-list.txt"
+  #       virtualenv: ~/hats
+
