@@ -1,19 +1,13 @@
 from matplotlib.figure import Figure
-from matplotlib.backend_bases import key_press_handler
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 import tkinter as tk
-import matplotlib.pyplot as plt
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from axe_selenium_python import Axe
-from selenium.common import exceptions
 
 from scipy import stats
 import time
 import numpy as np
-import pytest
-import json
-from Naked.toolshed.shell import execute_js
+# from Naked.toolshed.shell import execute_js
 
 
 
@@ -47,11 +41,11 @@ def make_autopct(values):
     return my_autopct
 
 
-def get_all_links(urls):
+def get_all_links(list_of_urls):
     fullSet = set()
     invalid_links = ['twitter', 'instagram', 'facebook',
                      'youtube', 'areyouready', 'void(0)']
-    for url in urls:
+    for url in list_of_urls:
         fullSet.add(url)
         driver.get(url)
         url_list = driver.find_elements_by_tag_name("a")
@@ -73,51 +67,50 @@ def get_all_links(urls):
     return fullSet
 
 
-def remove_invalid(full_set):
+def remove_invalid(whole_set):
     # Removing possible special cases
     # fix later
-    if ("" in full_set):
-        full_set.remove("")
-    if ("None" in full_set):
-        full_set.remove("None")
-    if ("javascript:;" in full_set):
-        full_set.remove("javascript:;")
-    if ("https://www.gov.sg/" in full_set):
-        full_set.remove("https://www.gov.sg/")
-    if ("https://null/common/Lists/CPFPages/DispForm.aspx?ID=239" in full_set):
-        full_set.remove(
+    if ("" in whole_set):
+        whole_set.remove("")
+    if ("None" in whole_set):
+        whole_set.remove("None")
+    if ("javascript:;" in whole_set):
+        whole_set.remove("javascript:;")
+    if ("https://www.gov.sg/" in whole_set):
+        whole_set.remove("https://www.gov.sg/")
+    if ("https://null/common/Lists/CPFPages/DispForm.aspx?ID=239" in whole_set):
+        whole_set.remove(
             "https://null/common/Lists/CPFPages/DispForm.aspx?ID=239")
-    if ("https://www.cpf.gov.sg/members" in full_set):
-        full_set.remove("https://www.cpf.gov.sg/members")
-    if ("https://www.cpf.gov.sg/members#" in full_set):
-        full_set.remove("https://www.cpf.gov.sg/members#")
-    if ("https://www.cpf.gov.sg/Members/Schemes#" in full_set):
-        full_set.remove("https://www.cpf.gov.sg/Members/Schemes#")
-    if ("https://icaeservices.ica.gov.sg/ipevp/web/evp/enquire-status-make-payment/status-enquiry" in full_set):
-        full_set.remove(
+    if ("https://www.cpf.gov.sg/members" in whole_set):
+        whole_set.remove("https://www.cpf.gov.sg/members")
+    if ("https://www.cpf.gov.sg/members#" in whole_set):
+        whole_set.remove("https://www.cpf.gov.sg/members#")
+    if ("https://www.cpf.gov.sg/Members/Schemes#" in whole_set):
+        whole_set.remove("https://www.cpf.gov.sg/Members/Schemes#")
+    if ("https://icaeservices.ica.gov.sg/ipevp/web/evp/enquire-status-make-payment/status-enquiry" in whole_set):
+        whole_set.remove(
             "https://icaeservices.ica.gov.sg/ipevp/web/evp/enquire-status-make-payment/status-enquirygit")
-    if ("https://www.onemotoring.com.sg/content/onemotoring/home/digitalservices/buy-e-day-licence.html" in full_set):
-        full_set.remove(
+    if ("https://www.onemotoring.com.sg/content/onemotoring/home/digitalservices/buy-e-day-licence.html" in whole_set):
+        whole_set.remove(
             "https://www.onemotoring.com.sg/content/onemotoring/home/digitalservices/buy-e-day-licence.html")
-    if ("https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/ContributionCalculator/Index?isFirstAndSecondYear=0&isMember=1" in full_set):
-        full_set.remove("https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/ContributionCalculator/Index?isFirstAndSecondYear=0&isMember=1")
-    return full_set
+    if ("https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/ContributionCalculator/Index?isFirstAndSecondYear=0&isMember=1" in whole_set):
+        whole_set.remove("https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/ContributionCalculator/Index?isFirstAndSecondYear=0&isMember=1")
+    return whole_set
 
 
-def save_as_json(full_set, full_json):
-    count_passes=0
-    count_incomplete=0
-
-    count_max=0
-    violations_arr=[]
-    url_arr=[]
+def save_as_json(final_set, final_json):
+    count_passes = 0
+    count_incomplete = 0
+    count_max = 0
+    violations_array = []
+    url_array = []
 
     # -------- Python Selenium -------- #
-    for link in full_set:
+    for link in final_set:
         print(link)
         driver.get(link)
 
-        axe=Axe(driver)
+        axe = Axe(driver)
 
         # try options
         # full_options = { 'xpath : True }
@@ -126,7 +119,7 @@ def save_as_json(full_set, full_json):
         axe.inject()
         # Run axe accessibility checks.
         try:
-            results=axe.run()
+            results = axe.run()
         except:
             break
             # driver.get(link)
@@ -136,30 +129,18 @@ def save_as_json(full_set, full_json):
         if (results is None):
             break
 
-        url=results['url']
+        url = results['url']
     # -------- Python Selenium -------- #
 
-    # -------- JS Configuration -------- #
-    # resu = execute_js('conftest.js')
-    # with open("object.json", "r") as read_file:
-    #     results = json.load(read_file)
-    #     print(len(results))
-    #     for i in range(len(results)):
-    #         if results[i] is None:
-    #             continue
-    #         url = results[i]['url']
-
-    # -------- JS Configuration -------- #
-
      # TODO: Can use dict for violations and url array, using array now for simplicity/pyplot
-        violations_arr=np.append(
-            violations_arr, len(results['violations']))
+        violations_array = np.append(
+            violations_array, len(results['violations']))
 
-        url_arr=np.append(url_arr, url)
+        url_array = np.append(url_arr, url)
 
         if (len(results['violations']) > count_max):
-            count_max=len(results['violations'])
-            max_url=url
+            count_max = len(results['violations'])
+            max_url_name = url
 
         count_passes += len(results['passes'])
         count_incomplete += len(results['incomplete'])
@@ -171,56 +152,55 @@ def save_as_json(full_set, full_json):
         # print('violations: ', count_violations)
         # print('critical violations: ', count_critical)
 
-        full_json[url]=results
+        final_json[url] = results
         print("done")
 
-        count_arr=[count_incomplete, sum(violations_arr), count_passes]
+        count_array = [count_incomplete, sum(violations_arr), count_passes]
 
     print('Number of violations: ', sum(violations_arr))
-    return full_json, violations_arr, url_arr, max_url, count_arr
+    return final_json, violations_array, url_array, max_url_name, count_array
 
 
-def plot_visualisations(count_arr, violations_arr, url_arr, des_arr, max_url, json_save_path):
-    root=tk.Tk()
+def plot_visualisations(count_array, violations_array, url_array, des_array, max_url_name, save_path):
+    root = tk.Tk()
     root.wm_title("title")
 
-    fig=Figure(figsize = (10, 10), dpi = 100)
-    labels='Passes', 'Violations', 'Incomplete'
-    sizes=count_arr
-    explode=(0, 0.2, 0)
+    fig = Figure(figsize = (10, 10), dpi = 100)
+    labels = 'Passes', 'Violations', 'Incomplete'
+    sizes = count_array
+    explode = (0, 0.2, 0)
 
     ax1=fig.add_subplot(223)
 
     ax1.pie(sizes, explode = explode, labels = labels, autopct = make_autopct(sizes),
             textprops = {'fontsize': 10}, shadow = True, startangle = 90, radius = 1.5)
 
-    # max_url = 'https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/Cashier/ECashierHomepage'
-    ax3=fig.add_subplot(211)
-    table_vals=[]
+    ax3 = fig.add_subplot(211)
+    table_vals = []
 
-    table_vals.append(['No. of Web Pages', len(url_arr)])
-    table_vals.append(['No. of Violations', str(int(sum(violations_arr)))])
-    table_vals.append(['Most Common Violation', str(stats.mode(des_arr)[0])])
-    table_vals.append(['No. of Passes', str(count_arr[0])])
-    table_vals.append(['Most Violations', max_url])
+    table_vals.append(['No. of Web Pages', len(url_array)])
+    table_vals.append(['No. of Violations', str(int(sum(violations_array)))])
+    table_vals.append(['Most Common Violation', str(stats.mode(des_array)[0])])
+    table_vals.append(['No. of Passes', str(count_array[0])])
+    table_vals.append(['Most Violations', max_url_name])
     table_vals.append(['Time taken:', "%.1f" % time_taken + "s"])
-    table_vals.append(['Full log:', json_save_path])
+    table_vals.append(['Full log:', save_path])
 
 
-    print(['No. of Web Pages', len(url_arr)])
-    print(['No. of Violations', str(int(sum(violations_arr)))])
-    print(['Most Common Violation', str(stats.mode(des_arr)[0])])
-    print(['No. of Passes', str(count_arr[0])])
-    print(['Most Violations', max_url])
+    print(['No. of Web Pages', len(url_array)])
+    print(['No. of Violations', str(int(sum(violations_array)))])
+    print(['Most Common Violation', str(stats.mode(des_array)[0])])
+    print(['No. of Passes', str(count_array[0])])
+    print(['Most Violations', max_url_name])
     print(['Time taken:', "%.1f" % time_taken + "s"])
-    print(['Full log:', json_save_path])
+    print(['Full log:', save_path])
 
     # Draw table
-    the_table=ax3.table(cellText = table_vals,
-                          colWidths = [0.09, 0.3],
-                          rowLabels = None,
-                          colLabels = None,
-                          loc = 'center')
+    the_table = ax3.table(cellText=table_vals,
+                          colWidths=[0.09, 0.3],
+                          rowLabels=None,
+                          colLabels=None,
+                          loc='center')
     the_table.auto_set_font_size(False)
     the_table.set_fontsize(10)
     the_table.scale(3, 3)
@@ -237,7 +217,7 @@ def plot_visualisations(count_arr, violations_arr, url_arr, des_arr, max_url, js
     for l in url_arr:
         labels.append(j)
         j = j+1
-    violations = violations_arr
+    violations = violations_array
 
     ax2 = fig.add_subplot(224)
 
