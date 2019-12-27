@@ -1,4 +1,3 @@
-from textwrap import wrap
 from matplotlib.figure import Figure
 from matplotlib.backend_bases import key_press_handler
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
@@ -8,11 +7,9 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from axe_selenium_python import Axe
 from selenium.common import exceptions
-from collections import Counter
 
 from scipy import stats
 import time
-import pymsgbox
 import numpy as np
 import pytest
 import json
@@ -102,6 +99,8 @@ def remove_invalid(full_set):
     if ("https://www.onemotoring.com.sg/content/onemotoring/home/digitalservices/buy-e-day-licence.html" in full_set):
         full_set.remove(
             "https://www.onemotoring.com.sg/content/onemotoring/home/digitalservices/buy-e-day-licence.html")
+    if ("https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/ContributionCalculator/Index?isFirstAndSecondYear=0&isMember=1" in full_set):
+        full_set.remove("https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/ContributionCalculator/Index?isFirstAndSecondYear=0&isMember=1")
     return full_set
 
 
@@ -121,8 +120,8 @@ def save_as_json(full_set, full_json):
         axe=Axe(driver)
 
         # try options
-        # option = {'rules': {'color-contrast': {'enabled': 'false'},
-        #                     'valid-lang': {'enabled': 'false'}}}
+        # full_options = { 'xpath : True }
+
         # Inject axe-core javascript into page.
         axe.inject()
         # Run axe accessibility checks.
@@ -164,6 +163,7 @@ def save_as_json(full_set, full_json):
 
         count_passes += len(results['passes'])
         count_incomplete += len(results['incomplete'])
+        print(len(results['incomplete']))
 
         # print(type(results))
         # print(results.get('violations').count("critical"))
@@ -285,8 +285,6 @@ urls = {"https://www.cpf.gov.sg/members"}
 
 axe = Axe(driver)
 
-
-
 # Thread sleep
 # time.sleep(50)
 
@@ -301,7 +299,7 @@ full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
     full_set, full_json)
 
 
-json_save_path = './data/careers_future_test.json'
+json_save_path = './data/cpf_demo_test.json'
 axe.write_results(full_json, json_save_path)
 
 des_arr = []
