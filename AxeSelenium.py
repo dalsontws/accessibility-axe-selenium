@@ -1,25 +1,35 @@
-from textwrap import wrap
 from matplotlib.figure import Figure
-from matplotlib.backend_bases import key_press_handler
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 import tkinter as tk
-import matplotlib.pyplot as plt
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from axe_selenium_python import Axe
-from selenium.common import exceptions
-from collections import Counter
 
 from scipy import stats
 import time
-import pymsgbox
 import numpy as np
-import pytest
-import json
-from Naked.toolshed.shell import execute_js
+# from Naked.toolshed.shell import execute_js
 
 
 
+
+def get_user_input():
+    input_url_list = []
+    print()
+    print("# -------------------- Start URL Input -------------------- #")
+    while True:
+        input_url = input('Enter URL:')
+        if (input_url == ''):
+            break
+        if ('http' not in input_url):
+            print('Please enter a valid URL')
+            continue
+        input_url_list.append(input_url)
+    # print(input_url_list)
+    print("# --------------------- End URL Input --------------------- #")
+    print()
+    return(input_url_list)
+    
+    
 def make_autopct(values):
     def my_autopct(pct):
         total = sum(values)
@@ -31,17 +41,14 @@ def make_autopct(values):
     return my_autopct
 
 
-def get_all_links(urls):
+def get_all_links(list_of_urls):
     fullSet = set()
     invalid_links = ['twitter', 'instagram', 'facebook',
-                     'youtube', 'areyouready']
-    for url in urls:
+                     'youtube', 'areyouready', 'void(0)']
+    for url in list_of_urls:
         fullSet.add(url)
         driver.get(url)
-
-        url_list = driver.find_elements_by_css_selector("a")
-        print('hi', url_list)
-
+        url_list = driver.find_elements_by_tag_name("a")
         for link in url_list:
             fullLink = str(link.get_attribute("href"))
             print(fullLink)
@@ -60,65 +67,84 @@ def get_all_links(urls):
     return fullSet
 
 
-def remove_invalid(full_set):
+def remove_invalid(whole_set):
     # Removing possible special cases
     # fix later
-    if ("" in full_set):
-        full_set.remove("")
-    if ("None" in full_set):
-        full_set.remove("None")
-    if ("javascript:;" in full_set):
-        full_set.remove("javascript:;")
-    if ("https://www.gov.sg/" in full_set):
-        full_set.remove("https://www.gov.sg/")
-    if ("https://null/common/Lists/CPFPages/DispForm.aspx?ID=239" in full_set):
-        full_set.remove(
+    if ("" in whole_set):
+        whole_set.remove("")
+    if ("None" in whole_set):
+        whole_set.remove("None")
+    if ("javascript:;" in whole_set):
+        whole_set.remove("javascript:;")
+    if ("https://www.gov.sg/" in whole_set):
+        whole_set.remove("https://www.gov.sg/")
+    if ("https://null/common/Lists/CPFPages/DispForm.aspx?ID=239" in whole_set):
+        whole_set.remove(
             "https://null/common/Lists/CPFPages/DispForm.aspx?ID=239")
-    if ("https://www.cpf.gov.sg/members" in full_set):
-        full_set.remove("https://www.cpf.gov.sg/members")
-    if ("https://www.cpf.gov.sg/members#" in full_set):
-        full_set.remove("https://www.cpf.gov.sg/members#")
-    if ("https://www.cpf.gov.sg/Members/Schemes#" in full_set):
-        full_set.remove("https://www.cpf.gov.sg/Members/Schemes#")
-    if ("https://icaeservices.ica.gov.sg/ipevp/web/evp/enquire-status-make-payment/status-enquiry" in full_set):
-        full_set.remove(
-            "https://icaeservices.ica.gov.sg/ipevp/web/evp/enquire-status-make-payment/status-enquiry")
-    return full_set
+    if ("https://www.cpf.gov.sg/members" in whole_set):
+        whole_set.remove("https://www.cpf.gov.sg/members")
+    if ("https://www.cpf.gov.sg/members#" in whole_set):
+        whole_set.remove("https://www.cpf.gov.sg/members#")
+    if ("https://www.cpf.gov.sg/Members/Schemes#" in whole_set):
+        whole_set.remove("https://www.cpf.gov.sg/Members/Schemes#")
+    if ("https://icaeservices.ica.gov.sg/ipevp/web/evp/enquire-status-make-payment/status-enquiry" in whole_set):
+        whole_set.remove(
+            "https://icaeservices.ica.gov.sg/ipevp/web/evp/enquire-status-make-payment/status-enquirygit")
+    if ("https://www.onemotoring.com.sg/content/onemotoring/home/digitalservices/buy-e-day-licence.html" in whole_set):
+        whole_set.remove(
+            "https://www.onemotoring.com.sg/content/onemotoring/home/digitalservices/buy-e-day-licence.html")
+    if ("https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/ContributionCalculator/Index?isFirstAndSecondYear=0&isMember=1" in whole_set):
+        whole_set.remove("https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/ContributionCalculator/Index?isFirstAndSecondYear=0&isMember=1")
+    return whole_set
 
 
-def save_as_json(full_json):
+def save_as_json(final_set, final_json):
     count_passes = 0
     count_incomplete = 0
-
     count_max = 0
-    violations_arr = []
-    url_arr = []
-    resu = execute_js('conftest.js')
+    violations_array = []
+    url_array = []
 
-    json_read = 'object.json'
-    with open(json_read, "r") as read_file:
-        results = json.load(read_file)
-        print(len(results))
-        for i in range(len(results)):
-            if results[i] is None:
-                continue
-            url = results[i]['url']
+    # -------- Python Selenium -------- #
+    for link in final_set:
+        print(link)
+        driver.get(link)
 
-        # TODO: Can use dict for violations and url array, using array now for simplicity/pyplot
-            violations_arr = np.append(
-                violations_arr, len(results[i]['violations']))
+        axe = Axe(driver)
 
-            url_arr = np.append(url_arr, url)
+        # try options
+        # full_options = { 'xpath : True }
 
+        # Inject axe-core javascript into page.
+        axe.inject()
+        # Run axe accessibility checks.
+        try:
+            results = axe.run()
+        except:
+            break
+            # driver.get(link)
+            # axe=Axe(driver)
+            # results=axe.run()
 
-            if len(results[i]['violations']) > count_max:
+        if (results is None):
+            break
 
-                count_max = len(results[i]['violations'])
+        url = results['url']
+    # -------- Python Selenium -------- #
 
-                max_url = url
+     # TODO: Can use dict for violations and url array, using array now for simplicity/pyplot
+        violations_array = np.append(
+            violations_array, len(results['violations']))
 
-            count_passes += len(results[i]['passes'])
-            count_incomplete += len(results[i]['incomplete'])
+        url_array = np.append(url_array, url)
+
+        if (len(results['violations']) > count_max):
+            count_max = len(results['violations'])
+            max_url_name = url
+
+        count_passes += len(results['passes'])
+        count_incomplete += len(results['incomplete'])
+        print(len(results['incomplete']))
 
         # print(type(results))
         # print(results.get('violations').count("critical"))
@@ -126,39 +152,48 @@ def save_as_json(full_json):
         # print('violations: ', count_violations)
         # print('critical violations: ', count_critical)
 
-            full_json[url] = results[i]
-            print("done")
+        final_json[url] = results
+        print("done")
 
-            print(sum(violations_arr))
-            count_arr = [count_incomplete, sum(violations_arr), count_passes]
-            print('Number of violations: ', sum(violations_arr))
-    return full_json, violations_arr, url_arr, max_url, count_arr
+        count_array = [count_incomplete, sum(violations_array), count_passes]
 
-def plot_visualisations(count_arr, violations_arr, url_arr, des_arr, max_url, json_save_path):
+    print('Number of violations: ', sum(violations_array))
+    return final_json, violations_array, url_array, max_url_name, count_array
+
+
+def plot_visualisations(count_array, violations_array, url_array, des_array, max_url_name, save_path):
     root = tk.Tk()
     root.wm_title("title")
 
-    fig = Figure(figsize=(10, 10), dpi=100)
+    fig = Figure(figsize = (10, 10), dpi = 100)
     labels = 'Passes', 'Violations', 'Incomplete'
-    sizes = count_arr
+    sizes = count_array
     explode = (0, 0.2, 0)
 
-    ax1 = fig.add_subplot(223)
+    ax1=fig.add_subplot(223)
 
-    ax1.pie(sizes, explode=explode, labels=labels, autopct=make_autopct(sizes),
-            textprops={'fontsize': 10}, shadow=True, startangle=90, radius=1.5)
-
+    ax1.pie(sizes, explode = explode, labels = labels, autopct = make_autopct(sizes),
+            textprops = {'fontsize': 10}, shadow = True, startangle = 90, radius = 1.5)
 
     ax3 = fig.add_subplot(211)
     table_vals = []
 
-    table_vals.append(['No. of Web Pages', len(url_arr)])
-    table_vals.append(['No. of Violations', str(int(sum(violations_arr)))])
-    table_vals.append(['Most Common Violation', str(stats.mode(des_arr)[0])])
-    table_vals.append(['No. of Passes', str(count_arr[0])])
-    table_vals.append(['Most Violations', max_url])
+    table_vals.append(['No. of Web Pages', len(url_array)])
+    table_vals.append(['No. of Violations', str(int(sum(violations_array)))])
+    table_vals.append(['Most Common Violation', str(stats.mode(des_array)[0])])
+    table_vals.append(['No. of Passes', str(count_array[0])])
+    table_vals.append(['Most Violations', max_url_name])
     table_vals.append(['Time taken:', "%.1f" % time_taken + "s"])
-    table_vals.append(['Full log:', json_save_path])
+    table_vals.append(['Full log:', save_path])
+
+
+    print(['No. of Web Pages', len(url_array)])
+    print(['No. of Violations', str(int(sum(violations_array)))])
+    print(['Most Common Violation', str(stats.mode(des_array)[0])])
+    print(['No. of Passes', str(count_array[0])])
+    print(['Most Violations', max_url_name])
+    print(['Time taken:', "%.1f" % time_taken + "s"])
+    print(['Full log:', save_path])
 
     # Draw table
     the_table = ax3.table(cellText=table_vals,
@@ -170,7 +205,7 @@ def plot_visualisations(count_arr, violations_arr, url_arr, des_arr, max_url, js
     the_table.set_fontsize(10)
     the_table.scale(3, 3)
 
-    ax3.tick_params(axis='x', which='both', bottom=False,
+    ax3.tick_params(axis = 'x', which = 'both', bottom = False,
                     top=False, labelbottom=False)
     ax3.tick_params(axis='y', which='both', right=False,
                     left=False, labelleft=False)
@@ -182,7 +217,7 @@ def plot_visualisations(count_arr, violations_arr, url_arr, des_arr, max_url, js
     for l in url_arr:
         labels.append(j)
         j = j+1
-    violations = violations_arr
+    violations = violations_array
 
     ax2 = fig.add_subplot(224)
 
@@ -202,6 +237,7 @@ def plot_visualisations(count_arr, violations_arr, url_arr, des_arr, max_url, js
 start_time = time.time()
 # Initialise driver
 
+# input_url_list = get_user_input()
 
 # -------- For Chrome -------- #
 driver = webdriver.Chrome()
@@ -215,51 +251,35 @@ driver.maximize_window()
 # -------- Internet Explorer -------- #
 
 
-# main_url = "https://www.cpf.gov.sg/members"
-# log in on singpass
+# main_url = "https://www.healthhub.sg/a-z"
 
-main_url = "https://www.google.com"
-
-
-urls = {"https://www.mycareersfuture.sg",
-        "https://www.mycareersfuture.sg/search"}
-
-
-
+# --------- SP Log In -------- #
+main_url = "https://www.cpf.gov.sg/members"
+# main_url = "https://saml.singpass.gov.sg/"
 driver.get(main_url)
+# --------- SP Log In -------- #
 
-# Thread sleep
-# time.sleep(10)
+# -------- Add base URLs -------- #
+urls = {"https://www.cpf.gov.sg/members"}
+        # "https://www.mycareersfuture.sg/search/"}
 
 axe = Axe(driver)
 
+# Thread sleep
+# time.sleep(50)
+
 full_json = dict()
 
+# full_set = get_all_links(input_url_list)
 full_set = get_all_links(urls)
 
-print(full_set)
 full_set = remove_invalid(full_set)
 
-
-print(full_set)
-
-res = dict.fromkeys(full_set, 0)
-
-print(res)
-
-json_save = 'data.json'
-
-with open(json_save, 'w') as outfile:
-
-    links = json.dump(res, outfile)
-
-
 full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
-    full_json)
+    full_set, full_json)
 
 
-json_save_path = './data/careers_future.json'
-
+json_save_path = './data/cpf_demo_test.json'
 axe.write_results(full_json, json_save_path)
 
 des_arr = []
