@@ -136,7 +136,7 @@ def save_as_json(final_set, final_json):
         violations_array = np.append(
             violations_array, len(results['violations']))
 
-        url_array = np.append(url_arr, url)
+        url_array = np.append(url_array, url)
 
         if (len(results['violations']) > count_max):
             count_max = len(results['violations'])
@@ -155,9 +155,9 @@ def save_as_json(final_set, final_json):
         final_json[url] = results
         print("done")
 
-        count_array = [count_incomplete, sum(violations_arr), count_passes]
+        count_array = [count_incomplete, sum(violations_array), count_passes]
 
-    print('Number of violations: ', sum(violations_arr))
+    print('Number of violations: ', sum(violations_array))
     return final_json, violations_array, url_array, max_url_name, count_array
 
 
