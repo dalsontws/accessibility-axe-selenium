@@ -1,20 +1,10 @@
 ---
 - hosts: all
   tasks:
-    # - name: Create accessibility testing directory
-    #   file:
-    #     path: "~/accessibility-testing"
-    #     state: "directory"
-
-    # python_version is a given variable
     - name: Check if Python3 is installed
       command: python3 --version
       register: python_version_result
       ignore_errors: true
-
-    #  - name: Python version
-    #    debug:
-    #    msg: "{{ python_version_result}}"
 
     - name: Install/Update Python
       apt: name="python{{ '3.7.3' }}-dev" staansbite=present
@@ -25,22 +15,6 @@
       pip:
         name: virtualenv
         executable: pip3
-
-    # - name: Check if repository ~/accessibility-testing/python-axe-selenium folder exists (1/2)
-    #   file:
-    #     path: "~/accessibility-testing/src"
-    #     state: "touch"
-    #   ignore_errors: yes
-
-    # - name: Check if repository ~/accessibility-testing/python-axe-selenium folder exists (2/2)
-    #   file:
-    #     path: "~/accessibility-testing/python-axe-selenium"
-    #     state: "absent"
-
-    # - name: Clone repo into python-axe-selenium folder
-    #   subversion:
-    #     repo: https://github.com/dalsontws/accessibility-axe-selenium/trunk/python-axe-selenium
-    #     dest: ~/accessibility-testing/python-axe-selenium
 
     - name: Check if virtualenv ~/accessibility-testing/venv folder exists (1/2)
       file:
@@ -53,14 +27,13 @@
         path: "~/accessibility-testing/venv"
         state: "absent"
 
-    # - name: Create Virtual Environment
-    #   pip:
-    #     virtualenv
-
-    # - name: Activate virtual environment (venv)
-    #   shell: . venv/bin/activate
-
     - name: Install requirements for Python using requirements.txt
       pip:
         requirements: "https://raw.githubusercontent.com/dalsontws/accessibility-axe-selenium/master/python-axe-selenium/requirements.txt?token=AKPNLJTM7I74K7MP3KFO7P26C2GKU"
         virtualenv: ~/accessibility-testing/venv
+
+    - name: Activate virtual environment (venv)
+      shell: source ~/accessibility-testing/venv/bin/activate
+
+    - name: Run axeSelenium.py
+      command: ~/accessibility-testing/venv/bin/python3 ~/accessibility-testing/python-axe-selenium/axeSelenium.py
