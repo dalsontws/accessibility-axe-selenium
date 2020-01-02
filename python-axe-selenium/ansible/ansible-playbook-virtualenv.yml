@@ -40,8 +40,11 @@
 
     - name: Create Virtual Environment
       shell: bash -lc "virtualenv ~/accessibility-testing/venv && source ~/accessibility-testing/venv/bin/activate"
-      #  - name: Install requirements for Python pip
-  #    pip:
-  #       requirements: "https://raw.githubusercontent.com/younglim/hats-ci/master/install-list/pip-install-list.txt"
-  #       virtualenv: ~/hats
 
+    # - name: Activate virtual environment (venv)
+    #   shell: . venv/bin/activate
+
+    - name: Install requirements for Python using requirements.txt
+      pip:
+        requirements: "https://raw.githubusercontent.com/dalsontws/accessibility-axe-selenium/master/python-axe-selenium/requirements.txt?token=AKPNLJTM7I74K7MP3KFO7P26C2GKU"
+        virtualenv: ~/accessibility-testing/venv
