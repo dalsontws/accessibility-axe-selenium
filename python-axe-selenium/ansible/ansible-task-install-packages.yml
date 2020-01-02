@@ -28,8 +28,7 @@
 
     - name: Activate virtual environment (venv)
       shell: source ~/accessibility-testing/venv/bin/activate
-
-    - name: Run axeSelenium.py
-      command: ~/accessibility-testing/venv/bin/python3 ~/accessibility-testing/python-axe-selenium/axeSelenium.py
-      args:
-        chdir: ~/accessibility-testing/python-axe-selenium
+    # - name: Run axeSelenium.py
+    #   command: ~/accessibility-testing/venv/bin/python3 ~/accessibility-testing/python-axe-selenium/axeSelenium.py
+    #   args:
+    #     chdir: ~/accessibility-testing/python-axe-selenium

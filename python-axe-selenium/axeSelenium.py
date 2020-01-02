@@ -14,8 +14,9 @@ def get_user_input():
     input_list = []
     print()
     print("# -------------------- Start URL Input -------------------- #")
+    print('Enter a blank character if there are no more links')
     while True:
-        input_url = input('Enter URL: (enter blank if there are no more links)')
+        input_url = input('Enter URL: ')
         if (input_url == ''):
             break
         if ('http' not in input_url):

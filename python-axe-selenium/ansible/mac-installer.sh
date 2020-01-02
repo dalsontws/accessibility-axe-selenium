@@ -48,3 +48,5 @@ ansible-playbook ansible/ansible-task-install-packages.yml -i ansible/inventory.
 echo -e "\n===================================="
 echo -e "Install complete. Please re-open your terminal.\n"
 echo -e "====================================\n"
+
+cd ../venv/bin/python axeSelenium.py
