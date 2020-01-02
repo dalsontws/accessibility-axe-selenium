@@ -39,12 +39,11 @@ cd ~/accessibility-testing
 # mkdir python-axe-selenium
 # cd python-axe-selenium
 svn checkout https://github.com/dalsontws/accessibility-axe-selenium/trunk/python-axe-selenium
-cd python-axe-selenium/ansible
-# cd ansible
+cd python-axe-selenium
 
 echo -e "Running Playbooks"
 
-ansible-playbook ansible-task-install-packages.yml -i inventory.yml -c local
+ansible-playbook ansible/ansible-task-install-packages.yml -i inventory.yml -c local
 
 echo -e "\n===================================="
 echo -e "Install complete. Please re-open your terminal.\n"
