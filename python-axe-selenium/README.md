@@ -10,7 +10,14 @@ For visual representation of the errors, we will be using WAVE (Web Accessibilit
 
 We have incorporated Python and Javascript for various uses of the axe tool.
 
-You can refer to the [Python Version here](https://github.com/dalsontws/accessibility-axe-selenium/tree/master/python-axe-selenium), and the [Javascript Version here](https://github.com/dalsontws/accessibility-axe-selenium/tree/master/js-axe-selenium)
+You can refer to the [Python Version here](https://github.com/dalsontws/accessibility-axe-selenium/tree/master/python-axe-selenium), and the [Javascript Version here](https://github.com/dalsontws/accessibility-axe-selenium/tree/master/js-axe-selenium) for more in-depth installation and usage instructions.
+
+## Recommended: User Setup (Ansible)
+
+Steps recommended to quickly get started on automated accessibility testing.
+
+1. Ensure you are in the [ansible directory](https://github.com/dalsontws/accessibility-axe-selenium/tree/master/python-axe-selenium/ansible)
+2. On your terminal, run: `ansible-playbook ansible-playbook-virtualenv.yml -i inventory.yml -c local`
 
 ## Acknowledgements
 
