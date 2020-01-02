@@ -49,4 +49,4 @@ echo -e "\n===================================="
 echo -e "Install complete. Please re-open your terminal.\n"
 echo -e "====================================\n"
 
-cd ../venv/bin/python axeSelenium.py
+../venv/bin/python axeSelenium.py

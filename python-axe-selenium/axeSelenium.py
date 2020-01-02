@@ -1,6 +1,6 @@
-from matplotlib.figure import Figure
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
-import tkinter as tk
+# from matplotlib.figure import Figure
+# from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
+# import tkinter as tk
 from selenium import webdriver
 from axe_selenium_python import Axe
 
@@ -27,8 +27,8 @@ def get_user_input():
     print("# --------------------- End URL Input --------------------- #")
     print()
     return(input_list)
-    
-    
+
+
 def make_autopct(values):
     def my_autopct(pct):
         total = sum(values)
@@ -93,7 +93,8 @@ def remove_invalid(whole_set):
         whole_set.remove(
             "https://www.onemotoring.com.sg/content/onemotoring/home/digitalservices/buy-e-day-licence.html")
     if ("https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/ContributionCalculator/Index?isFirstAndSecondYear=0&isMember=1" in whole_set):
-        whole_set.remove("https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/ContributionCalculator/Index?isFirstAndSecondYear=0&isMember=1")
+        whole_set.remove(
+            "https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/ContributionCalculator/Index?isFirstAndSecondYear=0&isMember=1")
     return whole_set
 
 
@@ -160,32 +161,7 @@ def save_as_json(final_set, final_json):
     return final_json, violations_array, url_array, max_url_name, count_array
 
 
-def plot_visualisations(count_array, violations_array, url_array, des_array, max_url_name, save_path):
-    root = tk.Tk()
-    root.wm_title("title")
-
-    fig = Figure(figsize = (10, 10), dpi = 100)
-    labels = 'Passes', 'Violations', 'Incomplete'
-    sizes = count_array
-    explode = (0, 0.2, 0)
-
-    ax1=fig.add_subplot(223)
-
-    ax1.pie(sizes, explode = explode, labels = labels, autopct = make_autopct(sizes),
-            textprops = {'fontsize': 10}, shadow = True, startangle = 90, radius = 1.5)
-
-    ax3 = fig.add_subplot(211)
-    table_vals = []
-
-    table_vals.append(['No. of Web Pages', len(url_array)])
-    table_vals.append(['No. of Violations', str(int(sum(violations_array)))])
-    table_vals.append(['Most Common Violation', str(stats.mode(des_array)[0])])
-    table_vals.append(['No. of Passes', str(count_array[0])])
-    table_vals.append(['Most Violations', max_url_name])
-    table_vals.append(['Time taken:', "%.1f" % time_taken + "s"])
-    table_vals.append(['Full log:', save_path])
-
-
+def print_stats(count_array, violations_array, url_array, des_array, max_url_name, save_path):
     print(['No. of Web Pages', len(url_array)])
     print(['No. of Violations', str(int(sum(violations_array)))])
     print(['Most Common Violation', str(stats.mode(des_array)[0])])
@@ -194,43 +170,77 @@ def plot_visualisations(count_array, violations_array, url_array, des_array, max
     print(['Time taken:', "%.1f" % time_taken + "s"])
     print(['Full log:', save_path])
 
-    # Draw table
-    the_table = ax3.table(cellText=table_vals,
-                          colWidths=[0.09, 0.3],
-                          rowLabels=None,
-                          colLabels=None,
-                          loc='center')
-    the_table.auto_set_font_size(False)
-    the_table.set_fontsize(10)
-    the_table.scale(3, 3)
+# def plot_visualisations(count_array, violations_array, url_array, des_array, max_url_name, save_path):
+#     root = tk.Tk()
+#     root.wm_title("title")
 
-    ax3.tick_params(axis = 'x', which = 'both', bottom = False,
-                    top=False, labelbottom=False)
-    ax3.tick_params(axis='y', which='both', right=False,
-                    left=False, labelleft=False)
-    for pos in ['right', 'top', 'bottom', 'left']:
-        ax3.spines[pos].set_visible(False)
+#     fig = Figure(figsize = (10, 10), dpi = 100)
+#     labels = 'Passes', 'Violations', 'Incomplete'
+#     sizes = count_array
+#     explode = (0, 0.2, 0)
 
-    j = 1
-    labels = []
-    for l in url_arr:
-        labels.append(j)
-        j = j+1
-    violations = violations_array
+#     ax1=fig.add_subplot(223)
 
-    ax2 = fig.add_subplot(224)
+#     ax1.pie(sizes, explode = explode, labels = labels, autopct = make_autopct(sizes),
+#             textprops = {'fontsize': 10}, shadow = True, startangle = 90, radius = 1.5)
 
-    ax2.bar(labels, violations, align='center', alpha=0.5, tick_label=labels)
+#     ax3 = fig.add_subplot(211)
+#     table_vals = []
 
-    canvas = FigureCanvasTkAgg(fig, master=root)
-    canvas.draw()
-    canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+#     table_vals.append(['No. of Web Pages', len(url_array)])
+#     table_vals.append(['No. of Violations', str(int(sum(violations_array)))])
+#     table_vals.append(['Most Common Violation', str(stats.mode(des_array)[0])])
+#     table_vals.append(['No. of Passes', str(count_array[0])])
+#     table_vals.append(['Most Violations', max_url_name])
+#     table_vals.append(['Time taken:', "%.1f" % time_taken + "s"])
+#     table_vals.append(['Full log:', save_path])
 
-    toolbar = NavigationToolbar2Tk(canvas, root)
-    toolbar.update()
-    canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
 
-    tk.mainloop()
+#     print(['No. of Web Pages', len(url_array)])
+#     print(['No. of Violations', str(int(sum(violations_array)))])
+#     print(['Most Common Violation', str(stats.mode(des_array)[0])])
+#     print(['No. of Passes', str(count_array[0])])
+#     print(['Most Violations', max_url_name])
+#     print(['Time taken:', "%.1f" % time_taken + "s"])
+#     print(['Full log:', save_path])
+
+#     # Draw table
+#     the_table = ax3.table(cellText=table_vals,
+#                           colWidths=[0.09, 0.3],
+#                           rowLabels=None,
+#                           colLabels=None,
+#                           loc='center')
+#     the_table.auto_set_font_size(False)
+#     the_table.set_fontsize(10)
+#     the_table.scale(3, 3)
+
+#     ax3.tick_params(axis = 'x', which = 'both', bottom = False,
+#                     top=False, labelbottom=False)
+#     ax3.tick_params(axis='y', which='both', right=False,
+#                     left=False, labelleft=False)
+#     for pos in ['right', 'top', 'bottom', 'left']:
+#         ax3.spines[pos].set_visible(False)
+
+#     j = 1
+#     labels = []
+#     for l in url_arr:
+#         labels.append(j)
+#         j = j+1
+#     violations = violations_array
+
+#     ax2 = fig.add_subplot(224)
+
+#     ax2.bar(labels, violations, align='center', alpha=0.5, tick_label=labels)
+
+#     canvas = FigureCanvasTkAgg(fig, master=root)
+#     canvas.draw()
+#     canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+
+#     toolbar = NavigationToolbar2Tk(canvas, root)
+#     toolbar.update()
+#     canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+
+#     tk.mainloop()
 
 
 start_time = time.time()
@@ -260,7 +270,7 @@ driver.get(main_url)
 
 # -------- Add base URLs -------- #
 # urls = {"https://www.cpf.gov.sg/members"}
-        # "https://www.mycareersfuture.sg/search/"}
+# "https://www.mycareersfuture.sg/search/"}
 
 axe = Axe(driver)
 
@@ -292,8 +302,10 @@ driver.close()
 driver.quit()
 time_taken = (time.time() - start_time)
 
-plot_visualisations(count_arr, violations_arr, url_arr, des_arr,
-                    max_url, json_save_path)
+# plot_visualisations(count_arr, violations_arr, url_arr, des_arr,
+#                     max_url, json_save_path)
 
+print_stats(count_arr, violations_arr, url_arr, des_arr,
+            max_url, json_save_path)
 
 print("Test Completed")
