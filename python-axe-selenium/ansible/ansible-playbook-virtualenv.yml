@@ -39,7 +39,7 @@
         state: "absent"
 
     - name: Create Virtual Environment
-      shell: bash -lc "virtualenv ~/accessibility-testing/venv && source ~/accessibility-testing/venv/bin/activate"
+      shell: bash -lc "virtualenv ~/accessibility-testing/venv && source ~/accessibility-testing/venv/bin/activate
 
     # - name: Activate virtual environment (venv)
     #   shell: . venv/bin/activate

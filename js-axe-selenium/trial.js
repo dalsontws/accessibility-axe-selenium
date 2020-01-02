@@ -47,13 +47,17 @@ var urls = []
           return ele != 'javascript:;';
         })
 
-        let unique = [...new Set(url)];
+        var url1 = url.filter(function (elem){
+          return elem != '';
+        })
+
+        let unique = [...new Set(url1)];
         console.log(unique);
         
         
 for (var i=0; i<unique.length;i++){
     
-    driver.get(unique[i])
+    driver.get(unique[i]).then(function(){
  
     const results = new AxeBuilder(driver)
     .configure(config)
@@ -63,6 +67,7 @@ for (var i=0; i<unique.length;i++){
     dict.push(results);
     JSONReport(dict);
     AxeReports.createCsvReportRow(results)})
+    })
   }
 
   driver.close()
