@@ -51,14 +51,10 @@
 #        virtualenv: ~/accessibility-testing/venv
 
     - name: Brew install nvm
-      homebrew: name={{item}} state=present
-      with_items:
-        - "nvm"
+      homebrew: name=['nvm'] state=present
 
     - name: Brew link nvm
-      homebrew: name={{item}} state=linked
-      with_items:
-        - "nvm"
+      homebrew: name=['nvm'] state=linked
 
     - name: Create ~/.nvm directory
       file: path="~/.nvm" state="directory"
@@ -76,3 +72,5 @@
       shell: >
         source $(brew --prefix nvm)/nvm.sh;
         nvm install v13.5.0;
+
+    - name:
