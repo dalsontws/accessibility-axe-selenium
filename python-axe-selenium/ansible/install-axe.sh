@@ -29,11 +29,22 @@ else
 	brew upgrade ansible
 fi
 
-echo -e "Running Playbooks"
-
-ansible-playbook -i "localhost," -c local "ansible-test.yml"
 
 . ~/.bash_profile
+
+
+echo -e "Making Directories"
+mkdir ~/accessibility-testing
+cd ~/accessibility-testing
+# mkdir python-axe-selenium
+# cd python-axe-selenium
+svn checkout https://github.com/dalsontws/accessibility-axe-selenium/trunk/python-axe-selenium
+cd python-axe-selenium/ansible
+# cd ansible
+
+echo -e "Running Playbooks"
+
+ansible-playbook ansible-playbook-virtualenv.yml -i inventory.yml -c local
 
 echo -e "\n===================================="
 echo -e "Install complete. Please re-open your terminal.\n"

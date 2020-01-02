@@ -1,12 +1,12 @@
 ---
 - hosts: all
   tasks:
-    - name: Create accessibility testing directory
-      file:
-        path: "~/accessibility-testing"
-        state: "directory"
+    # - name: Create accessibility testing directory
+    #   file:
+    #     path: "~/accessibility-testing"
+    #     state: "directory"
 
-      # python_version is a given variable
+    # python_version is a given variable
     - name: Check if Python3 is installed
       command: python3 --version
       register: python_version_result
@@ -26,7 +26,22 @@
         name: virtualenv
         executable: pip3
 
-      # sudo: yes
+    # - name: Check if repository ~/accessibility-testing/python-axe-selenium folder exists (1/2)
+    #   file:
+    #     path: "~/accessibility-testing/src"
+    #     state: "touch"
+    #   ignore_errors: yes
+
+    # - name: Check if repository ~/accessibility-testing/python-axe-selenium folder exists (2/2)
+    #   file:
+    #     path: "~/accessibility-testing/python-axe-selenium"
+    #     state: "absent"
+
+    # - name: Clone repo into python-axe-selenium folder
+    #   subversion:
+    #     repo: https://github.com/dalsontws/accessibility-axe-selenium/trunk/python-axe-selenium
+    #     dest: ~/accessibility-testing/python-axe-selenium
+
     - name: Check if virtualenv ~/accessibility-testing/venv folder exists (1/2)
       file:
         path: "~/accessibility-testing/venv"
@@ -38,8 +53,9 @@
         path: "~/accessibility-testing/venv"
         state: "absent"
 
-    - name: Create Virtual Environment
-      shell: bash -lc "virtualenv ~/accessibility-testing/venv && source ~/accessibility-testing/venv/bin/activate
+    # - name: Create Virtual Environment
+    #   pip:
+    #     virtualenv
 
     # - name: Activate virtual environment (venv)
     #   shell: . venv/bin/activate
