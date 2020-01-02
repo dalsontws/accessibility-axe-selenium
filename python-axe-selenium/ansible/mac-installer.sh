@@ -43,7 +43,7 @@ cd python-axe-selenium
 
 echo -e "Running Playbooks"
 
-ansible-playbook ansible/ansible-task-install-packages.yml -i inventory.yml -c local
+ansible-playbook ansible/ansible-task-install-packages.yml -i ansible/inventory.yml -c local
 
 echo -e "\n===================================="
 echo -e "Install complete. Please re-open your terminal.\n"

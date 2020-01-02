@@ -16,16 +16,10 @@
         name: virtualenv
         executable: pip3
 
-    - name: Check if virtualenv ~/accessibility-testing/venv folder exists (1/2)
+    - name: Creates data directory to store logs
       file:
-        path: "~/accessibility-testing/venv"
-        state: "touch"
-      ignore_errors: yes
-
-    - name: Check if virtualenv ~/accessibility-testing/venv folder exists (2/2)
-      file:
-        path: "~/accessibility-testing/venv"
-        state: "absent"
+        path: ~/accessibility-testing/python-axe-selenium/data
+        state: directory
 
     - name: Install requirements for Python using requirements.txt
       pip:
@@ -37,3 +31,5 @@
 
     - name: Run axeSelenium.py
       command: ~/accessibility-testing/venv/bin/python3 ~/accessibility-testing/python-axe-selenium/axeSelenium.py
+      args:
+        chdir: ~/accessibility-testing/python-axe-selenium
