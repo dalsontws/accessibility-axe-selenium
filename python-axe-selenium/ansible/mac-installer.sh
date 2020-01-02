@@ -29,7 +29,7 @@ else
 	brew upgrade ansible
 fi
 
-
+touch ~/.profile
 . ~/.bash_profile
 
 
