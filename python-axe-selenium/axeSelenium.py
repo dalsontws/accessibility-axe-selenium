@@ -10,24 +10,22 @@ import numpy as np
 # from Naked.toolshed.shell import execute_js
 
 
-
-
 def get_user_input():
-    input_url_list = []
+    input_list = []
     print()
     print("# -------------------- Start URL Input -------------------- #")
     while True:
-        input_url = input('Enter URL:')
+        input_url = input('Enter URL: (enter blank if there are no more links)')
         if (input_url == ''):
             break
         if ('http' not in input_url):
             print('Please enter a valid URL')
             continue
-        input_url_list.append(input_url)
-    # print(input_url_list)
+        input_list.append(input_url)
+    # print(input_list)
     print("# --------------------- End URL Input --------------------- #")
     print()
-    return(input_url_list)
+    return(input_list)
     
     
 def make_autopct(values):
@@ -51,7 +49,7 @@ def get_all_links(list_of_urls):
         url_list = driver.find_elements_by_tag_name("a")
         for link in url_list:
             fullLink = str(link.get_attribute("href"))
-            print(fullLink)
+            # print(fullLink)
             if any(substring in fullLink for substring in invalid_links):
                 break
 
@@ -144,7 +142,7 @@ def save_as_json(final_set, final_json):
 
         count_passes += len(results['passes'])
         count_incomplete += len(results['incomplete'])
-        print(len(results['incomplete']))
+        # print(len(results['incomplete']))
 
         # print(type(results))
         # print(results.get('violations').count("critical"))
@@ -237,7 +235,7 @@ def plot_visualisations(count_array, violations_array, url_array, des_array, max
 start_time = time.time()
 # Initialise driver
 
-# input_url_list = get_user_input()
+input_url_list = get_user_input()
 
 # -------- For Chrome -------- #
 driver = webdriver.Chrome()
@@ -254,13 +252,13 @@ driver.maximize_window()
 # main_url = "https://www.healthhub.sg/a-z"
 
 # --------- SP Log In -------- #
-main_url = "https://www.cpf.gov.sg/members"
+main_url = "https://www.google.com"
 # main_url = "https://saml.singpass.gov.sg/"
 driver.get(main_url)
 # --------- SP Log In -------- #
 
 # -------- Add base URLs -------- #
-urls = {"https://www.cpf.gov.sg/members"}
+# urls = {"https://www.cpf.gov.sg/members"}
         # "https://www.mycareersfuture.sg/search/"}
 
 axe = Axe(driver)
@@ -270,8 +268,8 @@ axe = Axe(driver)
 
 full_json = dict()
 
-# full_set = get_all_links(input_url_list)
-full_set = get_all_links(urls)
+full_set = get_all_links(input_url_list)
+# full_set = get_all_links(urls)
 
 full_set = remove_invalid(full_set)
 
@@ -279,7 +277,7 @@ full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
     full_set, full_json)
 
 
-json_save_path = './data/cpf_demo_test.json'
+json_save_path = './data/demo_test.json'
 axe.write_results(full_json, json_save_path)
 
 des_arr = []
