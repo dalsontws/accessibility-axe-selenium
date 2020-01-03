@@ -21,10 +21,10 @@
         path: ~/accessibility-testing/python-axe-selenium/data
         state: directory
 
-#    - name: Install requirements for Python using requirements.txt
-#      pip:
-#        requirements: "https://raw.githubusercontent.com/dalsontws/accessibility-axe-selenium/master/python-axe-selenium/requirements.txt?token=AKPNLJTM7I74K7MP3KFO7P26C2GKU"
-#        virtualenv: ~/accessibility-testing/venv
+    - name: Install requirements for Python using requirements.txt
+      pip:
+        requirements: "https://raw.githubusercontent.com/dalsontws/accessibility-axe-selenium/master/python-axe-selenium/requirements.txt?token=AKPNLJTM7I74K7MP3KFO7P26C2GKU"
+        virtualenv: ~/accessibility-testing/venv
 
     - name: Activate virtual environment (venv)
       shell: source ~/accessibility-testing/venv/bin/activate
@@ -66,7 +66,7 @@
 
     - name: bug
       debug:
-        msg: "{{ playbook_dir | dirname }}"
+        msg: "{{ npm_location }}"
 
     - name: Install packages based on package.json using the npm installed with nvm v0.35.2.
       npm:
