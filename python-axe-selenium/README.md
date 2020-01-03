@@ -14,10 +14,11 @@ You can refer to the [Python Version here](https://github.com/dalsontws/accessib
 
 ## Recommended: User Setup (Ansible)
 
-Steps recommended to quickly get started on automated accessibility testing.
+Steps recommended to quickly get started on automated accessibility testing with the repo.
 
 1. Ensure you are in the [ansible directory](https://github.com/dalsontws/accessibility-axe-selenium/tree/master/python-axe-selenium/ansible)
-2. On your terminal, run: `ansible-playbook ansible-playbook-virtualenv.yml -i inventory.yml -c local`
+2. To run the installer playbook from your terminal, run: `ansible-playbook ansible-playbook-virtualenv.yml -i inventory.yml -c local`
+3. To run the chrome-driver installation playbook from your terminal, run: ansible-playbook ansible-task-chrome-driver.yml -i inventory.yml -c local --extra-vars "ansible_become_pass=YOURPASSWORDHERE"
 
 ## Acknowledgements
 
