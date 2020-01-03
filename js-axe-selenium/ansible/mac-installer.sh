@@ -38,8 +38,8 @@ mkdir ~/accessibility-testing
 cd ~/accessibility-testing
 # mkdir python-axe-selenium
 # cd python-axe-selenium
-svn checkout https://github.com/dalsontws/accessibility-axe-selenium/trunk/python-axe-selenium
-cd python-axe-selenium
+svn checkout https://github.com/cy002/accessibility-axe-selenium/trunk/js-axe-selenium
+cd js-axe-selenium
 
 echo -e "Running Playbooks"
 

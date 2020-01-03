@@ -21,45 +21,66 @@
         path: ~/accessibility-testing/python-axe-selenium/data
         state: directory
 
-    - name: Install requirements for Python using requirements.txt
-      pip:
-        requirements: "https://raw.githubusercontent.com/dalsontws/accessibility-axe-selenium/master/python-axe-selenium/requirements.txt?token=AKPNLJTM7I74K7MP3KFO7P26C2GKU"
-        virtualenv: ~/accessibility-testing/venv
+#    - name: Install requirements for Python using requirements.txt
+#      pip:
+#        requirements: "https://raw.githubusercontent.com/dalsontws/accessibility-axe-selenium/master/python-axe-selenium/requirements.txt?token=AKPNLJTM7I74K7MP3KFO7P26C2GKU"
+#        virtualenv: ~/accessibility-testing/venv
 
     - name: Activate virtual environment (venv)
       shell: source ~/accessibility-testing/venv/bin/activate
 
-    - name: Brew install nvm
-      homebrew: name={{item}} state=present
-      with_items:
-        - "nvm"
+    - name: Get nvm.sh
+      get_url:
+        url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh
+        dest: "{{ playbook_dir }}"
+        mode: '0755'
 
-    - name: Brew link nvm
-      homebrew: name={{item}} state=linked
-      with_items:
-        - "nvm"
+#    - name: Add ~/.bash_profile if not present
+#      file: path=~/.bash_profile state=touch
 
-    - name: Create ~/.nvm directory
-      file: path="~/.nvm" state="directory"
+    - name: Create $PWD/.nvm directory
+      file: path="{{ playbook_dir }}/.nvm" state="directory"
 
-    - name: Add ~/.bash_profile if not present
-      file: path=~/.bash_profile state=touch
+#    - name: Add to .bash_profile nvm.sh
+#      lineinfile: dest="~/.bash_profile" line='{{item}}' state=present
+#      with_items:
+#        - 'export NVM_DIR="$HOME/.nvm"'
+#        - 'source $(brew --prefix nvm)/nvm.sh'
 
-    - name: Add to .bash_profile nvm.sh
-      lineinfile: dest="~/.bash_profile" line='{{item}}' state=present
-      with_items:
-        - 'export NVM_DIR="$HOME/.nvm"'
-        - 'source $(brew --prefix nvm)/nvm.sh'
+    - name: Install nvm
+      shell: >
+        export NVM_DIR="{{ playbook_dir }}/.nvm";
+        {{ playbook_dir }}/install.sh;
 
     - name: "Install and Use Node.js {{ node_js_version }}"
       shell: >
-        source $(brew --prefix nvm)/nvm.sh;
+        export NVM_DIR="{{ playbook_dir }}/.nvm";
+        source $NVM_DIR/nvm.sh;
         nvm install v13.5.0;
+        nvm use --delete-prefix v13.5.0/dev/null;
+        which npm;
+      register: npm_output
 
+    - name: Save location of npm
+      set_fact: npm_location={{ npm_output.stdout_lines | last }}
 
+    - name: bug
+      debug:
+        msg: "{{ playbook_dir | dirname }}"
 
+    - name: Install packages based on package.json using the npm installed with nvm v0.35.2.
+      npm:
+        path: "{{ playbook_dir | dirname }}"
+        executable: "{{ npm_location }}"
+        state: present
 
-    - name: Run axeSelenium.py
-      command: ~/accessibility-testing/venv/bin/python3 ~/accessibility-testing/python-axe-selenium/axeSelenium.py
+    - name: Run trial.js
+      script: ~/accessibility-testing/js-axe-selenium/trial.js
       args:
-        chdir: ~/accessibility-testing/python-axe-selenium
+        executable: node
+
+
+#    - name: Run axeSelenium.py
+#      command: ~/accessibility-testing/venv/bin/python3 ~/accessibility-testing/python-axe-selenium/axeSelenium.py
+#      args:
+#        chdir: ~/accessibility-testing/python-axe-selenium
