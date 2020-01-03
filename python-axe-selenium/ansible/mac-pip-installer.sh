@@ -10,23 +10,16 @@ echo -e "====================================\n"
 
 sudo echo ""
 
-echo -e "Install brew if currently not installed"
-if [ ! -f /usr/local/bin/brew ]; then
-	echo -e "	Installing Brew..."
-	
-	ruby \
-  	-e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" \
-  	</dev/null
-  	
-  	brew update
-fi
+echo -e "Install pip if currently not installed"
+
+sudo easy_install pip
 
 echo -e "Install Ansible if currently not installed"
 if [ ! -f /usr/local/bin/ansible-playbook ]; then
 	echo -e "	Installing Ansible..."
-	brew install ansible 
+	sudo pip install ansible 
 else
-	brew upgrade ansible
+	sudo pip upgrade ansible
 fi
 
 . ~/.bash_profile
