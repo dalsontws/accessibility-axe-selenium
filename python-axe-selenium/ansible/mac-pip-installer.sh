@@ -10,10 +10,6 @@ echo -e "====================================\n"
 
 sudo echo ""
 
-echo -e "Install pip if currently not installed"
-
-sudo easy_install pip
-
 echo -e "Install Ansible if currently not installed"
 if [ ! -f /usr/local/bin/ansible-playbook ]; then
 	echo -e "	Installing Ansible..."
@@ -28,8 +24,7 @@ fi
 echo -e "Making Directories"
 mkdir ~/accessibility-testing
 cd ~/accessibility-testing
-# mkdir python-axe-selenium
-# cd python-axe-selenium
+
 svn checkout https://github.com/dalsontws/accessibility-axe-selenium/trunk/python-axe-selenium
 cd python-axe-selenium
 
