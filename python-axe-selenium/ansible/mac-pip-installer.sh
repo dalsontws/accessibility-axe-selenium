@@ -13,9 +13,9 @@ sudo echo ""
 echo -e "Install Ansible if currently not installed"
 if [ ! -f /usr/local/bin/ansible-playbook ]; then
 	echo -e "	Installing Ansible..."
-	sudo pip install ansible 
+	pip install ansible 
 else
-	sudo pip upgrade ansible
+	pip upgrade ansible
 fi
 
 . ~/.bash_profile
@@ -36,4 +36,4 @@ echo -e "\n===================================="
 echo -e "Install complete. Please re-open your terminal.\n"
 echo -e "====================================\n"
 
-../venv/bin/python axeSelenium.py
+/venv/bin/python axeSelenium.py
