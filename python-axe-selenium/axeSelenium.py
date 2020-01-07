@@ -287,7 +287,7 @@ full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
     full_set, full_json)
 
 
-json_save_path = './data/demo_test.json'
+json_save_path = './python-axe-selenium/data/demo_test.json'
 axe.write_results(full_json, json_save_path)
 
 des_arr = []
@@ -301,10 +301,10 @@ driver.close()
 driver.quit()
 time_taken = (time.time() - start_time)
 
-# plot_visualisations(count_arr, violations_arr, url_arr, des_arr,
-#                     max_url, json_save_path)
+plot_visualisations(count_arr, violations_arr, url_arr, des_arr,
+                    max_url, json_save_path)
 
-print_stats(count_arr, violations_arr, url_arr, des_arr,
-            max_url, json_save_path)
+# print_stats(count_arr, violations_arr, url_arr, des_arr,
+#             max_url, json_save_path)
 
 print("Test Completed")
