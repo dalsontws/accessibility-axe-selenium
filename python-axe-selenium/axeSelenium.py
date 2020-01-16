@@ -25,7 +25,7 @@ def get_user_input():
     # print(input_list)
     print("# --------------------- End URL Input --------------------- #")
     print()
-    return(input_list)
+    return input_list
 
 
 def make_autopct(values):
@@ -41,12 +41,13 @@ def make_autopct(values):
 
 def get_all_links(list_of_urls):
     fullSet = set()
-    invalid_links = ['twitter', 'instagram', 'facebook',
-                     'youtube', 'areyouready', 'void(0)']
+    invalid_links = ['twitter', 'instagram', 'facebook', 'mailto:member@cpf.gov.sg', 'update-or-change-your-cpf-nomination',
+                     'youtube', 'areyouready', 'void(0)', 'github', 'https://www.tech.gov.sg/report_vulnerability/']
     for url in list_of_urls:
         fullSet.add(url)
         driver.get(url)
         url_list = driver.find_elements_by_tag_name("a")
+        print
         for link in url_list:
             fullLink = str(link.get_attribute("href"))
             # print(fullLink)
@@ -62,6 +63,7 @@ def get_all_links(list_of_urls):
     # fullSet.add('http://127.0.0.1:8000/contact/')
     # ------- LocalHost Testing ------- #
 
+    print("fullset: ", fullSet)
     return fullSet
 
 
@@ -94,6 +96,13 @@ def remove_invalid(whole_set):
     if ("https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/ContributionCalculator/Index?isFirstAndSecondYear=0&isMember=1" in whole_set):
         whole_set.remove(
             "https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/ContributionCalculator/Index?isFirstAndSecondYear=0&isMember=1")
+    # if ("https://mylegacy.gov.sg/singpass/?redirect=/vault/" in whole_set):
+    #     whole_set.remove("https://mylegacy.gov.sg/singpass/?redirect=/vault/")
+        
+    # if ("https://mylegacy.gov.sg/singpass/?redirect=/vault" in whole_set):
+    #     whole_set.remove("https://mylegacy.gov.sg/singpass/?redirect=/vault") 
+    # if ("https://www.cpf.gov.sg/eSvc/Web/Services/Appointments/CreateAppointmentCover/" in whole_set):
+    #     whole_set.remove("https://www.cpf.gov.sg/eSvc/Web/Services/Appointments/CreateAppointmentCover/")
     return whole_set
 
 
@@ -103,7 +112,7 @@ def save_as_json(final_set, final_json):
     count_max = 0
     violations_array = []
     url_array = []
-
+    max_url_name = ""
     # -------- Python Selenium -------- #
     for link in final_set:
         print(link)
@@ -136,11 +145,11 @@ def save_as_json(final_set, final_json):
             violations_array, len(results['violations']))
 
         url_array = np.append(url_array, url)
-
+        
         if (len(results['violations']) > count_max):
             count_max = len(results['violations'])
             max_url_name = url
-
+ 
         count_passes += len(results['passes'])
         count_incomplete += len(results['incomplete'])
         # print(len(results['incomplete']))
@@ -157,6 +166,7 @@ def save_as_json(final_set, final_json):
         count_array = [count_incomplete, sum(violations_array), count_passes]
 
     print('Number of violations: ', sum(violations_array))
+
     return final_json, violations_array, url_array, max_url_name, count_array
 
 
@@ -164,7 +174,7 @@ def print_stats(count_array, violations_array, url_array, des_array, max_url_nam
     print(['No. of Web Pages', len(url_array)])
     print(['No. of Violations', str(int(sum(violations_array)))])
     print(['Most Common Violation', str(stats.mode(des_array)[0])])
-    print(['No. of Passes', str(count_array[0])])
+    print(['No. of Passes', str(count_array[2])])
     print(['Most Violations', max_url_name])
     print(['Time taken:', "%.1f" % time_taken + "s"])
     print(['Full log:', save_path])
@@ -174,7 +184,7 @@ def plot_visualisations(count_array, violations_array, url_array, des_array, max
     root.wm_title("title")
 
     fig = Figure(figsize = (10, 10), dpi = 100)
-    labels = 'Passes', 'Violations', 'Incomplete'
+    labels = 'Incomplete', 'Violations', 'Passes'
     sizes = count_array
     explode = (0, 0.2, 0)
 
@@ -198,7 +208,7 @@ def plot_visualisations(count_array, violations_array, url_array, des_array, max
     print(['No. of Web Pages', len(url_array)])
     print(['No. of Violations', str(int(sum(violations_array)))])
     print(['Most Common Violation', str(stats.mode(des_array)[0])])
-    print(['No. of Passes', str(count_array[0])])
+    print(['No. of Incomplete', str(count_array[0])])
     print(['Most Violations', max_url_name])
     print(['Time taken:', "%.1f" % time_taken + "s"])
     print(['Full log:', save_path])
@@ -245,7 +255,7 @@ def plot_visualisations(count_array, violations_array, url_array, des_array, max
 start_time = time.time()
 # Initialise driver
 
-input_url_list = get_user_input()
+# input_url_list = get_user_input()
 
 # -------- For Chrome -------- #
 driver = webdriver.Chrome()
@@ -262,14 +272,24 @@ driver.maximize_window()
 # main_url = "https://www.healthhub.sg/a-z"
 
 # --------- SP Log In -------- #
-main_url = "https://www.google.com"
-# main_url = "https://saml.singpass.gov.sg/"
+# main_url = "https://www.google.com"
+main_url = "https://www.designsystem.gov.sg/"
 driver.get(main_url)
 # --------- SP Log In -------- #
 
 # -------- Add base URLs -------- #
-# urls = {"https://www.cpf.gov.sg/members"}
-# "https://www.mycareersfuture.sg/search/"}
+urls = {"https://www.designsystem.gov.sg/",
+"https://www.designsystem.gov.sg/docs/getting-started/",
+"https://www.designsystem.gov.sg/guides/"}
+# "https://mylegacy.gov.sg/guides/",
+# "https://mylegacy.gov.sg/guides/planning-ahead/",
+# "https://mylegacy.gov.sg/guides/planning-ahead/write-a-will/",
+# "https://mylegacy.gov.sg/guides/planning-ahead/make-a-cpf-nomination/",
+# "https://mylegacy.gov.sg/guides/planning-ahead/make-an-advance-care-plan/",
+# "https://mylegacy.gov.sg/tools/find-a-service/",
+# "https://mylegacy.gov.sg/guides/estate-settlements/",
+# "https://mylegacy.gov.sg/guides/reporting-a-death/",
+# "https://mylegacy.gov.sg/guides/funeral-matters/"}
 
 axe = Axe(driver)
 
@@ -278,9 +298,10 @@ axe = Axe(driver)
 
 full_json = dict()
 
-full_set = get_all_links(input_url_list)
-# full_set = get_all_links(urls)
+# full_set = get_all_links(input_url_list)
+full_set = get_all_links(urls)
 
+print(full_set)
 full_set = remove_invalid(full_set)
 
 full_json, violations_arr, url_arr, max_url, count_arr = save_as_json(
@@ -291,12 +312,18 @@ json_save_path = './python-axe-selenium/data/demo_test.json'
 axe.write_results(full_json, json_save_path)
 
 des_arr = []
+type_arr= []
 for items in full_json.values():
     # print(items['violations'])
     for item in items['violations']:
         des_arr.append(item['description'])
+        type_arr.append(item['impact'])
 
-
+print("Critical violations: ", type_arr.count('critical'))
+print("Serious violations: ", type_arr.count('serious'))
+print("Moderate violations: ", type_arr.count('moderate'))
+print("Minor violations: ", type_arr.count('minor'))
+        
 driver.close()
 driver.quit()
 time_taken = (time.time() - start_time)
