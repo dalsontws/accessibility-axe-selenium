@@ -29,7 +29,12 @@ else
 	brew upgrade ansible
 fi
 
+<<<<<<< HEAD
 . ~/.bash_profile
+=======
+
+#. ~/.bash_profile
+>>>>>>> c9c9dd1b72ce5fa6c2c46b6a38f0df4f0faf512e
 
 
 echo -e "Making Directories"

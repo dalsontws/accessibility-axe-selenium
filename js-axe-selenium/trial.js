@@ -25,7 +25,7 @@ var urls = []
   // const links = Array.from(document.querySelectorAll('a'))
   // return links.map(link => link.href)
   // })
-  driver.get("https://www.cpf.gov.sg/Members")
+  driver.get("https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/Cashier/ECashierHomepage")
   // var urls = driver.findElements(By.tagName("a")).then(function(){
   //   var links = urls.getAttribute("href")
   // console.log(links)
@@ -55,7 +55,7 @@ var urls = []
         console.log(unique);
         
         
-for (var i=0; i<unique.length;i++){
+for (var i=0; i<1;i++){
     
     driver.get(unique[i]).then(function(){
  
