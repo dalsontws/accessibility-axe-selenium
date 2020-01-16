@@ -11,25 +11,8 @@ var dict = []
 var array = []
 var urls = []
 
-
-  // let screenshotNumber = 0;
+  driver.get("https://www.googles.com")
   
-  // const browser = await puppeteer.launch({headless:false, defaultViewport:null})
-  
-  // const page = await browser.newPage()
-  // //await page.setBypassCSP(true)
-  
-  // await page.goto('https://www.mycareersfuture.sg/', {waitUntil:'networkidle2'})//get the main links
-  
-  // const stories = await page.evaluate(() => {
-  // const links = Array.from(document.querySelectorAll('a'))
-  // return links.map(link => link.href)
-  // })
-  driver.get("https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/Cashier/ECashierHomepage")
-  // var urls = driver.findElements(By.tagName("a")).then(function(){
-  //   var links = urls.getAttribute("href")
-  // console.log(links)
-  // })
   var promise = require('selenium-webdriver').promise;
   var links = driver.findElements(By.tagName('a'))
   links.then(function (elements) {
@@ -38,26 +21,25 @@ var urls = []
     });
 
     promise.all(pendingHref).then(function (allHref) {
-        // `allHtml` will be an `Array` of strings
+        
         console.log(allHref)
         var urls = allHref.filter(function (el){
           return el != null;
         })
-        var url = urls.filter(function (ele){
+        var url1 = urls.filter(function (ele){
           return ele != 'javascript:;';
         })
-
-        var url1 = url.filter(function (elem){
+        var url2 = url1.filter(function (elem){
           return elem != '';
         })
 
-        let unique = [...new Set(url1)];
+        let unique = [...new Set(url2)];
         console.log(unique);
         
         
-for (var i=0; i<1;i++){
+for (var i=0; i<unique.length;i++){
     
-    driver.get(unique[i]).then(function(){
+    driver.get(unique[i])
  
     const results = new AxeBuilder(driver)
     .configure(config)
@@ -67,7 +49,6 @@ for (var i=0; i<1;i++){
     dict.push(results);
     JSONReport(dict);
     AxeReports.createCsvReportRow(results)})
-    })
   }
 
   driver.close()
@@ -75,18 +56,6 @@ for (var i=0; i<1;i++){
         
     });
 
-
-
-
-
-    
-  
-
-    
-    
-
-  //var links = await driver.findElements(By.css("a"))
-  //var links = ["https://www.cpf.gov.sg/Members"]
   
 
   const config = {

@@ -21,10 +21,10 @@
         path: ~/accessibility-testing/python-axe-selenium/data
         state: directory
 
-    - name: Install requirements for Python using requirements.txt
-      pip:
-        requirements: "https://raw.githubusercontent.com/dalsontws/accessibility-axe-selenium/master/python-axe-selenium/requirements.txt?token=AKPNLJTM7I74K7MP3KFO7P26C2GKU"
-        virtualenv: ~/accessibility-testing/venv
+#    - name: Install requirements for Python using requirements.txt
+#      pip:
+#        requirements: "https://raw.githubusercontent.com/dalsontws/accessibility-axe-selenium/master/python-axe-selenium/requirements.txt?token=AKPNLJTM7I74K7MP3KFO7P26C2GKU"
+#        virtualenv: ~/accessibility-testing/venv
 
     - name: Activate virtual environment (venv)
       shell: source ~/accessibility-testing/venv/bin/activate
@@ -66,13 +66,21 @@
 
     - name: bug
       debug:
-        msg: "{{ npm_location }}"
+        msg: "{{ npm_location }}:{{ ansible_env.PATH }}"
+
+    - name: Save location of npm
+      set_fact: bin_location={{ npm_location | dirname }}
 
     - name: Install packages based on package.json using the npm installed with nvm v0.35.2.
+      environment:
+#        PATH: "/Users/hats/accessibility-testing/js-axe-selenium/ansible/.nvm/versions/node/v13.5.0/bin:{{ ansible_env.PATH }}"
+        PATH: "{{ bin_location }}:{{ ansible_env.PATH }}"
       npm:
         path: "{{ playbook_dir | dirname }}"
-        executable: "{{ npm_location }}"
-        state: present
+#        path: /Users/hats/accessibility-testing/js-axe-selenium
+#        executable: "{{ npm_location }}"
+#        state: present
+
 
     - name: Run trial.js
       script: ~/accessibility-testing/js-axe-selenium/trial.js
