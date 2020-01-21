@@ -25,7 +25,7 @@ var urls = []
   // const links = Array.from(document.querySelectorAll('a'))
   // return links.map(link => link.href)
   // })
-  driver.get("https://www.cpf.gov.sg/eSvc/Web/Miscellaneous/Cashier/ECashierHomepage")
+  driver.get("https://www.cpf.gov.sg/Members")
   // var urls = driver.findElements(By.tagName("a")).then(function(){
   //   var links = urls.getAttribute("href")
   // console.log(links)
@@ -39,7 +39,7 @@ var urls = []
 
     promise.all(pendingHref).then(function (allHref) {
         // `allHtml` will be an `Array` of strings
-        console.log(allHref)
+//        console.log(allHref)
         var urls = allHref.filter(function (el){
           return el != null;
         })
@@ -52,21 +52,21 @@ var urls = []
         })
 
         let unique = [...new Set(url1)];
-        console.log(unique);
+//        console.log(unique);
         
         
-for (var i=0; i<1;i++){
+for (var i=0; i<5;i++){
     
     driver.get(unique[i]).then(function(){
  
     const results = new AxeBuilder(driver)
     .configure(config)
     .analyze().then(function(results){
-    console.log(results)
-    Report(results);
+    // console.log(results)
+    // Report(results);
     dict.push(results);
     JSONReport(dict);
-    AxeReports.createCsvReportRow(results)})
+    AxeReports.createCsvReport(results)})
     })
   }
 
@@ -194,7 +194,7 @@ JSONReport = function(dict) {
       console.error(err);
       return;
     }
-    console.log("File has been created");
+//    console.log("File has been created");
   });
 };
 
