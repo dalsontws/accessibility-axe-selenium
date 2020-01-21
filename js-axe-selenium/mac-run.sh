@@ -14,7 +14,7 @@ else
         nvm use --delete-prefix default;
 pip3 install pandas
 
-node trial.js
+node trial => new.csv
 python CSVMerge.py
 
 fi
