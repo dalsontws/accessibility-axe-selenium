@@ -4,36 +4,70 @@ var WebDriver = require("selenium-webdriver");
 
 var driver = new WebDriver.Builder().forBrowser("chrome").build();
 const fs = require("fs");
-var By = WebDriver.By;
+var By = WebDriver.By
 
-var dict = [];
-var array = [];
-var urls = [];
+var dict = []
+var array = []
+var urls = []
 
-// let screenshotNumber = 0;
 
-// const browser = await puppeteer.launch({headless:false, defaultViewport:null})
+  // let screenshotNumber = 0;
+  
+  // const browser = await puppeteer.launch({headless:false, defaultViewport:null})
+  
+  // const page = await browser.newPage()
+  // //await page.setBypassCSP(true)
+  
+  // await page.goto('https://www.mycareersfuture.sg/', {waitUntil:'networkidle2'})//get the main links
+  
+  // const stories = await page.evaluate(() => {
+  // const links = Array.from(document.querySelectorAll('a'))
+  // return links.map(link => link.href)
+  // })
+  driver.get("https://www.cpf.gov.sg/Members")
+  // var urls = driver.findElements(By.tagName("a")).then(function(){
+  //   var links = urls.getAttribute("href")
+  // console.log(links)
+  // })
+  var promise = require('selenium-webdriver').promise;
+  var links = driver.findElements(By.tagName('a'))
+  links.then(function (elements) {
+    var pendingHref = elements.map(function (elem) {
+        return elem.getAttribute('href');
+    });
 
-// const page = await browser.newPage()
-// //await page.setBypassCSP(true)
+    promise.all(pendingHref).then(function (allHref) {
+        // `allHtml` will be an `Array` of strings
+//        console.log(allHref)
+        var urls = allHref.filter(function (el){
+          return el != null;
+        })
+        var url = urls.filter(function (ele){
+          return ele != 'javascript:;';
+        })
 
-// await page.goto('https://www.mycareersfuture.sg/', {waitUntil:'networkidle2'})//get the main links
+        var url1 = url.filter(function (elem){
+          return elem != '';
+        })
 
-// const stories = await page.evaluate(() => {
-// const links = Array.from(document.querySelectorAll('a'))
-// return links.map(link => link.href)
-// })
-driver.get("https://www.designsystem.gov.sg/docs/getting-started/");
-// var urls = driver.findElements(By.tagName("a")).then(function(){
-//   var links = urls.getAttribute("href")
-// console.log(links)
-// })
-var promise = require("selenium-webdriver").promise;
-var links = driver.findElements(By.tagName("a"));
-links.then(function(elements) {
-  var pendingHref = elements.map(function(elem) {
-    return elem.getAttribute("href");
-  });
+        let unique = [...new Set(url1)];
+//        console.log(unique);
+        
+        
+for (var i=0; i<5;i++){
+    
+    driver.get(unique[i]).then(function(){
+ 
+    const results = new AxeBuilder(driver)
+    .configure(config)
+    .analyze().then(function(results){
+    // console.log(results)
+    // Report(results);
+    dict.push(results);
+    JSONReport(dict);
+    AxeReports.createCsvReport(results)})
+    })
+  }
 
   promise.all(pendingHref).then(function(allHref) {
     // `allHtml` will be an `Array` of strings
@@ -169,6 +203,6 @@ JSONReport = function(dict) {
       console.error(err);
       return;
     }
-    console.log("File has been created");
+//    console.log("File has been created");
   });
 };
