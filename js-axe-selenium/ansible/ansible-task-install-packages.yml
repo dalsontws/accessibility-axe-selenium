@@ -1,33 +1,6 @@
 ---
 - hosts: all
   tasks:
-    - name: Check if Python3 is installed
-      command: python3 --version
-      register: python_version_result
-      ignore_errors: true
-
-    - name: Install/Update Python
-      apt: name="python{{ '3.7.3' }}-dev" staansbite=present
-      when: python_version_result.stdout | replace('Python ', '') is version('3.7', '<')
-      ignore_errors: true
-
-    - name: Install virtualenv package
-      pip:
-        name: virtualenv
-        executable: pip3
-
-    - name: Creates data directory to store logs
-      file:
-        path: ~/accessibility-testing/python-axe-selenium/data
-        state: directory
-
-#    - name: Install requirements for Python using requirements.txt
-#      pip:
-#        requirements: "https://raw.githubusercontent.com/dalsontws/accessibility-axe-selenium/master/python-axe-selenium/requirements.txt?token=AKPNLJTM7I74K7MP3KFO7P26C2GKU"
-#        virtualenv: ~/accessibility-testing/venv
-
-    - name: Activate virtual environment (venv)
-      shell: source ~/accessibility-testing/venv/bin/activate
 
     - name: Get nvm.sh
       get_url:
@@ -35,17 +8,8 @@
         dest: "{{ playbook_dir }}"
         mode: '0755'
 
-#    - name: Add ~/.bash_profile if not present
-#      file: path=~/.bash_profile state=touch
-
     - name: Create $PWD/.nvm directory
       file: path="{{ playbook_dir }}/.nvm" state="directory"
-
-#    - name: Add to .bash_profile nvm.sh
-#      lineinfile: dest="~/.bash_profile" line='{{item}}' state=present
-#      with_items:
-#        - 'export NVM_DIR="$HOME/.nvm"'
-#        - 'source $(brew --prefix nvm)/nvm.sh'
 
     - name: Install nvm
       shell: >
@@ -57,7 +21,7 @@
         export NVM_DIR="{{ playbook_dir }}/.nvm";
         source $NVM_DIR/nvm.sh;
         nvm install v13.5.0;
-        nvm use --delete-prefix v13.5.0/dev/null;
+        nvm use --delete-prefix v13.5.0/dev/null --silent;
         which npm;
       register: npm_output
 
@@ -71,24 +35,45 @@
     - name: Save location of npm
       set_fact: bin_location={{ npm_location | dirname }}
 
+
     - name: Install packages based on package.json using the npm installed with nvm v0.35.2.
       environment:
-#        PATH: "/Users/hats/accessibility-testing/js-axe-selenium/ansible/.nvm/versions/node/v13.5.0/bin:{{ ansible_env.PATH }}"
         PATH: "{{ bin_location }}:{{ ansible_env.PATH }}"
       npm:
         path: "{{ playbook_dir | dirname }}"
-#        path: /Users/hats/accessibility-testing/js-axe-selenium
-#        executable: "{{ npm_location }}"
-#        state: present
 
+    - name: Get Chrome Major version
+      shell:
+           export CHROME_VERSION=$(defaults read "$(ls -t /Applications/*Google*Chrome*.app/Contents/Info.plist | head -1)" CFBundleShortVersionString);
+           echo ${CHROME_VERSION%%.*};
+      register: chrome_version_command_output
 
-    - name: Run trial.js
-      script: ~/accessibility-testing/js-axe-selenium/trial.js
-      args:
-        executable: node
+    - name: Save Chrome major version
+      set_fact: chrome_version={{ chrome_version_command_output.stdout }}
 
+    - name: Chrome Version Detected
+      debug:
+        msg: "{{ chrome_version }}"
 
-#    - name: Run axeSelenium.py
-#      command: ~/accessibility-testing/venv/bin/python3 ~/accessibility-testing/python-axe-selenium/axeSelenium.py
-#      args:
-#        chdir: ~/accessibility-testing/python-axe-selenium
+    - name: Get Chromedriver version from website
+      shell:
+           curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE_{{ chrome_version }};
+      register: chromedriver_version_command_output
+
+    - name: Save Chromedriver version from website
+      set_fact: chromedriver_version={{ chromedriver_version_command_output.stdout }}
+
+    - name: Chromedriver available from website
+      debug:
+        msg: "{{ chromedriver_version }}"
+
+    - name: Download Chromedriver
+      get_url:
+         url: "https://chromedriver.storage.googleapis.com/{{ chromedriver_version }}/chromedriver_mac64.zip"
+         dest: "{{ playbook_dir | dirname }}"
+         force: yes
+
+    - name: Unzip Chromedriver
+      unarchive:
+         src: "{{ playbook_dir | dirname }}/chromedriver_mac64.zip"
+         dest: "{{ playbook_dir | dirname }}"
