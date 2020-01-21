@@ -26,6 +26,7 @@ var urls = []
   // return links.map(link => link.href)
   // })
   driver.get("https://www.cpf.gov.sg/Members")
+
   // var urls = driver.findElements(By.tagName("a")).then(function(){
   //   var links = urls.getAttribute("href")
   // console.log(links)
@@ -137,55 +138,55 @@ for (var i=0; i<5;i++){
   
   
 
-Report = function(results) {
-  var violations = results.violations;
-  var passes = results.passes;
-  var manual = results.incomplete;
-  var violation,
-    violationCount,
-    nodes,
-    node,
-    nodeCount,
-    element,
-    any,
-    anys
-
-  if (typeof violations !== "undefined") {
-    violationCount = violations.length;
-  }
-  console.log("\nKinds of violations:" + violationCount);
-  for (i = 0; i < violationCount; i += 1) {
-    violation = violations[i];
-    nodes = violation.nodes;
-
-    if (typeof nodes !== "undefined") {
-      nodeCount = nodes.length;
-    }
-
-    console.log("\nThere are " + nodeCount + " times of " + violation.id);
-
-    for (j = 0; j < nodeCount; j += 1) {
-      node = nodes[j];
-      if (typeof node !== "undefined") {
-        element = node.target;
-        anys = node.any;
-      }
-
-      if (typeof anys !== "undefined") {
-        anyCount = anys.length;
-      }
-
-      //trial for outputting DOM element & error message
-      for (k = 0; k < anyCount; k += 1) {
-        any = anys[k];
-
-        violationImpact = any.impact;
-        // if(any.message && any.impact !== 'undefined'){
-        // console.log('\nDOM element: ' + element[k] + ' has error ' + any.message + '\n' + any.impact);
-      }
-    }
-  }
-};
+//Report = function(results) {
+//  var violations = results.violations;
+//  var passes = results.passes;
+//  var manual = results.incomplete;
+//  var violation,
+//    violationCount,
+//    nodes,
+//    node,
+//    nodeCount,
+//    element,
+//    any,
+//    anys
+//
+//  if (typeof violations !== "undefined") {
+//    violationCount = violations.length;
+//  }
+//  console.log("\nKinds of violations:" + violationCount);
+//  for (i = 0; i < violationCount; i += 1) {
+//    violation = violations[i];
+//    nodes = violation.nodes;
+//
+//    if (typeof nodes !== "undefined") {
+//      nodeCount = nodes.length;
+//    }
+//
+//    console.log("\nThere are " + nodeCount + " times of " + violation.id);
+//
+//    for (j = 0; j < nodeCount; j += 1) {
+//      node = nodes[j];
+//      if (typeof node !== "undefined") {
+//        element = node.target;
+//        anys = node.any;
+//      }
+//
+//      if (typeof anys !== "undefined") {
+//        anyCount = anys.length;
+//      }
+//
+//      //trial for outputting DOM element & error message
+//      for (k = 0; k < anyCount; k += 1) {
+//        any = anys[k];
+//
+//        violationImpact = any.impact;
+//        // if(any.message && any.impact !== 'undefined'){
+//        // console.log('\nDOM element: ' + element[k] + ' has error ' + any.message + '\n' + any.impact);
+//      }
+//    }
+//  }
+//};
 
 //return report results to Crawl.py file for processing
 JSONReport = function(dict) {

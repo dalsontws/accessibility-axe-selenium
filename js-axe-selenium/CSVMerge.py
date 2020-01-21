@@ -3,7 +3,6 @@ import pandas as pd
 data = pd.read_csv('jug.csv')
 score = pd.read_csv('score.csv')
 
-score.head()
 
 result = pd.merge(data,
                   score[['Volation Type','Govtech Priority','WCAG Mapping']],
