@@ -13,8 +13,11 @@ else
         source $NVM_DIR/nvm.sh;
         nvm use --delete-prefix default;
 pip3 install pandas
+pip3 install bokeh
+pip3 install panel
 
-node trial => new.csv
+WEBSITE="https://www.isomer.sg" node trial => jug.csv
+#node trial => jug.csv
 python CSVMerge.py
 
 fi

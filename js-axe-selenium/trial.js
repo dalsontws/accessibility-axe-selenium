@@ -25,7 +25,7 @@ var urls = []
   // const links = Array.from(document.querySelectorAll('a'))
   // return links.map(link => link.href)
   // })
-  driver.get("https://www.cpf.gov.sg/Members")
+  driver.get(process.env.WEBSITE)
 
   // var urls = driver.findElements(By.tagName("a")).then(function(){
   //   var links = urls.getAttribute("href")
@@ -51,23 +51,26 @@ var urls = []
         var url1 = url.filter(function (elem){
           return elem != '';
         })
+        var url2 = url1.filter(function (elem){
+              return elem.includes(process.env.WEBSITE);})
 
-        let unique = [...new Set(url1)];
+        let unique = [...new Set(url2)];
 //        console.log(unique);
         
         
-for (var i=0; i<5;i++){
+for (var i=0; i<unique.length;i++){
     
     driver.get(unique[i]).then(function(){
  
     const results = new AxeBuilder(driver)
-    .configure(config)
+//    .configure(config)
     .analyze().then(function(results){
     // console.log(results)
     // Report(results);
     dict.push(results);
     JSONReport(dict);
-    AxeReports.createCsvReport(results)})
+    AxeReports.createCsvReport(results)
+    })
     })
   }
 
