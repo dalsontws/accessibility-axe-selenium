@@ -16,7 +16,7 @@ pip3 install pandas
 pip3 install bokeh
 pip3 install panel
 
-WEBSITE="https://www.isomer.sg" node trial => jug.csv
+WEBSITE="https://www.isomer.gov.sg" node trial => jug.csv
 #node trial => jug.csv
 python CSVMerge.py
 

@@ -76,7 +76,7 @@ data["moderate"]=moderateno
 data["minor"]=minorno
 # print(data)
 
-p = figure(x_range=urlno, plot_height=380, title="Violation Count by Website",
+p = figure(x_range=urlno, plot_height=350, title="Violation Count by Website",
            toolbar_location="above", tools="hover,pan,wheel_zoom,reset,save", tooltips="@$name $name issue(s) found")
 
 p.vbar_stack(impact, x='urlno', width=0.9, color=colors, source=data,
@@ -107,7 +107,7 @@ data = pd.Series(piechart).reset_index(name='value').rename(columns={'index':'co
 data['angle'] = data['value']/data['value'].sum() * 2*pi
 data['color'] = Category20c[len(piechart)]
 
-p3 = figure(plot_height=350, title="Violation Type Breakdown", toolbar_location=None,
+p3 = figure(plot_height=350, title="Violation Severity Breakdown", toolbar_location=None,
            tools="hover", tooltips="@country: @value", x_range=(-0.5, 1.0))
 
 p3.wedge(x=0, y=1, radius=0.4,
@@ -119,8 +119,16 @@ p3.axis.axis_label=None
 p3.axis.visible=False
 p3.grid.grid_line_color = None
 
-tab = pn.Tabs(('URL Legend',legend), scroll=True)
-combine = pn.Column(p,tab)
-combinerow = pn.Row(combine,p3)
-pn.Tabs(('PM/PO',combinerow),('Developers',devtable)).show()
+typelist = devtable.groupby('Volation Type').size()
+types = typelist.to_dict()
+vtypelist = pd.DataFrame.from_dict(types,orient='index')
+
+violationstable = vtypelist.rename(columns={0: 'Most Common Violation Types'})
+violationstable.sort_values(by=['Most Common Violation Types'], inplace=True, ascending=False)
+
+combine = pn.Column(p,legend)
+combinecolumn = pn.Column(p3,violationstable)
+pages = pn.Tabs(('Analysis by Website',combine),('Analysis by Type',combinecolumn))
+# combinerow = pn.Row(combine,combinecolumn)
+pn.Tabs(('PM/PO',pages),('Developers',devtable)).show()
 
