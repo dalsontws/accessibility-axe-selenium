@@ -37,7 +37,7 @@ for i in range(len(urllist)):
     urldict[i] = urllist[i]
 
 
-print(urldict)
+# print(urldict)
 
 urlno = list(urldict.keys())
 

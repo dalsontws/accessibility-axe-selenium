@@ -16,8 +16,17 @@ pip3 install pandas
 pip3 install bokeh
 pip3 install panel
 
-WEBSITE="https://www.isomer.gov.sg" node trial => jug.csv
-#node trial => jug.csv
-python CSVMerge.py
+read -p 'Input URL: ' page
+
+if curl --output /dev/null --silent --head --fail "$page"
+then
+    echo "Scanning Website..."
+    WEBSITE=$page node trial => jug.csv
+    python CSVMerge.py
+
+else
+    echo "This URL Not Exist"
+fi
+
 
 fi
