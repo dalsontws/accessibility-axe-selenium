@@ -8,7 +8,7 @@ import panel as pn
 pn.extension()
 
 
-data = pd.read_csv('jug.csv')
+data = pd.read_csv('Results.csv')
 score = pd.read_csv('score.csv')
 
 
@@ -18,11 +18,10 @@ result = pd.merge(data,
                   how='left')
 df = pd.DataFrame(result)
 
-
 df.sort_values(by=['URL','Govtech Priority'], inplace=True, ascending=False)
 h=df[df.URL!='URL']
 devtable = h[h.URL!='Failed to inject axe-core into one of the iframes!']
-devtable.to_csv('new.csv')
+devtable.to_csv('Developer Report.csv')
 
 g=devtable.iloc[:,0]
 k=pd.DataFrame(g)
@@ -60,7 +59,6 @@ for i in range(len(urllist)):
     seriousno.append(len(url[url['Impact'] == 'serious']))
     moderateno.append(len(url[url['Impact'] == 'moderate']))
     minorno.append(len(url[url['Impact'] == 'minor']))
-
 
 
 output_file("Summary Report.html")

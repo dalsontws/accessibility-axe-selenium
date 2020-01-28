@@ -11,26 +11,8 @@ var dict = []
 var array = []
 var urls = []
 
-
-  // let screenshotNumber = 0;
-  
-  // const browser = await puppeteer.launch({headless:false, defaultViewport:null})
-  
-  // const page = await browser.newPage()
-  // //await page.setBypassCSP(true)
-  
-  // await page.goto('https://www.mycareersfuture.sg/', {waitUntil:'networkidle2'})//get the main links
-  
-  // const stories = await page.evaluate(() => {
-  // const links = Array.from(document.querySelectorAll('a'))
-  // return links.map(link => link.href)
-  // })
   driver.get(process.env.WEBSITE)
 
-  // var urls = driver.findElements(By.tagName("a")).then(function(){
-  //   var links = urls.getAttribute("href")
-  // console.log(links)
-  // })
   var promise = require('selenium-webdriver').promise;
   var links = driver.findElements(By.tagName('a'))
   links.then(function (elements) {
@@ -39,8 +21,6 @@ var urls = []
     });
 
     promise.all(pendingHref).then(function (allHref) {
-        // `allHtml` will be an `Array` of strings
-//        console.log(allHref)
         var urls = allHref.filter(function (el){
           return el != null;
         })
@@ -65,8 +45,6 @@ for (var i=0; i<unique.length;i++){
     const results = new AxeBuilder(driver)
 //    .configure(config)
     .analyze().then(function(results){
-    // console.log(results)
-    // Report(results);
     dict.push(results);
     JSONReport(dict);
     AxeReports.createCsvReport(results)
@@ -80,18 +58,6 @@ for (var i=0; i<unique.length;i++){
     });
 
 
-
-
-
-    
-  
-
-    
-    
-
-  //var links = await driver.findElements(By.css("a"))
-  //var links = ["https://www.cpf.gov.sg/Members"]
-  
 
   const config = {
   rules: [
@@ -126,7 +92,7 @@ for (var i=0; i<unique.length;i++){
       },
 
       evaluate: function(node, options) {
-        var href = node.getAttribute("href");
+        var href = node.findElements("href");
 
         if (href === null || href === "" || href === "#") {
           return false;
@@ -138,67 +104,14 @@ for (var i=0; i<unique.length;i++){
   ]
 };
 
-  
-  
 
-//Report = function(results) {
-//  var violations = results.violations;
-//  var passes = results.passes;
-//  var manual = results.incomplete;
-//  var violation,
-//    violationCount,
-//    nodes,
-//    node,
-//    nodeCount,
-//    element,
-//    any,
-//    anys
-//
-//  if (typeof violations !== "undefined") {
-//    violationCount = violations.length;
-//  }
-//  console.log("\nKinds of violations:" + violationCount);
-//  for (i = 0; i < violationCount; i += 1) {
-//    violation = violations[i];
-//    nodes = violation.nodes;
-//
-//    if (typeof nodes !== "undefined") {
-//      nodeCount = nodes.length;
-//    }
-//
-//    console.log("\nThere are " + nodeCount + " times of " + violation.id);
-//
-//    for (j = 0; j < nodeCount; j += 1) {
-//      node = nodes[j];
-//      if (typeof node !== "undefined") {
-//        element = node.target;
-//        anys = node.any;
-//      }
-//
-//      if (typeof anys !== "undefined") {
-//        anyCount = anys.length;
-//      }
-//
-//      //trial for outputting DOM element & error message
-//      for (k = 0; k < anyCount; k += 1) {
-//        any = anys[k];
-//
-//        violationImpact = any.impact;
-//        // if(any.message && any.impact !== 'undefined'){
-//        // console.log('\nDOM element: ' + element[k] + ' has error ' + any.message + '\n' + any.impact);
-//      }
-//    }
-//  }
-//};
-
-//return report results to Crawl.py file for processing
 JSONReport = function(dict) {
-  fs.writeFile("./object3.json", JSON.stringify(dict, null, 4), err => {
+  fs.writeFile("./Report.json", JSON.stringify(dict, null, 4), err => {
     if (err) {
       console.error(err);
       return;
     }
-//    console.log("File has been created");
+
   });
 };
 
