@@ -9,11 +9,15 @@ if ! [ -d "a11y/bin" ]; then
 else
   
   . a11y/bin/activate
-export NVM_DIR="ansible/.nvm";
-      source $NVM_DIR/nvm.sh;
-      nvm use --delete-prefix default;
+  export NVM_DIR="ansible/.nvm";
+        source $NVM_DIR/nvm.sh;
+        nvm use --delete-prefix default;
 pip3 install pandas
-node trial.js
+pip3 install bokeh
+pip3 install panel
+
+WEBSITE="https://www.isomer.sg" node trial => jug.csv
+#node trial => jug.csv
 python CSVMerge.py
 
 fi
