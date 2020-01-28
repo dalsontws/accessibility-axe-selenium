@@ -22,10 +22,10 @@ if curl --output /dev/null --silent --head --fail "$page"
 then
     echo "Scanning Website..."
     WEBSITE=$page node trial => Results.csv
-    python CSVMerge.py
+    python3 CSVMerge.py
 
 else
-    echo "This URL Not Exist"
+    echo "This URL Does Not Exist"
 fi
 
 
