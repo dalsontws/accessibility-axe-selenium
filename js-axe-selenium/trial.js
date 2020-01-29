@@ -35,13 +35,15 @@ var urls = []
               return elem.includes(process.env.WEBSITE);})
 
         let unique = [...new Set(url2)];
-//        console.log(unique);
+
+
+//         console.log(unique);
         
         
 for (var i=0; i<unique.length;i++){
     
     driver.get(unique[i]).then(function(){
- 
+
     const results = new AxeBuilder(driver)
 //    .configure(config)
     .analyze().then(function(results){
@@ -50,11 +52,12 @@ for (var i=0; i<unique.length;i++){
     AxeReports.createCsvReport(results)
     })
     })
+
   }
 
   driver.close()
   })
-        
+
     });
 
 

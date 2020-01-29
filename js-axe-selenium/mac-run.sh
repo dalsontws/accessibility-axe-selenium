@@ -21,6 +21,7 @@ read -p 'Input URL: ' page
 if curl --output /dev/null --silent --head --fail "$page"
 then
     echo "Scanning Website..."
+
     WEBSITE=$page node trial => Results.csv
     python3 CSVMerge.py
 
