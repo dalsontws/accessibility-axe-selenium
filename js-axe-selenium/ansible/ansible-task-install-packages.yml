@@ -77,3 +77,8 @@
       unarchive:
          src: "{{ playbook_dir | dirname }}/chromedriver_mac64.zip"
          dest: "{{ playbook_dir | dirname }}"
+
+    - name: Delete Chromedriver.zip
+      file:
+        path: "{{ playbook_dir | dirname }}/chromedriver_mac64.zip"
+        state: absent
