@@ -9,3 +9,5 @@ js-axe-selenium/chromedriver
 Js-axe-selenium/chromedriver_mac64.zip
 
 .DS_Store
+.vscode
+venv
