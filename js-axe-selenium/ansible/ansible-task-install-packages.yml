@@ -1,12 +1,11 @@
 ---
 - hosts: all
   tasks:
-
     - name: Get nvm.sh
       get_url:
         url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh
         dest: "{{ playbook_dir }}"
-        mode: '0755'
+        mode: "0755"
 
     - name: Create $PWD/.nvm directory
       file: path="{{ playbook_dir }}/.nvm" state="directory"
@@ -35,7 +34,6 @@
     - name: Save location of npm
       set_fact: bin_location={{ npm_location | dirname }}
 
-
     - name: Install packages based on package.json using the npm installed with nvm v0.35.2.
       environment:
         PATH: "{{ bin_location }}:{{ ansible_env.PATH }}"
@@ -44,8 +42,8 @@
 
     - name: Get Chrome Major version
       shell:
-           export CHROME_VERSION=$(defaults read "$(ls -t /Applications/*Google*Chrome*.app/Contents/Info.plist | head -1)" CFBundleShortVersionString);
-           echo ${CHROME_VERSION%%.*};
+        export CHROME_VERSION=$(defaults read "$(ls -t /Applications/*Google*Chrome*.app/Contents/Info.plist | head -1)" CFBundleShortVersionString);
+        echo ${CHROME_VERSION%%.*};
       register: chrome_version_command_output
 
     - name: Save Chrome major version
@@ -56,8 +54,7 @@
         msg: "{{ chrome_version }}"
 
     - name: Get Chromedriver version from website
-      shell:
-           curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE_{{ chrome_version }};
+      shell: curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE_{{ chrome_version }};
       register: chromedriver_version_command_output
 
     - name: Save Chromedriver version from website
@@ -69,16 +66,11 @@
 
     - name: Download Chromedriver
       get_url:
-         url: "https://chromedriver.storage.googleapis.com/{{ chromedriver_version }}/chromedriver_mac64.zip"
-         dest: "{{ playbook_dir | dirname }}"
-         force: yes
+        url: "https://chromedriver.storage.googleapis.com/{{ chromedriver_version }}/chromedriver_mac64.zip"
+        dest: "{{ playbook_dir | dirname }}"
+        force: yes
 
     - name: Unzip Chromedriver
       unarchive:
-         src: "{{ playbook_dir | dirname }}/chromedriver_mac64.zip"
-         dest: "{{ playbook_dir | dirname }}"
-
-    - name: Delete Chromedriver.zip
-      file:
-        path: "{{ playbook_dir | dirname }}/chromedriver_mac64.zip"
-        state: absent
+        src: "{{ playbook_dir | dirname }}/chromedriver_mac64.zip"
+        dest: "{{ playbook_dir | dirname }}"
