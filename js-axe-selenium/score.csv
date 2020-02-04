@@ -1,7 +1,5 @@
 Volation Type,Govtech Priority,WCAG Mapping
 input-image-alt,20,1.1.1 Non-text Content (Level A)
-label,20,1.1.1 Non-text Content (Level A)
-label,20,1.1.1 Non-text Content (Level A)
 label,20,3.3.2 Labels or Instructions (Level A)
 link-name,10,"2.4.4 Link Purpose (In Context) (Level A),
 4.1.2 Name, Role, Value (Level A)"
