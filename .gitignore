@@ -4,6 +4,7 @@ python-axe-selenium/data
 js-axe-selenium/node_modules
 python-axe-selenium/node_modules
 js-axe-selenium/venv/
+<<<<<<< HEAD
 js-axe-selenium/ansible/.nvm
 js-axe-selenium/chromedriver
 Js-axe-selenium/chromedriver_mac64.zip
@@ -11,3 +12,7 @@ Js-axe-selenium/chromedriver_mac64.zip
 .DS_Store
 .vscode
 venv
+=======
+
+.DS_Store
+>>>>>>> master

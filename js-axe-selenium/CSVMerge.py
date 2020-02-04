@@ -158,3 +158,4 @@ pages = pn.Tabs(("Analysis by Website", combine), ("Analysis by Type", combineco
 # combinerow = pn.Row(combine,combinecolumn)
 pn.Tabs(("PM/PO", pages), ("Developers", devtable)).show()
 
+s
