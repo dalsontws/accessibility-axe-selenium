@@ -1,7 +1,6 @@
 ---
 - hosts: all
   tasks:
-
     - name: Get nvm.sh
       get_url:
         url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh

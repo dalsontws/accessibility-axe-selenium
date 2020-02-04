@@ -9,6 +9,27 @@ if ! [ -d "a11y/bin" ]; then
 else
   
   . a11y/bin/activate
+  export NVM_DIR="ansible/.nvm";
+        source $NVM_DIR/nvm.sh;
+        nvm use --delete-prefix default;
+pip3 install pandas
+pip3 install bokeh
+pip3 install panel
+
+read -p 'Input URL: ' page
+
+if curl --output /dev/null --silent --head --fail "$page"
+then
+    echo "Scanning Website..."
+
+    WEBSITE=$page node trial => Results.csv
+    python3 CSVMerge.py
+
+else
+    echo "This URL Does Not Exist"
+fi
+
+
 export NVM_DIR="ansible/.nvm";
       source $NVM_DIR/nvm.sh;
       nvm use --delete-prefix default;
