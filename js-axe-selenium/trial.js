@@ -52,163 +52,51 @@ var AxeReports = require("axe-reports");
 var AxeBuilder = require("axe-webdriverjs");
 var WebDriver = require("selenium-webdriver");
 
-var driver = new WebDriver.Builder().forBrowser("chrome").build();
-const fs = require("fs");
-var By = WebDriver.By
+const { By } = WebDriver;
 
-var dict = []
-var array = []
-var urls = []
+const driver = new WebDriver.Builder().forBrowser('chrome').build();
 
+const allUrls = new Set();
 
-  // let screenshotNumber = 0;
-  
-  // const browser = await puppeteer.launch({headless:false, defaultViewport:null})
-  
-  // const page = await browser.newPage()
-  // //await page.setBypassCSP(true)
-  
-  // await page.goto('https://www.mycareersfuture.sg/', {waitUntil:'networkidle2'})//get the main links
-  
-  // const stories = await page.evaluate(() => {
-  // const links = Array.from(document.querySelectorAll('a'))
-  // return links.map(link => link.href)
-  // })
-  driver.get("https://www.cpf.gov.sg/Members")
-  // var urls = driver.findElements(By.tagName("a")).then(function(){
-  //   var links = urls.getAttribute("href")
-  // console.log(links)
-  // })
-  var promise = require('selenium-webdriver').promise;
-  var links = driver.findElements(By.tagName('a'))
-  links.then(function (elements) {
-    var pendingHref = elements.map(function (elem) {
-        return elem.getAttribute('href');
-    });
+const domain = process.env.WEBSITE;
 
-    promise.all(pendingHref).then(function (allHref) {
-        // `allHtml` will be an `Array` of strings
-//        console.log(allHref)
-        var urls = allHref.filter(function (el){
-          return el != null;
-        })
-        var url = urls.filter(function (ele){
-          return ele != 'javascript:;';
-        })
+allUrls.add(domain);
 
-        var url1 = url.filter(function (elem){
-          return elem != '';
-        })
+function getAllUrls(mainDomain, link) {
+  const currentUrlSet = new Set();
 
-        let unique = [...new Set(url1)];
-//        console.log(unique);
-        
-        
-for (var i=0; i<5;i++){
-    
-    driver.get(unique[i]).then(function(){
- 
-    const results = new AxeBuilder(driver)
-    .configure(config)
-    .analyze().then(function(results){
-    // console.log(results)
-    // Report(results);
-    dict.push(results);
-    JSONReport(dict);
-    AxeReports.createCsvReport(results)})
-    })
-  }
-
-  promise.all(pendingHref).then(function(allHref) {
-    // `allHtml` will be an `Array` of strings
-    console.log(allHref);
-    var urls = allHref.filter(function(el) {
-      return el != null;
-    });
-    var url = urls.filter(function(ele) {
-      return ele != "javascript:;";
-    });
-
-    var url1 = url.filter(function(elem) {
-      return elem != "";
-    });
-
-    let unique = [...new Set(url1)];
-    console.log(unique);
-
-    for (var i = 0; i < 1; i++) {
-      driver.get(unique[i]).then(function() {
-        const results = new AxeBuilder(driver)
-          .configure(config)
-          .analyze()
-          .then(function(results) {
-            console.log(results);
-            Report(results);
-            dict.push(results);
-            JSONReport(dict);
-            AxeReports.createCsvReportRow(results);
-          });
+  driver.get(link).then(() => {
+    AxeBuilder(driver)
+      .analyze()
+      .then(results => {
+        AxeReports.createCsvReport(results);
       });
-    }
 
-    driver.close();
+    const elements = driver.findElements(By.tagName('a'));
+    elements
+      .then(elementsResult => {
+        elementsResult.forEach(element => {
+          element.getAttribute('href').then(url => {
+            if (url !== null && url.startsWith(mainDomain)) {
+              currentUrlSet.add(url);
+            }
+          });
+        });
+      })
+      .then(() => {
+        const newUrlsSet = new Set([...currentUrlSet].filter(x => !allUrls.has(x)));
+        const newUrlsArray = [...newUrlsSet];
+        newUrlsSet.forEach(allUrls.add, allUrls);
+        newUrlsArray.forEach(newLink => {
+          getAllUrls(mainDomain, newLink);
+        });
+      });
   });
-});
+}
 
-//var links = await driver.findElements(By.css("a"))
-var links = ["https://www.designsystem.gov.sg/docs/getting-started/"];
+getAllUrls(domain, domain);
 
-const config = {
-  rules: [
-    {
-      id: "fake-rule",
-      selector: "a",
-      enabled: true,
-      tags: ["custom"],
-      all: [],
-      any: ["fake-rule"],
-      none: [],
-      metadata: {
-        description:
-          "This is a rule used for testing the bok choy integration.",
-        help: "I can't help",
-        helpUrl: "There isn't a help url for this!"
-      }
-    }
-  ],
-  checks: [
-    {
-      id: "fake-rule",
-      metadata: {
-        impact: "serious",
-        messages: {
-          pass: "Element has Bok Choy",
-          fail: "Element has no Bok Choy",
-          incomplete: {
-            BokChoy: "Bok Choy could not be seen"
-          }
-        }
-      },
-
-      evaluate: function(node, options) {
-        var href = node.getAttribute("href");
-
-        if (href === null || href === "" || href === "#") {
-          return false;
-        } else {
-          return true;
-        }
-      }
-    }
-  ]
-};
-
-Report = function(results) {
-  var violations = results.violations;
-  var passes = results.passes;
-  var manual = results.incomplete;
-  var violation, violationCount, nodes, node, nodeCount, element, any, anys;
-
+<<<<<<< HEAD
   if (typeof violations !== "undefined") {
     violationCount = violations.length;
   }
@@ -256,3 +144,6 @@ JSONReport = function(dict) {
 //    console.log("File has been created");
   });
 };
+=======
+driver.close();
+>>>>>>> e11be0808c1ae682ce9fde22d3e38c81725bb6a1
