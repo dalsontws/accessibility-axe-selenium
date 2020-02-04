@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 var AxeReports = require('axe-reports')
 var AxeBuilder = require("axe-webdriverjs");
@@ -117,6 +118,8 @@ JSONReport = function(dict) {
     }
 
 =======
+=======
+>>>>>>> master
 const AxeReports = require('axe-reports');
 const AxeBuilder = require('axe-webdriverjs');
 const WebDriver = require('selenium-webdriver');
@@ -160,6 +163,9 @@ function getAllUrls(mainDomain, link) {
           getAllUrls(mainDomain, newLink);
         });
       });
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
   });
 }
