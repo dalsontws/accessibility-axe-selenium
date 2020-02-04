@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const AxeReports = require('axe-reports');
 const AxeBuilder = require('axe-webdriverjs');
 const WebDriver = require('selenium-webdriver');
@@ -48,7 +47,7 @@ function getAllUrls(mainDomain, link) {
 getAllUrls(domain, domain);
 
 driver.close();
-=======
+
 var AxeReports = require("axe-reports");
 var AxeBuilder = require("axe-webdriverjs");
 var WebDriver = require("selenium-webdriver");
@@ -257,4 +256,3 @@ JSONReport = function(dict) {
 //    console.log("File has been created");
   });
 };
->>>>>>> master
