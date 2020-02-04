@@ -12,9 +12,13 @@ else
   export NVM_DIR="ansible/.nvm";
         source $NVM_DIR/nvm.sh;
         nvm use --delete-prefix default;
+
+fi   
+        
 pip3 install pandas
 pip3 install bokeh
 pip3 install panel
+
 
 read -p 'Input URL: ' page
 
@@ -27,7 +31,4 @@ then
 
 else
     echo "This URL Does Not Exist"
-fi
-
-
 fi

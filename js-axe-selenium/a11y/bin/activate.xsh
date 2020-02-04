@@ -28,7 +28,7 @@ def _deactivate(args):
 _deactivate(["nondestructive"])
 aliases["deactivate"] = _deactivate
 
-$VIRTUAL_ENV = r"/Users/hats/accessibility-axe-selenium/js-axe-selenium/a11y"
+$VIRTUAL_ENV = r"/Users/hats/Documents/dalsontws/accessibility-axe-selenium/js-axe-selenium/a11y"
 
 $_OLD_VIRTUAL_PATH = $PATH
 $PATH = $PATH[:]

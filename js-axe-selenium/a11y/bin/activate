@@ -46,7 +46,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/hats/accessibility-axe-selenium/js-axe-selenium/a11y"
+VIRTUAL_ENV="/Users/hats/Documents/dalsontws/accessibility-axe-selenium/js-axe-selenium/a11y"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
