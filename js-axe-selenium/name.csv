@@ -1,0 +1,709 @@
+[
+  'https://www.gov.sg/',
+  'https://www.designsystem.gov.sg/',
+  'https://www.designsystem.gov.sg/about/',
+  'https://www.designsystem.gov.sg/guides/',
+  'https://www.designsystem.gov.sg/docs/',
+  'https://github.com/govtechsg/sgds',
+  'https://www.designsystem.gov.sg/docs/installation/',
+  'https://github.com/govtechsg/sgds',
+  'https://www.designsystem.gov.sg/docs/installation/',
+  'https://www.designsystem.gov.sg/docs/getting-started/',
+  'https://www.designsystem.gov.sg/docs/installation/',
+  'https://www.designsystem.gov.sg/docs/customise-sgds/',
+  'https://www.designsystem.gov.sg/docs/masthead/',
+  'https://www.designsystem.gov.sg/docs/main-nav/',
+  'https://www.designsystem.gov.sg/docs/side-nav/',
+  'https://www.designsystem.gov.sg/docs/footer/',
+  'https://www.designsystem.gov.sg/docs/container/',
+  'https://www.designsystem.gov.sg/docs/grid/',
+  'https://www.designsystem.gov.sg/docs/responsiveness/',
+  'https://www.designsystem.gov.sg/docs/section/',
+  'https://www.designsystem.gov.sg/docs/accordion/',
+  'https://www.designsystem.gov.sg/docs/breadcrumb/',
+  'https://www.designsystem.gov.sg/docs/button/',
+  'https://www.designsystem.gov.sg/docs/callout/',
+  'https://www.designsystem.gov.sg/docs/card/',
+  'https://www.designsystem.gov.sg/docs/dropdown/',
+  'https://www.designsystem.gov.sg/docs/hero/',
+  'https://www.designsystem.gov.sg/docs/iconography/',
+  'https://www.designsystem.gov.sg/docs/notification/',
+  'https://www.designsystem.gov.sg/docs/pagination/',
+  'https://www.designsystem.gov.sg/docs/tab/',
+  'https://www.designsystem.gov.sg/docs/table/',
+  'https://www.designsystem.gov.sg/docs/tooltip/',
+  'https://www.designsystem.gov.sg/docs/typography/',
+  'https://www.designsystem.gov.sg/docs/checkbox/',
+  'https://www.designsystem.gov.sg/docs/radio-buttons/',
+  'https://www.designsystem.gov.sg/docs/text-area/',
+  'https://www.designsystem.gov.sg/docs/text-input/',
+  'https://www.designsystem.gov.sg/docs/colours/',
+  'https://www.designsystem.gov.sg/docs/display/',
+  'https://www.designsystem.gov.sg/',
+  'https://www.designsystem.gov.sg/docs/',
+  'https://www.designsystem.gov.sg/docs/getting-started/',
+  'https://www.designsystem.gov.sg/docs/getting-started',
+  'https://www.designsystem.gov.sg/docs/installation',
+  'https://www.designsystem.gov.sg/docs/customise-sgds',
+  null,
+  'https://www.designsystem.gov.sg/docs/masthead/',
+  'https://www.designsystem.gov.sg/docs/main-nav/',
+  'https://www.designsystem.gov.sg/docs/side-nav/',
+  'https://www.designsystem.gov.sg/docs/footer/',
+  null,
+  'https://www.designsystem.gov.sg/docs/container/',
+  'https://www.designsystem.gov.sg/docs/grid/',
+  'https://www.designsystem.gov.sg/docs/responsiveness/',
+  'https://www.designsystem.gov.sg/docs/section/',
+  null,
+  'https://www.designsystem.gov.sg/docs/accordion/',
+  'https://www.designsystem.gov.sg/docs/breadcrumb/',
+  'https://www.designsystem.gov.sg/docs/button/',
+  'https://www.designsystem.gov.sg/docs/callout/',
+  'https://www.designsystem.gov.sg/docs/card/',
+  'https://www.designsystem.gov.sg/docs/dropdown/',
+  'https://www.designsystem.gov.sg/docs/hero/',
+  'https://www.designsystem.gov.sg/docs/iconography/',
+  'https://www.designsystem.gov.sg/docs/notification/',
+  'https://www.designsystem.gov.sg/docs/pagination/',
+  'https://www.designsystem.gov.sg/docs/tab/',
+  'https://www.designsystem.gov.sg/docs/table/',
+  'https://www.designsystem.gov.sg/docs/tooltip/',
+  'https://www.designsystem.gov.sg/docs/typography/',
+  null,
+  'https://www.designsystem.gov.sg/docs/checkbox/',
+  'https://www.designsystem.gov.sg/docs/radio-buttons/',
+  'https://www.designsystem.gov.sg/docs/text-area/',
+  'https://www.designsystem.gov.sg/docs/text-input/',
+  null,
+  'https://www.designsystem.gov.sg/docs/colours/',
+  'https://www.designsystem.gov.sg/docs/display/',
+  'https://www.designsystem.gov.sg/docs/installation',
+  'https://www.designsystem.gov.sg/docs/customise-sgds',
+  'https://www.designsystem.gov.sg/docs/customise-sgds',
+  'https://www.designsystem.gov.sg/docs/installation',
+  'https://github.com/govtechsg/sgds-govtech-react',
+  'https://github.com/govtechsg/sgds-govtech-vue',
+  'https://www.tech.gov.sg/digital-service-standards/',
+  'https://www.designsystem.gov.sg/docs/masthead/',
+  'https://www.designsystem.gov.sg/docs/main-nav/',
+  'https://www.designsystem.gov.sg/docs/side-nav/',
+  'https://www.designsystem.gov.sg/docs/footer/',
+  'https://www.designsystem.gov.sg/docs/container/',
+  'https://www.designsystem.gov.sg/docs/grid/',
+  'https://www.designsystem.gov.sg/docs/responsiveness/',
+  'https://www.designsystem.gov.sg/docs/section/',
+  'https://www.designsystem.gov.sg/docs/accordion/',
+  'https://www.designsystem.gov.sg/docs/breadcrumb/',
+  'https://www.designsystem.gov.sg/docs/button/',
+  'https://www.designsystem.gov.sg/docs/callout/',
+  'https://www.designsystem.gov.sg/docs/card/',
+  'https://www.designsystem.gov.sg/docs/dropdown/',
+  ... 24 more items
+]
+[
+  'https://www.gov.sg/',
+  'https://www.designsystem.gov.sg/',
+  'https://www.designsystem.gov.sg/about/',
+  'https://www.designsystem.gov.sg/guides/',
+  'https://www.designsystem.gov.sg/docs/',
+  'https://github.com/govtechsg/sgds',
+  'https://www.designsystem.gov.sg/docs/installation/',
+  'https://www.designsystem.gov.sg/docs/getting-started/',
+  'https://www.designsystem.gov.sg/docs/customise-sgds/',
+  'https://www.designsystem.gov.sg/docs/masthead/',
+  'https://www.designsystem.gov.sg/docs/main-nav/',
+  'https://www.designsystem.gov.sg/docs/side-nav/',
+  'https://www.designsystem.gov.sg/docs/footer/',
+  'https://www.designsystem.gov.sg/docs/container/',
+  'https://www.designsystem.gov.sg/docs/grid/',
+  'https://www.designsystem.gov.sg/docs/responsiveness/',
+  'https://www.designsystem.gov.sg/docs/section/',
+  'https://www.designsystem.gov.sg/docs/accordion/',
+  'https://www.designsystem.gov.sg/docs/breadcrumb/',
+  'https://www.designsystem.gov.sg/docs/button/',
+  'https://www.designsystem.gov.sg/docs/callout/',
+  'https://www.designsystem.gov.sg/docs/card/',
+  'https://www.designsystem.gov.sg/docs/dropdown/',
+  'https://www.designsystem.gov.sg/docs/hero/',
+  'https://www.designsystem.gov.sg/docs/iconography/',
+  'https://www.designsystem.gov.sg/docs/notification/',
+  'https://www.designsystem.gov.sg/docs/pagination/',
+  'https://www.designsystem.gov.sg/docs/tab/',
+  'https://www.designsystem.gov.sg/docs/table/',
+  'https://www.designsystem.gov.sg/docs/tooltip/',
+  'https://www.designsystem.gov.sg/docs/typography/',
+  'https://www.designsystem.gov.sg/docs/checkbox/',
+  'https://www.designsystem.gov.sg/docs/radio-buttons/',
+  'https://www.designsystem.gov.sg/docs/text-area/',
+  'https://www.designsystem.gov.sg/docs/text-input/',
+  'https://www.designsystem.gov.sg/docs/colours/',
+  'https://www.designsystem.gov.sg/docs/display/',
+  'https://www.designsystem.gov.sg/docs/getting-started',
+  'https://www.designsystem.gov.sg/docs/installation',
+  'https://www.designsystem.gov.sg/docs/customise-sgds',
+  'https://github.com/govtechsg/sgds-govtech-react',
+  'https://github.com/govtechsg/sgds-govtech-vue',
+  'https://www.tech.gov.sg/digital-service-standards/',
+  'https://github.com/GovTechSG/sgds/issues',
+  'https://www.designsystem.gov.sg/coming-soon/',
+  'https://www.developer.gov.sg/',
+  'https://www.isomer.gov.sg/',
+  'https://form.gov.sg/forms/govtech/5bc440ac507956000fdbae91',
+  'https://form.gov.sg/#!/forms/govtech/5bd12c6668dbe7000fff9ace',
+  'https://tech.gov.sg/report_vulnerability',
+  'https://www.designsystem.gov.sg/privacy/',
+  'https://www.designsystem.gov.sg/terms/'
+]
+{
+  inapplicable: [
+    {
+      description: 'Ensures every accesskey attribute value is unique',
+      help: 'accesskey attribute value must be unique',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/accesskeys?application=webdriverjs',
+      id: 'accesskeys',
+      impact: null,
+      nodes: [],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures <area> elements of image maps have alternate text',
+      help: 'Active <area> elements must have alternate text',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/area-alt?application=webdriverjs',
+      id: 'area-alt',
+      impact: null,
+      nodes: [],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures <audio> elements have captions',
+      help: '<audio> elements must have a captions track',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/audio-caption?application=webdriverjs',
+      id: 'audio-caption',
+      impact: null,
+      nodes: [],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures <blink> elements are not used',
+      help: '<blink> elements are deprecated and must not be used',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/blink?application=webdriverjs',
+      id: 'blink',
+      impact: null,
+      nodes: [],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures related <input type="checkbox"> elements have a group and that that group designation is consistent',
+      help: 'Checkbox inputs with the same name attribute value must be part of a group',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/checkboxgroup?application=webdriverjs',
+      id: 'checkboxgroup',
+      impact: null,
+      nodes: [],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures <dl> elements are structured correctly',
+      help: '<dl> elements must only directly contain properly-ordered <dt> and <dd> groups, <script> or <template> elements',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/definition-list?application=webdriverjs',
+      id: 'definition-list',
+      impact: null,
+      nodes: [],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures <dt> and <dd> elements are contained by a <dl>',
+      help: '<dt> and <dd> elements must be contained by a <dl>',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/dlitem?application=webdriverjs',
+      id: 'dlitem',
+      impact: null,
+      nodes: [],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures <input type="image"> elements have alternate text',
+      help: 'Image buttons must have alternate text',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/input-image-alt?application=webdriverjs',
+      id: 'input-image-alt',
+      impact: null,
+      nodes: [],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures every form element has a label',
+      help: 'Form elements must have labels',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/label?application=webdriverjs',
+      id: 'label',
+      impact: null,
+      nodes: [],
+      tags: [Array]
+    },
+    {
+      description: 'The main landmark should not be contained in another landmark',
+      help: 'Main landmark is not at top level',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/landmark-main-is-top-level?application=webdriverjs',
+      id: 'landmark-main-is-top-level',
+      impact: null,
+      nodes: [],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures presentational <table> elements do not use <th>, <caption> elements or the summary attribute',
+      help: 'Layout tables must not use data table elements',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/layout-table?application=webdriverjs',
+      id: 'layout-table',
+      impact: null,
+      nodes: [],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures <marquee> elements are not used',
+      help: '<marquee> elements are deprecated and must not be used',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/marquee?application=webdriverjs',
+      id: 'marquee',
+      impact: null,
+      nodes: [],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures <meta http-equiv="refresh"> is not used',
+      help: 'Timed refresh must not exist',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/meta-refresh?application=webdriverjs',
+      id: 'meta-refresh',
+      impact: null,
+      nodes: [],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures <object> elements have alternate text',
+      help: '<object> elements must have alternate text',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/object-alt?application=webdriverjs',
+      id: 'object-alt',
+      impact: null,
+      nodes: [],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures related <input type="radio"> elements have a group and that the group designation is consistent',
+      help: 'Radio inputs with the same name attribute value must be part of a group',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/radiogroup?application=webdriverjs',
+      id: 'radiogroup',
+      impact: null,
+      nodes: [],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures the scope attribute is used correctly on tables',
+      help: 'scope attribute should be used correctly',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/scope-attr-valid?application=webdriverjs',
+      id: 'scope-attr-valid',
+      impact: null,
+      nodes: [],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures that server-side image maps are not used',
+      help: 'Server-side image maps must not be used',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/server-side-image-map?application=webdriverjs',
+      id: 'server-side-image-map',
+      impact: null,
+      nodes: [],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures tabindex attribute values are not greater than 0',
+      help: 'Elements should not have tabindex greater than zero',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/tabindex?application=webdriverjs',
+      id: 'tabindex',
+      impact: null,
+      nodes: [],
+      tags: [Array]
+    },
+    {
+      description: 'Ensure that tables do not have the same summary and caption',
+      help: 'The <caption> element should not contain the same text as the summary attribute',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/table-duplicate-name?application=webdriverjs',
+      id: 'table-duplicate-name',
+      impact: null,
+      nodes: [],
+      tags: [Array]
+    },
+    {
+      description: 'Ensure that each cell in a table using the headers refers to another cell in that table',
+      help: 'All cells in a table element that use the headers attribute must only refer to other cells of that same table',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/td-headers-attr?application=webdriverjs',
+      id: 'td-headers-attr',
+      impact: null,
+      nodes: [],
+      tags: [Array]
+    },
+    {
+      description: 'Ensure that each table header in a data table refers to data cells',
+      help: 'All th elements and elements with role=columnheader/rowheader must have data cells they describe',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/th-has-data-cells?application=webdriverjs',
+      id: 'th-has-data-cells',
+      impact: null,
+      nodes: [],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures lang attributes have valid values',
+      help: 'lang attribute must have a valid value',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/valid-lang?application=webdriverjs',
+      id: 'valid-lang',
+      impact: null,
+      nodes: [],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures <video> elements have captions',
+      help: '<video> elements must have captions',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/video-caption?application=webdriverjs',
+      id: 'video-caption',
+      impact: null,
+      nodes: [],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures <video> elements have audio descriptions',
+      help: '<video> elements must have an audio description track',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/video-description?application=webdriverjs',
+      id: 'video-description',
+      impact: null,
+      nodes: [],
+      tags: [Array]
+    }
+  ],
+  incomplete: [
+    {
+      description: 'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
+      help: 'Elements must have sufficient color contrast',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/color-contrast?application=webdriverjs',
+      id: 'color-contrast',
+      impact: 'serious',
+      nodes: [Array],
+      tags: [Array]
+    }
+  ],
+  passes: [
+    {
+      description: "Ensures ARIA attributes are allowed for an element's role",
+      help: 'Elements must only use allowed ARIA attributes',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/aria-allowed-attr?application=webdriverjs',
+      id: 'aria-allowed-attr',
+      impact: null,
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: "Ensures aria-hidden='true' is not present on the document body.",
+      help: "aria-hidden='true' must not be present on the document body",
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/aria-hidden-body?application=webdriverjs',
+      id: 'aria-hidden-body',
+      impact: null,
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures elements with ARIA roles have all required ARIA attributes',
+      help: 'Required ARIA attributes must be provided',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/aria-required-attr?application=webdriverjs',
+      id: 'aria-required-attr',
+      impact: null,
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures elements with an ARIA role that require child roles contain them',
+      help: 'Certain ARIA roles must contain particular children',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/aria-required-children?application=webdriverjs',
+      id: 'aria-required-children',
+      impact: null,
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures elements with an ARIA role that require parent roles are contained by them',
+      help: 'Certain ARIA roles must be contained by particular parents',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/aria-required-parent?application=webdriverjs',
+      id: 'aria-required-parent',
+      impact: null,
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures all elements with a role attribute use a valid value',
+      help: 'ARIA roles used must conform to valid values',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/aria-roles?application=webdriverjs',
+      id: 'aria-roles',
+      impact: null,
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures all ARIA attributes have valid values',
+      help: 'ARIA attributes must conform to valid values',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/aria-valid-attr-value?application=webdriverjs',
+      id: 'aria-valid-attr-value',
+      impact: null,
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures attributes that begin with aria- are valid ARIA attributes',
+      help: 'ARIA attributes must conform to valid names',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/aria-valid-attr?application=webdriverjs',
+      id: 'aria-valid-attr',
+      impact: null,
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures buttons have discernible text',
+      help: 'Buttons must have discernible text',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/button-name?application=webdriverjs',
+      id: 'button-name',
+      impact: null,
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures each page has at least one mechanism for a user to bypass navigation and jump straight to the content',
+      help: 'Page must have means to bypass repeated blocks',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/bypass?application=webdriverjs',
+      id: 'bypass',
+      impact: null,
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
+      help: 'Elements must have sufficient color contrast',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/color-contrast?application=webdriverjs',
+      id: 'color-contrast',
+      impact: 'serious',
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures each HTML document contains a non-empty <title> element',
+      help: 'Documents must have <title> element to aid in navigation',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/document-title?application=webdriverjs',
+      id: 'document-title',
+      impact: null,
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures every id attribute value is unique',
+      help: 'id attribute value must be unique',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/duplicate-id?application=webdriverjs',
+      id: 'duplicate-id',
+      impact: null,
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures headings have discernible text',
+      help: 'Headings must not be empty',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/empty-heading?application=webdriverjs',
+      id: 'empty-heading',
+      impact: null,
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures <iframe> and <frame> elements contain a unique title attribute',
+      help: 'Frames must have a unique title attribute',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/frame-title-unique?application=webdriverjs',
+      id: 'frame-title-unique',
+      impact: null,
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures <iframe> and <frame> elements contain a non-empty title attribute',
+      help: 'Frames must have title attribute',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/frame-title?application=webdriverjs',
+      id: 'frame-title',
+      impact: 'serious',
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures every HTML document has a lang attribute',
+      help: '<html> element must have a lang attribute',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/html-has-lang?application=webdriverjs',
+      id: 'html-has-lang',
+      impact: null,
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures the lang attribute of the <html> element has a valid value',
+      help: '<html> element must have a valid value for the lang attribute',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/html-lang-valid?application=webdriverjs',
+      id: 'html-lang-valid',
+      impact: null,
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures <img> elements have alternate text or a role of none or presentation',
+      help: 'Images must have alternate text',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/image-alt?application=webdriverjs',
+      id: 'image-alt',
+      impact: null,
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensure button and link text is not repeated as image alternative',
+      help: 'Text of buttons and links should not be repeated in the image alternative',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/image-redundant-alt?application=webdriverjs',
+      id: 'image-redundant-alt',
+      impact: null,
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures links have discernible text',
+      help: 'Links must have discernible text',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/link-name?application=webdriverjs',
+      id: 'link-name',
+      impact: 'serious',
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures that lists are structured correctly',
+      help: '<ul> and <ol> must only directly contain <li>, <script> or <template> elements',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/list?application=webdriverjs',
+      id: 'list',
+      impact: null,
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures <li> elements are used semantically',
+      help: '<li> elements must be contained in a <ul> or <ol>',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/listitem?application=webdriverjs',
+      id: 'listitem',
+      impact: null,
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures <meta name="viewport"> can scale a significant amount',
+      help: 'Users should be able to zoom and scale the text up to 500%',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/meta-viewport-large?application=webdriverjs',
+      id: 'meta-viewport-large',
+      impact: null,
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures <meta name="viewport"> does not disable text scaling and zooming',
+      help: 'Zooming and scaling must not be disabled',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/meta-viewport?application=webdriverjs',
+      id: 'meta-viewport',
+      impact: null,
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'This is a rule used for testing the bok choy integration.',
+      help: "I can't help",
+      helpUrl: "There isn't a help url for this!",
+      id: 'fake-rule',
+      impact: 'serious',
+      nodes: [Array],
+      tags: [Array]
+    }
+  ],
+  timestamp: '2020-01-21T03:09:45.740Z',
+  url: 'https://www.gov.sg/',
+  violations: [
+    {
+      description: 'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
+      help: 'Elements must have sufficient color contrast',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/color-contrast?application=webdriverjs',
+      id: 'color-contrast',
+      impact: 'serious',
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures <iframe> and <frame> elements contain a non-empty title attribute',
+      help: 'Frames must have title attribute',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/frame-title?application=webdriverjs',
+      id: 'frame-title',
+      impact: 'serious',
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures a navigation point to the primary content of the page. If the page contains iframes, each iframe should contain either no main landmarks or just one.',
+      help: 'Page must contain one main landmark.',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/landmark-one-main?application=webdriverjs',
+      id: 'landmark-one-main',
+      impact: 'moderate',
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'Ensures links have discernible text',
+      help: 'Links must have discernible text',
+      helpUrl: 'https://dequeuniversity.com/rules/axe/2.6/link-name?application=webdriverjs',
+      id: 'link-name',
+      impact: 'serious',
+      nodes: [Array],
+      tags: [Array]
+    },
+    {
+      description: 'This is a rule used for testing the bok choy integration.',
+      help: "I can't help",
+      helpUrl: "There isn't a help url for this!",
+      id: 'fake-rule',
+      impact: 'serious',
+      nodes: [Array],
+      tags: [Array]
+    }
+  ]
+}
+
+Kinds of violations:5
+
+There are 6 times of color-contrast
+
+There are 1 times of frame-title
+
+There are 1 times of landmark-one-main
+
+There are 13 times of link-name
+
+There are 2 times of fake-rule
+https://www.gov.sg/,color-contrast,serious,https://dequeuniversity.com/rules/axe/2.6/color-contrast?application=webdriverjs,<span>Education</span>,Element has insufficient color contrast of 2.05 (foreground color: #ffffff- background color: #f19cbb- font size: 9.0pt- font weight: normal). Expected contrast ratio of 4.5:1,html > body > .banner-art.js-banner-art > .banner-art__inner > .banner-art__list > a:nth-child(2) > .banner-art__info > .banner-art__itag > .tag.tag-primary > span
+https://www.gov.sg/,color-contrast,serious,https://dequeuniversity.com/rules/axe/2.6/color-contrast?application=webdriverjs,<span>Housing</span>,Element has insufficient color contrast of 3.14 (foreground color: #ffffff- background color: #cd7f32- font size: 9.0pt- font weight: normal). Expected contrast ratio of 4.5:1,html > body > .banner-art.js-banner-art > .banner-art__inner > .banner-art__list > a:nth-child(3) > .banner-art__info > .banner-art__itag > .tag.tag-primary > span
+https://www.gov.sg/,color-contrast,serious,https://dequeuniversity.com/rules/axe/2.6/color-contrast?application=webdriverjs,<span class="button is-radiusless tag tag-primary" style="background-color: #B0BF1A;">                                    Savings and Taxes                                </span>,Element has insufficient color contrast of 2.03 (foreground color: #ffffff- background color: #b0bf1a- font size: 9.0pt- font weight: normal). Expected contrast ratio of 4.5:1,html > body > .section--layout > .container > .layout-panel > .columns > .column > div:nth-child(2) > div > div:nth-child(3) > a > .latest-content__info > span
+https://www.gov.sg/,color-contrast,serious,https://dequeuniversity.com/rules/axe/2.6/color-contrast?application=webdriverjs,<span class="button is-radiusless tag tag-primary" style="background-color: #9966CC;">                                    Social and Community                                </span>,Element has insufficient color contrast of 4.09 (foreground color: #ffffff- background color: #9966cc- font size: 9.0pt- font weight: normal). Expected contrast ratio of 4.5:1,html > body > .section--layout > .container > .layout-panel > .columns > .column > div:nth-child(2) > div > div:nth-child(4) > a > .latest-content__info > span
+https://www.gov.sg/,color-contrast,serious,https://dequeuniversity.com/rules/axe/2.6/color-contrast?application=webdriverjs,<span class="button is-radiusless tag tag-primary" style="background-color: #F19CBB;">                                    Education                                </span>,Element has insufficient color contrast of 2.05 (foreground color: #ffffff- background color: #f19cbb- font size: 9.0pt- font weight: normal). Expected contrast ratio of 4.5:1,html > body > .section--layout > .container > .layout-panel > .columns > .column > div:nth-child(2) > div > div:nth-child(6) > a > .latest-content__info > span
+https://www.gov.sg/,color-contrast,serious,https://dequeuniversity.com/rules/axe/2.6/color-contrast?application=webdriverjs,<a href="~/link.aspx?_id=A9760E2521D942CDA2F6E4FB690DBFFC&amp;_z=z">here</a>,Element has insufficient color contrast of 3.7 (foreground color: #d81800- background color: #dadada- font size: 12.0pt- font weight: normal). Expected contrast ratio of 4.5:1,p > a
+https://www.gov.sg/,frame-title,serious,https://dequeuniversity.com/rules/axe/2.6/frame-title?application=webdriverjs,<iframe src="https://www.youtube.com/embed/IVk7OqCKus4??disablekb=1&amp;rel=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.gov.sg" allow="autoplay" frameborder="0" class="yt-pl__player" data-gtm-yt-inspected-12325006_41="true" id="600722205" cd_frame_id_="99d819e32873e3c71010123bd4c3e456">,aria-label attribute does not exist or is empty--aria-labelledby attribute does not exist- references elements that do not exist or references elements that are empty or not visible--Element has no title attribute or the title attribute is empty--Element's default semantics were not overridden with role="presentation"--Element's default semantics were not overridden with role="none",#\36 00722205
+https://www.gov.sg/,landmark-one-main,moderate,https://dequeuniversity.com/rules/axe/2.6/landmark-one-main?application=webdriverjs,<html lang="en" style="--vh:5.45px;">,Document has no main landmarks,html
+https://www.gov.sg/,link-name,serious,https://dequeuniversity.com/rules/axe/2.6/link-name?application=webdriverjs,<a href="https://www.facebook.com/gov.sg" class="navbar-socialmedia__item" target="_blank">,Element does not have text that is visible to screen readers--aria-label attribute does not exist or is empty--aria-labelledby attribute does not exist- references elements that do not exist or references elements that are empty or not visible--Element's default semantics were not overridden with role="presentation"--Element's default semantics were not overridden with role="none",html > body > .header-wrapper.is-stuck > header > [role="navigation"]:nth-child(2) > .container > .navbar-menu > .navbar-end > .navbar-socialmedia > .navbar-item > .navbar-socialmedia__items > a[href$="gov.sg"]:nth-child(1)
+https://www.gov.sg/,link-name,serious,https://dequeuniversity.com/rules/axe/2.6/link-name?application=webdriverjs,<a href="https://www.instagram.com/gov.sg/" class="navbar-socialmedia__item" target="_blank">,Element does not have text that is visible to screen readers--aria-label attribute does not exist or is empty--aria-labelledby attribute does not exist- references elements that do not exist or references elements that are empty or not visible--Element's default semantics were not overridden with role="presentation"--Element's default semantics were not overridden with role="none",html > body > .header-wrapper.is-stuck > header > [role="navigation"]:nth-child(2) > .container > .navbar-menu > .navbar-end > .navbar-socialmedia > .navbar-item > .navbar-socialmedia__items > a[href$="gov.sg/"]
+https://www.gov.sg/,link-name,serious,https://dequeuniversity.com/rules/axe/2.6/link-name?application=webdriverjs,<a href="https://www.youtube.com/user/govsingapore" class="navbar-socialmedia__item" target="_blank">,Element does not have text that is visible to screen readers--aria-label attribute does not exist or is empty--aria-labelledby attribute does not exist- references elements that do not exist or references elements that are empty or not visible--Element's default semantics were not overridden with role="presentation"--Element's default semantics were not overridden with role="none",html > body > .header-wrapper.is-stuck > header > [role="navigation"]:nth-child(2) > .container > .navbar-menu > .navbar-end > .navbar-socialmedia > .navbar-item > .navbar-socialmedia__items > a[href$="govsingapore"]
+https://www.gov.sg/,link-name,serious,https://dequeuniversity.com/rules/axe/2.6/link-name?application=webdriverjs,<a href="https://twitter.com/govsingapore/" class="navbar-socialmedia__item" target="_blank">,Element does not have text that is visible to screen readers--aria-label attribute does not exist or is empty--aria-labelledby attribute does not exist- references elements that do not exist or references elements that are empty or not visible--Element's default semantics were not overridden with role="presentation"--Element's default semantics were not overridden with role="none",html > body > .header-wrapper.is-stuck > header > [role="navigation"]:nth-child(2) > .container > .navbar-menu > .navbar-end > .navbar-socialmedia > .navbar-item > .navbar-socialmedia__items > a[href$="govsingapore/"]
+https://www.gov.sg/,link-name,serious,https://dequeuniversity.com/rules/axe/2.6/link-name?application=webdriverjs,<a href="https://sg.sg/mgp" class="navbar-socialmedia__item" target="_blank">,Element does not have text that is visible to screen readers--aria-label attribute does not exist or is empty--aria-labelledby attribute does not exist- references elements that do not exist or references elements that are empty or not visible--Element's default semantics were not overridden with role="presentation"--Element's default semantics were not overridden with role="none",html > body > .header-wrapper.is-stuck > header > [role="navigation"]:nth-child(2) > .container > .navbar-menu > .navbar-end > .navbar-socialmedia > .navbar-item > .navbar-socialmedia__items > a[href$="mgp"]
+https://www.gov.sg/,link-name,serious,https://dequeuniversity.com/rules/axe/2.6/link-name?application=webdriverjs,<a href="https://m.me/gov.sg" class="navbar-socialmedia__item" target="_blank">,Element does not have text that is visible to screen readers--aria-label attribute does not exist or is empty--aria-labelledby attribute does not exist- references elements that do not exist or references elements that are empty or not visible--Element's default semantics were not overridden with role="presentation"--Element's default semantics were not overridden with role="none",html > body > .header-wrapper.is-stuck > header > [role="navigation"]:nth-child(2) > .container > .navbar-menu > .navbar-end > .navbar-socialmedia > .navbar-item > .navbar-socialmedia__items > a[href$="gov.sg"]:nth-child(6)
+https://www.gov.sg/,link-name,serious,https://dequeuniversity.com/rules/axe/2.6/link-name?application=webdriverjs,<a href="/">            <img alt="" src="/-/media/gov/images/shared/logo/2019-08-07.png">        </a>,Element does not have text that is visible to screen readers--aria-label attribute does not exist or is empty--aria-labelledby attribute does not exist- references elements that do not exist or references elements that are empty or not visible--Element's default semantics were not overridden with role="presentation"--Element's default semantics were not overridden with role="none",.footer-brand > a
+https://www.gov.sg/,link-name,serious,https://dequeuniversity.com/rules/axe/2.6/link-name?application=webdriverjs,<a href="https://www.facebook.com/gov.sg" class="navbar-socialmedia__item" target="_blank">,Element does not have text that is visible to screen readers--aria-label attribute does not exist or is empty--aria-labelledby attribute does not exist- references elements that do not exist or references elements that are empty or not visible--Element's default semantics were not overridden with role="presentation"--Element's default semantics were not overridden with role="none",html > body > footer > .container > .footer-main > .footer-social > .navbar-socialmedia > .navbar-item > .navbar-socialmedia__items > a[href$="gov.sg"]:nth-child(1)
+https://www.gov.sg/,link-name,serious,https://dequeuniversity.com/rules/axe/2.6/link-name?application=webdriverjs,<a href="https://www.instagram.com/gov.sg/" class="navbar-socialmedia__item" target="_blank">,Element does not have text that is visible to screen readers--aria-label attribute does not exist or is empty--aria-labelledby attribute does not exist- references elements that do not exist or references elements that are empty or not visible--Element's default semantics were not overridden with role="presentation"--Element's default semantics were not overridden with role="none",html > body > footer > .container > .footer-main > .footer-social > .navbar-socialmedia > .navbar-item > .navbar-socialmedia__items > a[href$="gov.sg/"]
+https://www.gov.sg/,link-name,serious,https://dequeuniversity.com/rules/axe/2.6/link-name?application=webdriverjs,<a href="https://www.youtube.com/user/govsingapore" class="navbar-socialmedia__item" target="_blank">,Element does not have text that is visible to screen readers--aria-label attribute does not exist or is empty--aria-labelledby attribute does not exist- references elements that do not exist or references elements that are empty or not visible--Element's default semantics were not overridden with role="presentation"--Element's default semantics were not overridden with role="none",html > body > footer > .container > .footer-main > .footer-social > .navbar-socialmedia > .navbar-item > .navbar-socialmedia__items > a[href$="govsingapore"]
+https://www.gov.sg/,link-name,serious,https://dequeuniversity.com/rules/axe/2.6/link-name?application=webdriverjs,<a href="https://twitter.com/govsingapore/" class="navbar-socialmedia__item" target="_blank">,Element does not have text that is visible to screen readers--aria-label attribute does not exist or is empty--aria-labelledby attribute does not exist- references elements that do not exist or references elements that are empty or not visible--Element's default semantics were not overridden with role="presentation"--Element's default semantics were not overridden with role="none",html > body > footer > .container > .footer-main > .footer-social > .navbar-socialmedia > .navbar-item > .navbar-socialmedia__items > a[href$="govsingapore/"]
+https://www.gov.sg/,link-name,serious,https://dequeuniversity.com/rules/axe/2.6/link-name?application=webdriverjs,<a href="https://sg.sg/mgp" class="navbar-socialmedia__item" target="_blank">,Element does not have text that is visible to screen readers--aria-label attribute does not exist or is empty--aria-labelledby attribute does not exist- references elements that do not exist or references elements that are empty or not visible--Element's default semantics were not overridden with role="presentation"--Element's default semantics were not overridden with role="none",html > body > footer > .container > .footer-main > .footer-social > .navbar-socialmedia > .navbar-item > .navbar-socialmedia__items > a[href$="mgp"]
+https://www.gov.sg/,link-name,serious,https://dequeuniversity.com/rules/axe/2.6/link-name?application=webdriverjs,<a href="https://m.me/gov.sg" class="navbar-socialmedia__item" target="_blank">,Element does not have text that is visible to screen readers--aria-label attribute does not exist or is empty--aria-labelledby attribute does not exist- references elements that do not exist or references elements that are empty or not visible--Element's default semantics were not overridden with role="presentation"--Element's default semantics were not overridden with role="none",html > body > footer > .container > .footer-main > .footer-social > .navbar-socialmedia > .navbar-item > .navbar-socialmedia__items > a[href$="gov.sg"]:nth-child(6)
+https://www.gov.sg/,fake-rule,serious,There isn't a help url for this!,<a class="navbar-link">                            More                        </a>,Element has no Bok Choy,#navbar-automenu-more > a.navbar-link
+https://www.gov.sg/,fake-rule,serious,There isn't a help url for this!,<a class="navbar-link">                                        Resources                                    </a>,Element has no Bok Choy,#navbar-fullmenu > .navbar-scroll-wrapper > .navbar-additional.navbar-end > .has-dropdown.initialized > a.navbar-link
+File has been created
